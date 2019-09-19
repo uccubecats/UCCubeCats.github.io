@@ -2625,6 +2625,16 @@ ul.icons {
   body.is-preload #banner2:before {
     opacity: 1; }
 /* CTA */
+#cta2 {
+  background-image: linear-gradient(rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 0.5)), url(../../images/bg.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  z-index: 1; }
+  #cta2 h2 {
+    color: #ffffff; }
 #cta {
   background-color: #000000;
   color: rgba(255, 255, 255, 0.75);
@@ -2761,6 +2771,8 @@ ul.icons {
     background: rgba(0,0,0,0.95);
     box-shadow: 0px 0px 4px 1px rgba(255, 255, 255, 0.025);
     }
+  #cta2 .highlights .content {
+    background: #dbdbdb;    }
   #cta .testimonials .content {
     background: #ce1b28;
     box-shadow: 0px 0px 4px 1px rgba(255, 255, 255, 0.025); }
