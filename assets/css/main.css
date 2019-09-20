@@ -2633,8 +2633,24 @@ ul.icons {
   position: relative;
   text-align: center;
   z-index: 1; }
-  #cta2 h2 {
-    color: #ffffff; }
+#cta2 h2 {
+  color: #ffffff; }
+#cta3 {
+  background-image: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url(../../images/bg.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  z-index: 1; }
+#cta3 h2 {
+  color: #ffffff; 
+  z-index: 2;}
+#cta2 .inner .higlights{
+  text-align: center;
+  vertical-align: center;
+}
+
 #cta {
   background-color: #000000;
   color: rgba(255, 255, 255, 0.75);
@@ -3248,7 +3264,7 @@ body {
   background: #ffffff;
   border-radius: 4px;
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.025);
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   padding: 3rem; }
   @media screen and (max-width: 980px) {
     #main .content {
