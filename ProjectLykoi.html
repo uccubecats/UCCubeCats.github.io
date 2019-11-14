@@ -46,48 +46,150 @@
     <section id="main" class="wrapper">
         <div class="inner">
             <div class="content">
-                <header>
-                    <h2>Feugiat consequat</h2>
-                </header>
-                <p>Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis
-                    sagittis eget. tempus euismod. Magna et cursus lorem faucibus
-                    vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
-                    adipiscing accumsan eu faucibus. Integer ac pellentesque praesent
-                    tincidunt felis sagittis eget. tempus euismod tempus. Vestibulum
-                    ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu
-                    felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer
-                    ac pellentesque praesent tincidunt felis sagittis eget. tempus
-                    euismod. Vestibulum ante ipsum primis in faucibus vestibulum.
-                    Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan
-                    eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac
-                    gravida lorem ipsum dolor sit amet dolor feugiat consequat. </p>
-                <p>Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis
-                    sagittis eget. tempus euismod. Magna et cursus lorem faucibus
-                    vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
-                    adipiscing accumsan eu faucibus. Integer ac pellentesque praesent
-                    tincidunt felis sagittis eget. tempus euismod tempus. Vestibulum
-                    ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu
-                    felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer
-                    ac pellentesque praesent tincidunt felis sagittis eget. tempus
-                    euismod. Vestibulum ante ipsum primis in faucibus vestibulum.
-                    Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan
-                    eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac
-                    gravida lorem ipsum dolor sit amet dolor feugiat consequat. </p>
+                <h2>Level 0 Requirements</h2>
+                  <ul>
+                    <li>Project Lykoi shall be a glider that reaches 100,000 feet (30.5 km) of altitude.</li>
+                    <li>The payload shall return by glider to a location specified by the team.</li>
+                    <li>The Project shall have cameras that will record/take images of the flight.</li>
+                    <li>The glider shall be designed so that data can be recovered from the payload on landing.</li>
+                  </ul>
                 <hr>
-                <h3>Magna odio tempus commodo</h3>
-                <p>In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim
-                    aliquet. Accumsan ac integer lobortis commodo ornare aliquet
-                    accumsan erat tempus amet porttitor. Ante commodo blandit adipiscing
-                    integer semper orci eget. Faucibus commodo adipiscing mi eu nullam
-                    accumsan morbi arcu ornare odio mi adipiscing nascetur lacus ac
-                    interdum morbi accumsan vis mi accumsan ac praesent.</p>
-                <p>Felis sagittis eget tempus primis in faucibus vestibulum. Blandit
-                    adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu
-                    faucibus. Integer ac pellentesque praesent tincidunt felis sagittis
-                    eget. tempus euismod. Magna sed etiam ante ipsum primis in faucibus
-                    vestibulum. Blandit adipiscing eu ipsum primis in faucibus
-                    vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
-                    adipiscing accumsan eu faucibus lorem ipsum dolor sit amet nullam.</p>
+                <h2>Strawman Mission Architecture</h2>
+                  <h3>Communications</h3>
+                  <ul>
+                    <li><b>Communicate with Payload</b>
+                      <ul>
+                        <li>Use a primary GPS tracking chip & antenna compatible with a microprocessor to track the payload</li>
+                        <li>Use microprocessor to format data into APRS</li>
+                        <li>Transmit the APRS data to nearby towers</li>
+                        <li>Use high-speed data-link from payload to collect untransmitted data to mobile station</li>
+                      </ul>
+                    </li>
+                    <li><b>Ground Station</b>
+                      <ul>
+                        <li>Use a computer with APRS decoding software to decode the APRS data</li>
+                        <li>Construct a directional antenna that will be used to receive the data transmitted</li>
+                      </ul>
+                    </li>
+                    <li><b>Use secondary GPS tracker to locate the HAB after it has landed</b>
+                      <ul>
+                        <li>Allows us to more accurately determine the location of the payload once it approaches touchdown</li>
+                      </ul>
+                    </li>
+                    <li><b>Ye Effortless Extraction Transmitter (YEET) System</b>
+                      <ul>
+                        <li>Separate system to allow rapid transfer of all data stored on the SD card in the event that the glider cannot be recovered</li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <h3>Software & Payload</h3>
+                  <ul>
+                    <li><b>Cameras</b>
+                      <ul>
+                        <li>GoPro- take pictures/videos, store via SD card (256 GB)</li>
+                      </ul>
+                    </li>
+                    <li><b>Flight controller</b>
+                      <ul>
+                        <li>Try to build one (Raspberry Pi). If no progress is made by a deadline, purchase one</li>
+                      </ul>
+                    </li>
+                    <li><b>Raspberry Pi</b>
+                      <ul>
+                        <li>Determine when and where to drop glider, possible flight controller</li>
+                      </ul>
+                    </li>
+                    <li><b>Servos</b>
+                      <ul>
+                        <li>Control the control surfaces, release system and possible parachute (if needed)</li>
+                      </ul>
+                    </li>
+                    <li><b>Power Supply</b>
+                      <ul>
+                        <li>Power all electronic components</li>
+                      </ul>
+                    </li>
+                    <li><b>GPS/Gyro</b>
+                      <ul>
+                        <li>Seperate from Comms, communicate with Raspberry Pi</li>
+                        <li>Gyro will communicate orientation of glider with Raspberry Pi</li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <h3>Flight Systems</h3>
+                  <ul>
+                    <li><b>Launch Location Ideas</b>
+                      <ul>
+                        <li>A farm in Sunman, IN (about 50 min away)</li>
+                      </ul>
+                    </li>
+                    <li><b>Recovery Location Ideas</b>
+                      <ul>
+                        <li>Within a 15 mi radius of the launch sight</li>
+                      </ul>
+                    </li>
+                    <li><b>Mission Altitude</b>
+                      <ul>
+                        <li>≈100,000 ft max altitude about 95,000ft when glider is released on the way up</li>
+                        <li>Parachute will deploy after 100,000 ft if glider controls are not operational</li>
+                      </ul>
+                    </li>
+                    <li><b>Mission Duration</b>
+                      <ul>
+                        <li>Total Time ≈ 5-7 hours</li>
+                        <li>1 hour of prep and takeoff</li>
+                        <li>2 - 4 hours flight time</li>
+                        <li>2 hours recovery</li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <hr>
+                  <h2>Data Plan Flow Diagram</h2>
+                  <img src="images/Lykoi/data-plan.png" style="text-align: center; width: 750px; height: auto;">
+                  <hr>
+                  <h2>Operational Concept Diagram</h2>
+                  <img src="images/Lykoi/ocd.png" style="text-align: center; width: 750px; height: auto;">
+                  <hr>
+                  <h2>Level 1 Requirements</h2>
+                  <h3>Communications</h3>
+                  <p><b>Our Misiion Shall:</b>
+                    <ul>
+                      <li>Transmit data over APRS every 1 minute and be received by retrieved on APRS.fi</li>
+                      <li>Transmit data every 1 minute and be received directly by a ground station.</li>
+                      <li>Store all information on an 32 GB SD card on the payload.</li>
+                      <li>Locate the payload once it has landed using a secondary GPS tracking system.</li>
+                      <li>Include a high frequency Ye Effortless Extraction Transmitter (YEET) to collect data from the glider in the event that it cannot be retrieved after landing.</li>
+                    </ul>
+                  </p>
+
+                  <h3>Software & Payload</h3>
+                  <p><b>Our Misiion Shall:</b>
+                    <ul>
+                      <li>Construct and program a flight controller with a Raspberry Pi 4 to gather data about orientation and position of the glider using a gyroscope and GPS.</li>
+                      <li>Use the position and orientation data gathered to steer the glider via servo motors to the position specified by the group before flight.</li>
+                      <li>Video record the entire duration of the flight using a GoPro at 1080p resolution.</li>
+                      <li>Provide enough power to the onboard electronic components for amount of hours planned for the mission +3hrs (9 hrs total) via a battery pack.</li>
+                    </ul>
+                  </p>
+
+                  <h3>Flight Systems</h3>
+                  <p><b>Our Misiion Shall:</b>
+                    <ul>
+                      <li>Reach an altitude of around 100,000 ft by filling a balloon with X ft^3 of helium; where X is determined by balloon size, weather conditions, and payload size.</li>
+                      <li>Measure the positive lift using a spring scale</li>
+                      <li>Release a glider at a designated altitude with hooks</li>
+                      <li>Point one camera forwards (at the glider) and the other camera will down</li>
+                      <li>Salvage the internal data and continue monitoring the location by absorbing outward shocks</li>
+                    </ul>
+                  </p>
+                  <hr>
+                  <h3>Schedule</h3>
+                  <p>
+                    MCR: 10/3/2019<br>
+                    TDR: 11/18/2019<br>
+                    Launch: February/March of 2020<br>
+                    <a href="https://docs.google.com/spreadsheets/d/1Sm1I6vfD5t6tfLXjCnIqziQaqoe-TBGkvFDi2_hp2HU/edit?usp=sharing">Gantt Chart</a>
+                  </p>
             </div>
         </div>
     </section>
@@ -105,7 +207,7 @@
                         <header>
                             <h3>Software &amp; Payload</h3>
                         </header>
-                        <img style="border-radius: 50%" src="images/Member Photos/JKropveld.png" alt="" height=150px>
+                        <img style="border-radius: 50%" src="images/" alt="" height=150px>
                         <p>Jessica Kropveld<br><a href="mailto:kropvejl@mail.uc.edu">kropvejl@mail.uc.edu</a></p>
                     </div>
                 </section>
