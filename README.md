@@ -1,2 +1,1 @@
-# <a href="https://kartikeyhpandey.github.io/CubeCats">kartikeyhpandey.github.io/CubeCats</a>
-Created a dynamic website for UC CubeCats
+# <a href="https://uccubecats.github.io">uccubecats.github.io/CubeCats</a>
