@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
+<head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <title>Ground Station</title>
+    <title>Helmholtz Cage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -12,6 +12,7 @@
 </head>
 
 <body class="is-preload">
+    
     <!-- Header -->
     <header id="header">
         <a class="logo" href="index.html"><img style="max-height:45px" src="images/banner1_white.png"></a>
@@ -19,32 +20,42 @@
             <a href="#menu">Menu</a>
         </nav>
     </header>
+    
+    <!-- Nav bar -->
     <nav id="menu">
-        <ul class="links">
-            <li><a href='index.html'>Home</a></li>
-            <li><a href='CubeSat.html'>CubeSat</a>
-                <ul>
-                    <li><a href='LEOPARDSat-1.html'>LEOPARDsat-1</a></li>
-                    <li><a href='HABSat-1.html'>HABsat-1</a></li>
-                    <li><a href='GroundStation.html'>Ground Station</a></li>
-                    <li><a href='HelmholtzCage.html'>Helmholtz Cage</a></li>
-                </ul>
-            </li>
-            <li><a href='CATiSE.html'>CATiSE</a>
-                <ul>
-                    <li><a href='CurrentMissions.html'>Project Lynx</a></li>
-                    <li><a href='PastMissions.html'>Past Missions</a></li>
-                </ul>
-            </li>
-            <li><a href='Exec.html'>Meet The Team</a></li>
-            <li><a href='Calendar.html'>Calendar</a></li>
-        </ul>
+    <ul class="links">
+        <li><a href='index.html'>Home</a></li>
+        <li><a href='About.html'>About Us</a>
+            <ul>
+                <li><a href='Exec.html'>Meet the Team</a></li>
+                <li><a href='Calendar.html'>Calendar</a></li>
+            </ul>
+        </li>
+        <li><a href='WhatIsACubeSat.html'>What Is A CubeSat?</a></li>
+        <li><a href='CubeSat.html'>CubeSat Program</a>
+            <ul>
+                <li><a href='LEOPARDSat-1.html'>LEOPARDsat-1</a></li>
+                <li><a href='HABSat-1.html'>HABsat-1</a></li>
+                <li><a href='GroundStation.html'>Ground Station</a></li>
+                <li><a href='HelmholtzCage.html'>Helmholtz Cage</a></li>
+            </ul>
+        </li>
+        <li><a href='CATiSE.html'>CATiSE Program</a>
+            <ul>
+                <li><a href='CurrentMissions.html'>Current Missions</a></li>
+                <li><a href='PastMissions.html'>Past Missions</a></li>
+            </ul>
+        </li>
+        <li><a href='ContactUs.html'>Contact Us</a></li>
+    </ul>
     </nav>
 
     <!-- Heading -->
-    <div id="heading">
-        <h1>Helmholtz Cage</h1>
-    </div>
+    <section id="banner2">
+        <div class="inner">
+            <h1><b>Helmholtz Cage</b></h1>
+        </div>
+    </section>
     
     <!-- Main -->
     <section id="main" class="wrapper">
@@ -53,49 +64,141 @@
                 <header>
                     <h2>About</h2>
                 </header>
+                <p>
+                    A Helmholtz Coil is a device consisting of a pair of identical coiled-wire electormagnets, separated by a set distance to create a uniform magnetic field along their common axis.
+                    Arranging three Helmholtz Coils orthogonally to each other creates a Helmholtz Cage, which is able to create uniform fields in each direction at its center.
+                    This capability can be used to realistically test a satellite attitude determination and control system on the ground by simulating on-orbit magnetic fields and characterize the residual magnetism of satellite components by negating the ambient magnetic field.
+                    In order to test the ADCS of our two upcoming CubeSat missions as well as potential future missions, UC CubeCats designed and built its own Helmholtz Cage.
+                    This work was funded by a grant from the <a href="http://osgc.org/">Ohio Space Grant Consortium (OSGC).</a></p>
+                <hr>
+                
+	        <header>
+                    <h2>Requirements</h2>
+		</header>
+                <ol>
+		    <li>Capable of generating a uniform magnetic field in a volume large enough to hold a 3U CubeSat plus some limited deployables.</li>
+                    <li>Capable of simulating dynamic magnetic fields such as those found in Low Earth Orbit (LEO).</li>
+                    <li>Capable of cancelling out the ambient magnetic field in our lab's location.</li>
+                    <li>Relatively easy to disassemble, store, and reassemble.</li>
+                    <li>Cost less than $5000</li>
+		</ol>
+                <hr>
+                
+                <header>
+                    <h2>Design</h2>
+                <header>
+                <p> The UC Helmholtz Cage is based upon previous designs used for CubeSat testing.
+                    Instead of circular coils, we use square-shaped coils, which provide a greater uniform magnetic field at the center of a pair
+                    In order to generate a uniform field 30 cm x 30 cm x 30 cm at its center (big enough for a 3U cubesat oriented in any direction), the square coils ideally should be 8 ft x 8 ft square, with a coil spacing ratio of 0.5445 (i.e. 4.356 ft separating each coil pair).
+                    Because the coils can not all be 8 ft x 8 ft (the coils can not intersect each other), the actual coil side lengths are 7.56 ft, 7.77 ft, and 8.00 ft for the innermost, middle, and outmost coils, respectively.
+                
+                <center><img src="images/HelmholtzCage/diagram.png" alt="" height=375px>
+                <img src="images/HelmholtzCage/helmholtz_cage.jpg" alt="" height=375px>
+                <p><i><u>Left</u>: Labeled CAD schematic of the Helmholtz Cage; <u>Right</u>: Assembled Helmholtz Cage</i></p></center>
+
+		<p> To hold the wire coils, we use a 1.25 in x 1.25 in Aluminum U-channel beam, with its interior wrapped in electrical tape for insulation.
+                    The beams are attached at their ends by L-brackets to create a square coil structure.
+                    To hold the beams in place further L-brackets are used and allow us to slide the coils in and out of the sturcture for easy assembly and disassembly.
+                    Each coil is wrapped in 45 loops or (~1445 ft) of 14-AWG wire, for a total of 8640 ft of wiring in the entire Cage.
+                    The maximum field that can be produced by a coil pair with safety and power considerations is 1.5 Gauss in either direction, with an current of 10 Amps applied in parallel.
+                    This is enough to cancel out the ambient magnetic field as well as simulate on-orbit magnetic fields in our lab location.</p>
+                
+                <p> To power the coils, the Cage uses three HP 6038a Autoranging DC Power supplies (one for each coil pair), which can each provide a maximum of 240 Watts of power.
+                    These are connected to the main control computer with the control software via a GPIB-USB interface.
+                    A truth magnetometer is placed at the center of the cage during operation and provides feedback on the actual magnetic field during operation.
+                
+                <center><img src="images/HelmholtzCage/block_diagram.png" alt="" height=350px>
+                <p><i>Block diagram of the Helmholtz Cage system</i></p></center>
+                
+                <header>
+                    <h3>Control Software</h3>
+                <header>
+                
+                <p> The control software for the cage is a Python based program, which is primarily operated from a custom GUI.
+                    The software has four main funtionalities:
+                    <ul>
+                        <li>Testing the connections to the three power supplies and the magnetometer.
+                        <li>Calibrating the cage by producing a equation that relates the output magnetic field strenght on each axis to the input voltage.
+                        <li>Running "static" tests in which the user can directly specify the desired magnetic field strength or voltages on each axis.
+                        <li>Running "dynamic" tests which use a time-varying input from a file, such as the output of an STK simulation, to simulate magnetic fields on orbit (WIP)
+		<p>
+
+                <center><img src="images/HelmholtzCage/gui.png" alt="" height=400px>
+                <p><i>Sample run of the Helmholtz Cage using the GUI based interface.</i></p></center>
+
+		<!--header>
+                    <h3>Air Bearing Table</h3>
+                </header-->
+                
             </div>
         </div>
     </section>
+    
+    <!-- Team -->
+    <section id="cta3" class="wrapper">
+        <div class="inner">
+
+            <header class="special">
+                <h2>Project Team Leads</h2>
+            </header>
+
+            <div class="highlights">
+
+                <section>
+                    <div class="content">
+                        <header>
+                            <h3>Helmholtz Cage <br>Project Lead</h3>
+                        </header>
+                        <img src="images/Leopard Logo.png" alt="" height=150px>
+                        <p>Matthew Verbryke<br><a href="mailto:verbrymr@mail.uc.edu">verbrymr@mail.uc.edu</a></p>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="content">
+                        <header>
+                            <h3>Air-Bearing Table Project Lead</h3>
+                        </header>
+                        <img src="images/Leopard Logo.png" alt="" height=150px>
+                        <p>Michael Rechtin<br><a href="rechtima@mail.uc.edu">rechtima@mail.uc.edu</a></p>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </section>
+    
     <!-- Footer -->
     <footer id="footer">
-        <div class="inner">
-            <div class="content">
-                <section>
-                    <h3>Become a Member Today!</h3>
-                    <p>Join our organisation and become part of some cool space
-                        projects. The UC CubeCats undergraduate research lab is recruiting
-                        students who have an interest in software development,
-                        electronics, design, analysis, and systems engineering for small
-                        satellite development.
-                        <br><br>
-                        Meeting Sign-in:
-                        <a href="https://goo.gl/Eh8ksg">https://goo.gl/Eh8ksg</a>
-                        <br>
-                        Join our Discord Server:
-                        <a href="https://discord.gg/BuNN8whQsY">https://discord.gg/BuNN8whQsY</a>
-                    </p>
-                </section>
-                <section>
-                    <h4>Projects</h4>
-                    <ul class="alt">
-                        <li><a href="LEOPARDSat-1.html">Project LEOPARD<br></a></li>
-                        <li><a href="HABSat-1.html">Project HABSat-1<br></a></li>
-                        <li><a href="GroundStation.html">Ground Station<br></a></li>
-                        <li><a href="CurrentMissions.html">Project Lynx<br></a></li>
-                    </ul>
-                </section>
-                <section>
-                    <h4>Follow US</h4>
-                    <ul class="plain">
-                        <li><a href="https://twitter.com/uccubecats"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
-                        <li><a href="https://www.facebook.com/UCCubeCats/"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
-                        <li><a href="https://www.instagram.com/uccubecats/"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
-                        <li><a href="https://github.com/uccubecats/"><i class="icon fa-github">&nbsp;</i>Github</a></li>
-                    </ul>
-                </section>
-            </div>
-            <div class="copyright"> © 2021 UC CubeCats </div>
+    <div class="inner">
+        <div class="content">
+            <section>
+                <h3>Work With Us Today!</a></h3>
+                <p> Are you a UC student interested in joining our organisation and becoming part of some cool space projects?
+		    Or are you interested in collaborating, donating, and/or partaking in outreach activities?</p>
+                    Read more <a href="About.html"><u>about our group and its work</u></a> or <a href="ContactUs.html"><u>contact us</u></a> for more information.
+            </section>
+            <section>
+                <h3>Projects</h3>
+                <ul class="alt">
+                    <li><a href="LEOPARDSat-1.html">LEOPARDSat-1<br></a></li>
+                    <li><a href="HABSat-1.html">HABSat-1<br></a></li>
+                    <li><a href="HelmholtzCage.html">Helmlholtz Cage<br></a></li>
+                    <li><a href="CurrentMissions.html">Project Lynx<br></a></li>
+                </ul>
+            </section>
+            <section>
+                <h3>Social Media</h3>
+                <ul class="plain">
+                    <li><a href="https://twitter.com/uccubecats"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                    <li><a href="https://www.facebook.com/UCCubeCats/"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                    <li><a href="https://www.instagram.com/uccubecats/"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+                    <li><a href="https://www.youtube.com/channel/UCswoyHMcaZrM_iyTmgqaW6w"><i class="icon fa-youtube-play">&nbsp;</i>Youtube</a></li>
+                </ul>
+            </section>
         </div>
+        <div class="copyright"> © 2021 UC CubeCats </div>
+    </div>
     </footer> 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>

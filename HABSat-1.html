@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <title>HABsat-1</title>
+    <title>HABSat-1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -13,6 +13,7 @@
 </head>
 
 <body class="is-preload">
+    
     <!-- Header -->
     <header id="header">
         <a class="logo" href="index.html"><img style="max-height:45px" src="images/banner1_white.png"></a>
@@ -20,32 +21,212 @@
             <a href="#menu">Menu</a>
         </nav>
     </header>
+    
+    <!-- Nav bar -->
     <nav id="menu">
-        <ul class="links">
-            <li><a href='index.html'>Home</a></li>
-            <li><a href='CubeSat.html'>CubeSat</a>
-                <ul>
-                    <li><a href='LEOPARDSat-1.html'>LEOPARDsat-1</a></li>
-                    <li><a href='HABSat-1.html'>HABsat-1</a></li>
-                    <li><a href='GroundStation.html'>Ground Station</a></li>
-                    <li><a href='HelmholtzCage.html'>Helmholtz Cage</a></li>
-                </ul>
-            </li>
-            <li><a href='CATiSE.html'>CATiSE</a>
-                <ul>
-                    <li><a href='CurrentMissions.html'>Project Lynx</a></li>
-                    <li><a href='PastMissions.html'>Past Missions</a></li>
-                </ul>
-            </li>
-            <li><a href='Exec.html'>Meet The Team</a></li>
-            <li><a href='Calendar.html'>Calendar</a></li>
-        </ul>
+    <ul class="links">
+        <li><a href='index.html'>Home</a></li>
+        <li><a href='About.html'>About Us</a>
+            <ul>
+                <li><a href='Exec.html'>Meet the Team</a></li>
+                <li><a href='Calendar.html'>Calendar</a></li>
+            </ul>
+        </li>
+        <li><a href='WhatIsACubeSat.html'>What Is A CubeSat?</a></li>
+        <li><a href='CubeSat.html'>CubeSat Program</a>
+            <ul>
+                <li><a href='LEOPARDSat-1.html'>LEOPARDsat-1</a></li>
+                <li><a href='HABSat-1.html'>HABsat-1</a></li>
+                <li><a href='GroundStation.html'>Ground Station</a></li>
+                <li><a href='HelmholtzCage.html'>Helmholtz Cage</a></li>
+            </ul>
+        </li>
+        <li><a href='CATiSE.html'>CATiSE Program</a>
+            <ul>
+                <li><a href='CurrentMissions.html'>Current Missions</a></li>
+                <li><a href='PastMissions.html'>Past Missions</a></li>
+            </ul>
+        </li>
+        <li><a href='ContactUs.html'>Contact Us</a></li>
+    </ul>
     </nav>
-    <!-- Heading -->
-    <div id="heading">
-        <h1>HABsat-1</h1>
-    </div>
+    
+    
+    <!-- Banner -->
+    <section id="banner2">
+        <div class="inner">
+            <br>
+            <img src="images/HABsat Logo.png" alt="" height=355px>
+            <h1 style="line-height:35px;"><b>HABSat-1</b></h1>
+            <p><b>H</b>armful <b>A</b>lgal <b>B</b>loom <b>Sat</b>ellite <b>1</b></p>
+        </div>
+    </section>
+    
     <!-- Main -->
+    <section id="main" class="wrapper">
+        <div class="inner">
+            <div class="content">
+                <h2>Background</h2>
+                <p>A Harmful Algal Bloom, or HAB, occurs when excessive nutrients in a body of water allow a large proliferation in the number of algae, leading to severe reductions in water oxygen levels, the release of dangerous toxins, and the creation of marine dead zones.
+                   On Lake Erie, HABs are an growing concern, due to their increasing frequency and enormous negative impact on the lake environment, human health, and the local economy.
+                   The only reliable ways to monitor HAB events are by using low-flying aircraft, which is time-consuming and expensive due to the large area involved, or by satellite.
+                   However, currently operating satellites have complex scientific schedules which cover many priorities and have a variety of orbits, ultimately meaning that an image of Lake Erie can only be taken roughly every sixteen days.</p>
+                <center>
+                    <!--https://earthobservatory.nasa.gov/images/84125/algae-bloom-on-lake-erie-->
+                    <img src="images/HABSat-1/Lake_Erie_HAB.jpg" alt="" height=350px>
+                    <!--http://landsat.gsfc.nasa.gov/?p=10357-->
+                    <img src="images/HABSat-1/Lake_Erie_HAB_2.png" alt="" height=350px>
+                    <p><i>Algal blooms on Lake Erie as seen from space (Left) and from the lake shore (Right).
+                    In 2014, such an algal bloom forced the city of Toledo to declare its tap water unsafe to drink. (images: NASA)</i></p>
+                </center>
+                
+                <p>The purpose of HABSat-1 is to fill this gap by monitoring the development and dynamics of HABs on the Great Lakes and other bodies of water in the state of Ohio using a dedicated CubeSat.
+                   This CubeSat will improve upon current satellite systems, by overcoming the techinical limitations of existing satellites in observing HABs and providing imaging at a higher frequency.
+                   The main on-board sensor will be a low-cost, narrow-band multispectral imager, optimized to detect the light wavelengths found in algal blooms.
+                   By pairing a drone-rated imager with a low-cost CubeSat, the mission will also demonstrate the viability of such sensors for space-based earth observation, providing an improvement over the temporal coverage and spatial resolution of current imaging satellites.</p>
+                <hr>
+                <header>
+                    <h2>Objectives</h2>
+                </header>
+                <ol>
+                    <li>
+                        Provide an educational platform for members of UC CubeCats and students at the University of Cincinnati to learn about the design, construction, testing, and launch of space systems.
+                    </li>
+                    <li>
+                        Study Harmful Algal Bloom dynamics in the Great Lakes and other Ohio water bodies using a multispectral imager.
+                    </li>
+                    <li>
+                        Provide a proof-of-concept for employing a &lt;$10000, drone-rated multispectral imager to successfully sense natural phenomena from space.
+                    </li>
+                </ol>
+                <hr>
+                
+                <header>
+                    <h2>Spacecraft</h2>
+                </header>
+                
+                <p> The HABSat-1 mission hardware will be a 3U CubeSat (10 cm x 10 cm x 30 cm), in which the multispectral imaging payload and its related assembly will take up 1U (10 cm x 10 cm x 10 cm) at one end of the satellite.
+                    On board computing, communications, and attitude determination and control will take up the remainder of the satellite.</p>
+             
+                <center><img src="images/HABSat-1/3d_render_annotated.png" alt="" height=450px>
+                <p><i>CAD model of HABSat-1 with major components labeled</i></p></center>
+                
+                <h3>Attitude Determination & Control</h3>
+                <p> Due to the need to precisely and accurately point the satellite for imaging the Earth's surface (&#177; 1&deg;), HABSat-1 will have an active Attitude Determination and Control System (ADCS).
+                    Four custom-design reaction wheels will quickly and accurately point the satellite during imaging, communication, and power collection, while magnetorquers will detumble the satellite, desaturate the reaction wheels, and make coarser attitude adjustments.
+                    A variety of controllers will be used depending on requirements of the current operational mode, including PID, B-dot, and LQR controllers.
+                    The satellite's attitude determination sensors will include a 3-axis Magnetometer, 3 MEM Gyroscopes, 6 Course Sun Sensors, and 2 Fine Sun/Horizon Sensors.
+                    Data from these sensors will be fused using an Extended Kalman Filter (EKF) to provide an attitude estimate to the onboard controllers.
+                    Due to the intense computational nature of these functions, HABSat-1 will have a dedicated ADCS flight computer.</p>
+
+                <center><img src="images/HABSat-1/Reaction_Wheels.png" alt="" height=300px>
+                <p><i>CAD model of custom-designed reaction wheels designed for HABSat-1</i></p></center>
+
+                <h3>Communication</h3>
+                <p> HABSat-1 will communicate with the ground station on two frequencies.
+                    A high-gain S-band antenna will be the satellite's main communication line, particularly for transmitting data from the payload sensors.
+                    As this antenna is body fixed and directional, the satellite will point it towards Cincinnati during orbital passes of the Midwestern United States.
+                    The secondary communication line is an omindirectional UHF antenna on a 70 cm band, which will primarily be used to transmit satellite health data.
+                    Each of these antennae will have their own transmitter onboard.</p>
+                    
+                <h3>Command and Data Handling</h3>
+                <p> The main computer for the satellite will be the EnduroSat OnBoard Computer (OBC),which will control the satellites operational modes and ground communications, as well as manage data collected by the payload sensors.
+                    This computer provides 256 kB of RAM, 2 MB of program memory, 32 GB of storage, and a real-time clock, and additionally has a large variety of interfacing options for integrating mission hardware.</p>
+                    
+                <h3>Payload</h3>
+
+                <p> The main payload sensor for HABSat-1 will be a modified version of the the four-band Sentera Quad sensor, provided to the mission by Sentera and NASA.
+                    In order to optimise detection of phycocyanin and chlorophyl, both found in algal blooms, the imager's four lenses will be filtered to sense the 620, 650, 680, and 710 nm wavelengths of light, with each sensing a 10 nm Full Width Half Maximum (FWHM) band about these center points.
+                    At the satellite's projected orbital altitude of 450 km, images should cover a ground swath of roughly 86.5 x 64.8 km, with a ground sample distance of roughly 67.5 meters.</p>
+
+                <center><img src="images/HABSat-1/Quad.jpg" alt="" height=300px>
+                <p><i>Sentera Quad multispectral imaging sensor (image: Sentera)</i></p></center>
+
+
+                <h3>Power</h3>
+                <p> The three main functions of the power subsystem are to provide power generation, power storage, and power distribution.
+                    Power is generated on HABSat-1 by a series of primary and secondary solar arrays:
+                <ul>
+                    <li>
+                        The primary array consists of three 10 cm x 34 cm panels, two of which are attached to deployable panels.
+                        During launch and deployment these panel are held down to the body of the satellite by nichrome wire; after deployment the nichrome wire is burned through and spring loaded hinges deploy the two panels.
+                        When deployed the primary array takes up the entire -X face of the satellite.
+                    </li>
+                    <li>
+                        The secondary array consists of three 10 cm x 10 cm panels fixed to the +X, +Z, and -Z axes of the satellite.
+                        These panels will help power the satellite while the primary array is not pointed at the sun when performing mission objectives.
+                    </li>
+                </ul>
+                </p>
+
+ 	        <center>
+                    <img src="images/HABSat-1/solar_cell.jpg" alt="" height=350px>
+                    <img src="images/HABSat-1/power_distribution.png" alt="" height=350px>
+                    <p><i>A prototype solar array (Left) and a schematic of the custom power distribution board (Right) for HABSat-1</i></p>
+                </center>
+
+                <p> Power generated by these solar panels will be stored in 4 18650 Lithium Ion Batteries 43.2 Watt hours of storage at 3.6V. 
+                    The batteries will be mounted to a custom-design Power Distribution Board (PDB), which contains battery chargers, a battery monitor to track battery health, and DC-DC converters to deliver the required voltage and peak/nominal current draws to each subsystem.
+                    A variant of this power distribution board will be used on LEOPARDSat-1 as well.</p>
+
+
+                <h3>Structure</h3>
+                <p> HABSat-1 wil use a custom-design 3U frame made from Aluminum 6061, and consisting of a top and bottom frames, two end cap frames, and four PC-104-compatable side support frames.
+                    Internally, subsystems will be attached to this outer frame using threaded rods and standoffs in two separate "stacks":</p>
+                <ul>
+                    <li>An Avionics Stack, containing the OBC, reaction wheels, ADCS computer, PDB, and both radio transmitters.</li>
+                    <li>An Imaging Stack, containing the multispectral imaging payload and other sensors.</li>
+                </ul>
+
+                <center><img src="images/HABSat-1/assembly_4.png" alt="" height=350px>
+                <p><i>Prototype of HABSat-1's structural frame.</i></p></center>
+                <hr>
+                
+                <header>
+                    <h2>Mission</h2>
+                </header>
+                <p> HABSat-1 does not currently have set launch provider or timeframe, but is anticipated to be placed into an ISS-like orbit (450 km altitude, 51.6&deg inclination).
+                    However it could also be placed into a higher inclination orbit depenging on the launch vehicle and mission.</p>
+                                    
+                <h3>Mission Parameters</h3>
+                <ul>
+                    <li><b>Launch Vehicle:</b> TBD</li>
+                    <li><b>Launch Date:</b> TBD</li>
+                    <li><b>Orbital Altitude:</b> 450 km</li>
+                    <li><b>Orbital Inclination:</b> 50-140&deg;</li>
+                    <li><b>Mission Duration:</b> 12 months (minimum), 24 months (desired)</li>
+                </ul>
+                
+                <h3>Operations</h3>
+                <p> Upon deployment into orbit, HABSat-1 will begin charging its batteries while also detumbling using its magnetorquers.
+                    Once detumbling is complete, all onboard systems (all boards, sensors, actuators, etc.) will be checked to ensure that they are operating properly.
+                    Immediately upon successful checkout, the satellite will deploy the two outer primary solar arrays, enter a stable attitude configuration, and begin sending a beaconing its health status until it recieves a command from the ground station to begin nominal operations.</p>
+                
+                <center><img src="images/HABSat-1/deploy_stabilize.png" alt="" height=350px></center>
+
+                <p> During nominal operations, there are two modes the satellite will use:
+                <ul>
+                    <li>Charging: the satellite orients its primary solar array towards the sun in order to charge its batteries up to a certain percentage (around 85% of full battery charge)</li>
+                    <li>Imaging: the satellite will slew so that the imager is pointed in the Nadir (towards the ground) direction.
+                        Once within range of Lake Erie, the multispectral imager will take images of the lake and will save them onboard to be downlinked to the S-Band ground station later.</li>
+                </ul>
+                </p>
+
+                <center><img src="images/HABSat-1/orbital_planning.png" alt="" height=350px></center>
+                <hr>
+                
+                <header>
+                    <h2>In The News</h2>
+                </header>
+                <p>
+                    University of Cincinnati - <a href="https://www.uc.edu/news/articles/2018/11/n2050010.html"><i>UC Students' Mini Satellite Tracks Harmful Algal Growth</i></a>, August 24, 2018
+                    <br>
+                </p>
+
+            </div>
+        </div>
+    </section>
+<!--
     <section id="main" class="wrapper">
         <div class="inner">
             <div class="content">
@@ -70,72 +251,72 @@
                             <figure class="slide-figure">
                                 <img class="slide-img" src="images/HABSat-1/3d-render.png" />
 
-                            </figure><!-- .slide-figure -->
-                        </div><!-- .slide -->
+                            
+                        </div>
                         <input type="radio" name="slider" class="trigger" id="two" />
                         <div class="slide">
                             <figure class="slide-figure">
                                 <img class="slide-img" src="images/HABSat-1/20190212_221640.jpg" />
 
-                            </figure><!-- .slide-figure -->
-                        </div><!-- .slide -->
+                            </figure>
+                        </div>
                         <input type="radio" name="slider" class="trigger" id="three" />
                         <div class="slide">
                             <figure class="slide-figure">
                                 <img class="slide-img" src="images/HABSat-1/assembly-1.png" />
 
-                            </figure><!-- .slide-figure -->
-                        </div><!-- .slide -->
+                            </figure>
+                        </div>
                         <input type="radio" name="slider" class="trigger" id="four" />
                         <div class="slide">
                             <figure class="slide-figure">
                                 <img class="slide-img" src="images/HABSat-1/assembly-2.png" />
 
-                            </figure><!-- .slide-figure -->
-                        </div><!-- .slide -->
+                            </figure>
+                        </div>
                         <input type="radio" name="slider" class="trigger" id="five" />
                         <div class="slide">
                             <figure class="slide-figure">
                                 <img class="slide-img" src="images/HABSat-1/assembly-3.png" />
 
-                            </figure><!-- .slide-figure -->
-                        </div><!-- .slide -->
+                            </figure>
+                        </div>
                         <input type="radio" name="slider" class="trigger" id="six" />
                         <div class="slide">
                             <figure class="slide-figure">
                                 <img class="slide-img" src="images/HABSat-1/assembly-4.png" />
 
-                            </figure><!-- .slide-figure -->
-                        </div><!-- .slide -->
+                            </figure>
+                        </div>
                         <input type="radio" name="slider" class="trigger" id="seven" />
                         <div class="slide">
                             <figure class="slide-figure">
                                 <img class="slide-img" src="images/HABSat-1/max-level.jpg" />
 
-                            </figure><!-- .slide-figure -->
-                        </div><!-- .slide -->
-                    </div><!-- .slider -->
+                            </figure>
+                        </div>
+                    </div>
                     <input type="radio" name="slider" class="trigger" id="eight" />
                     <div class="slide">
                         <figure class="slide-figure">
                             <img class="slide-img" src="images/HABSat-1/orbital-planning.png" />
 
-                        </figure><!-- .slide-figure -->
-                    </div><!-- .slide -->
+                        </figure>
+                    </div>
                     <input type="radio" name="slider" class="trigger" id="nine" />
                     <div class="slide">
                         <figure class="slide-figure">
                             <img class="slide-img" src="images/HABSat-1/Power-Distribution.png" />
 
-                        </figure><!-- .slide-figure -->
-                    </div><!-- .slide -->
+                        </figure>
+                    </div>
                     <input type="radio" name="slider" class="trigger" id="ten" />
                     <div class="slide">
                         <figure class="slide-figure">
                             <img class="slide-img" src="images/HABSat-1/solar-cell.jpg" />
 
-                        </figure><!-- .slide-figure -->
-                    </div><!-- .slide -->
+                        </figure>
+                    </div>
                     <ul class="slider-nav">
                         <li class="slider-nav__item"><label class="slider-nav__label" for="one">1</label></li>
                         <li class="slider-nav__item"><label class="slider-nav__label" for="two">2</label></li>
@@ -148,8 +329,8 @@
                         <li class="slider-nav__item"><label class="slider-nav__label" for="nine">9</label></li>
                         <li class="slider-nav__item"><label class="slider-nav__label" for="ten">10</label></li>
 
-                    </ul><!-- .slider-nav -->
-                </div><!-- .slider-wrapper -->
+                    </ul>
+                </div>
                 <br>
                 <br>
                 <hr>
@@ -158,13 +339,14 @@
 
             </div>
         </div>
-    </section>
+    </section-->
 
+    <!-- Team -->
     <section id="cta3" class="wrapper">
         <div class="inner">
 
             <header class="special">
-                <h2>HABsat-1 Team Leads</h2>
+                <h2>Project Team Leads</h2>
             </header>
 
             <div class="highlights">
@@ -174,93 +356,78 @@
                         <header>
                             <h3>Chief Engineer</h3>
                         </header>
-                        <img style="border-radius: 50%" src="images/HABsat_1_Patch.png" alt="" height=150px>
-                        <p>Jessica Kropveld<br><a href="mailto:kropvejl@mail.uc.edu">kropvejl@mail.uc.edu</a></p>
+                        <img style="border-radius: 50%" src="images/HABsat Logo.png" alt="" height=150px>
+                        <p>Jasmine Rosen<br><a href="mailto:rosenmi@mail.uc.edu">rosenmi@mail.uc.edu</a></p>
                     </div>
                 </section>
-
                 <section>
                     <div class="content">
                         <header>
                             <h3>Team Lead ADCS</h3>
                         </header>
-                        <img style="border-radius: 50%" src="images/HABsat_1_Patch.png" alt="" height=150px>
-                        <p>Michael Rosen<br><a href="mailto:rosenmi@mail.uc.edu">rosenmi@mail.uc.edu</a></p>
+                        <img style="border-radius: 50%" src="images/HABsat Logo.png" alt="" height=150px>
+                        <p>Michael Rechtin<br><a href="mailto:rechtima@mail.uc.edu">rechtima@mail.uc.edu</a></p>
                     </div>
                 </section>
-
                 <section>
                     <div class="content">
                         <header>
                             <h3>Team Lead Payload</h3>
                         </header>
-                        <img style="border-radius: 50%" src="images/HABsat_1_Patch.png" alt="" height=150px>
+                        <img style="border-radius: 50%" src="images/HABsat Logo.png" alt="" height=150px>
                         <p>Vincent Feldman<br><a href="mailto:feldmavp@mail.uc.edu">feldmavp@mail.uc.edu</a></p>
                     </div>
                 </section>
-
                 <section>
                     <div class="content">
                         <header>
                             <h3>Team Lead OBC</h3>
                         </header>
-                        <img style="border-radius: 50%" src="images/HABsat_1_Patch.png" alt="" height=150px>
+                        <img style="border-radius: 50%" src="images/HABsat Logo.png" alt="" height=150px>
                         <p>Zach Powell<br><a href="mailto:powellwz@mail.uc.edu">powellwz@mail.uc.edu</a></p>
-
                     </div>
                 </section>
-
                 <section>
                     <div class="content2"></div>
                 </section>
-
                 <section>
                     <div class="content2"></div>
                 </section>
-
             </div>
         </div>
     </section>
+    
     <!-- Footer -->
     <footer id="footer">
-        <div class="inner">
-            <div class="content">
-                <section>
-                    <h3>Become a Member Today!</h3>
-                    <p>Join our organisation and become part of some cool space
-                        projects. The UC CubeCats undergraduate research lab is recruiting
-                        students who have an interest in software development,
-                        electronics, design, analysis, and systems engineering for small
-                        satellite development.
-                        <br><br>
-                        Meeting Sign-in:
-                        <a href="https://goo.gl/Eh8ksg">https://goo.gl/Eh8ksg</a>
-                        <br>
-                        Join our Discord Server:
-                        <a href="https://discord.gg/BuNN8whQsY">https://discord.gg/BuNN8whQsY</a>
-                    </p>
-                </section>
-                <section>
-                    <h4>Projects</h4>
-                    <ul class="alt">
-                        <li><a href="LEOPARDSat-1.html">Project LEOPARD<br></a></li>
-                        <li><a href="HABSat-1.html">Project HABSat-1<br></a></li>
-                        <li><a href="GroundStation.html">Ground Station<br></a></li>
-                        <li><a href="CurrentMissions.html">Project Lynx<br></a></li>
-                    </ul>
-                </section>
-                <section>
-                    <h4>Follow US</h4>
-                    <ul class="plain">
-                        <li><a href="https://twitter.com/uccubecats"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
-                        <li><a href="https://www.facebook.com/UCCubeCats/"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
-                        <li><a href="https://www.instagram.com/uccubecats/"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
-                        <li><a href="https://github.com/uccubecats/"><i class="icon fa-github">&nbsp;</i>Github</a></li>
-                    </ul>
-                </section>
-            </div>
-            <div class="copyright"> © 2021 UC CubeCats </div>
+    <div class="inner">
+        <div class="content">
+            <section>
+                <h3>Work With Us Today!</a></h3>
+                <p> Are you a UC student interested in joining our organisation and becoming part of some cool space projects?
+		    Or are you interested in collaborating, donating, and/or partaking in outreach activities?</p>
+                    Read more <a href="About.html"><u>about our group and its work</u></a> or <a href="ContactUs.html"><u>contact us</u></a> for more information.
+            </section>
+            <section>
+                <h3>Projects</h3>
+                <ul class="alt">
+                    <li><a href="LEOPARDSat-1.html">LEOPARDSat-1<br></a></li>
+                    <li><a href="HABSat-1.html">HABSat-1<br></a></li>
+                    <li><a href="HelmholtzCage.html">Helmlholtz Cage<br></a></li>
+                    <li><a href="CurrentMissions.html">Project Lynx<br></a></li>
+                </ul>
+            </section>
+            <section>
+                <h3>Social Media</h3>
+                <ul class="plain">
+                    <li><a href="https://twitter.com/uccubecats"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                    <li><a href="https://www.facebook.com/UCCubeCats/"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                    <li><a href="https://www.instagram.com/uccubecats/"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+                    <li><a href="https://www.youtube.com/channel/UCswoyHMcaZrM_iyTmgqaW6w"><i class="icon fa-youtube-play">&nbsp;</i>Youtube</a></li>
+                </ul>
+            </section>
         </div>
+        <div class="copyright"> © 2021 UC CubeCats </div>
+    </div>
     </footer>  
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
