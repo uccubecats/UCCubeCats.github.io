@@ -68,11 +68,11 @@
                 <header>
                     <h2>Background</h2>
                 </header>
-                <p> Radiation from cosmic rays and solar particles is one of the most significant challenges to any manned missions beyond protection of Earth's magnetic field.
+                <p> Radiation from cosmic rays and solar energetic particles is one of the most significant challenges to any future manned missions beyond the protection of Earth's magnetic field.
                     Robotic space missions have shown that astronauts will exceed their career radiation limits on a typical mission to Mars lasting roughly 500 days, leading to increased risks of cancer and other serious health issues.
-                    In order to undertake such missions, spacecraft will need to adequately mitigate the radiation astronauts will recieve.
-                    However, many materials usually considered for this role are typically too massive to be practical (such as lead), or are consumables (such as liquid hydrogen, food, or water) secondarily used as radiation mitigation.
-                    Lighter, more permanent materials are needed that can protect astronauts while being more versitile in their application on the spacecraft.</p>
+                    In order to undertake such missions, spacecraft will need to adequately mitigate the radiation astronauts recieve during the voyage.
+                    However, many materials usually considered for the role of shielding against radiation are typically too massive to be practical (such as lead), or are consumables (such as liquid hydrogen, food, or water) secondarily used as radiation mitigation.
+                    Lighter, more permanent materials are needed that can protect astronauts while being more versatile in their application on the spacecraft.</p>
                 
                 <div class="row gtr-50 gtr-uniform">
                   <div class="col-4">
@@ -93,12 +93,13 @@
                     Representations of the three natural forms of radiation encountered in space.
                     <u>Left</u>: Solar energetic particles (pictured: coronal mass ejection, NASA)
                     <u>Center</u>: Galactic Cosmic Rays, or GCRs (pictured: GCR collision with Earth's atmosphere, NSF)
-                    <u>Right</u>: trapped particle radiation (pictured: Earth's Van Allen Belts, NASA)
+                    <u>Right</u>: Trapped particle radiation (pictured: Earth's Van Allen Belts, NASA)
                 </i></p></center>
-                <p> LEOPARDSat-1 is a CubeSat Mission to study the effectiveness of lightweight carbon-carbon composites and polyethylene in sheilding against ionizing radiation. 
+                
+                <p> LEOPARDSat-1 is a CubeSat mission to study the effectiveness of lightweight carbon-carbon composites and polyethylene in sheilding against ionizing radiation. 
                     To do this, the satellite will measure the difference in radiation dosages between radiation sensors partially protected by varying thicknesses of each material and those which are left unprotected.
                     This data will inform the spaceflight community on the viability of using these materials for manned, deep-space missions.
-                    As this is UC Cubecats' first satellite mission, it will also serve as opportunity for its members to learn about the design, construction, testing, and launch of space systems.</p>
+                    As this is UC Cubecats' first satellite mission, it will also serve as opportunity for our members to gain experience in the design, construction, testing, and launch of space systems.</p>
                 <hr>
                 
                 <header>
@@ -118,34 +119,35 @@
                     <h2>Spacecraft</h2>
                 </header>
                 <p> The LEOPARDSat-1 mission hardware is a 1U CubeSat (10 cm x 10 cm x 10 cm) with a mass of roughly 900 grams.
-                    Within the structural frame are five PC104 boards (one for each major subsystem), with the Payload Assembly mounted on the Z+ (top) face of the satellite.</p>
+                    Within the structural frame are five PC104-format boards, with the Payload Assembly mounted on the Z+ (top) face of the satellite.</p>
 
                 <center><img src="images/Leopard/3d-model.png" alt="" height=450px><br>
                 <p><i>CAD rendering of LEOPARDSat-1 in its operational configuration</i></p></center>
                 
-                <h3>Attitude Determination & Control</h3>
-                <p> LEOPARDSat-1 will use a Passive Magnetic Attitude Control System (PMACS) to control its orientation, utilizing a permanent magnet to align with Earth's magnetic field and two bars of hysteresis material to dampen out the transient response.
-                    For this mission, the PMACS will keep the satellite pointed to within 15&deg; of the local magnetic field vector after a week long period of "detumbling" after deployment.
-                    Although PMACS can not set the satellite to a desired orientation and is not as precise as an active control system, neither of these are required for the objectives of LEOPARDSat-1, and the passive approach requires no power or computational resources to orient the satellite.</p>
+                <h3>Attitude Determination & Control Subsystem</h3>
+                <p> LEOPARDSat-1 will use a Passive Magnetic Attitude Control System (PMACS) to control its orientation on-orbit, utilizing a permanent magnet to align with Earth's magnetic field and two bars of hysteresis material to dampen out the transient response.
+                    For this mission, the PMACS will keep the satellite pointed to within 15&deg; of the local magnetic field vector after a week long period of "detumbling" post-deployment.
+                    Although PMACS can not set the satellite to a commanded orientation and is not as precise as an active control system, neither of these are required for the objectives of LEOPARDSat-1, and the passive approach requires no power or computational resources to orient the satellite.</p>
                 
                 <center><img src="images/Leopard/ADCS Layout.png" alt="" height=350px>
-                <p><i>Schematic of the LEOPARDSat-1 Attitude Determination and Control System (ADCS)</i></p></center>
+                <p><i>Schematic of the LEOPARDSat-1 Attitude Determination and Control Subsystem (ADCS)</i></p></center>
                 
-                <p> An Inerital Measurement Unit (IMU), containing a 3-axis Gyroscope and 3-axis Magnetometer, will measure the angular rates and local magnetic field, while the power output of the satellites' solar panels will be used to roughly determine the direction of the sun.
-                    Although this data is not needed for attitude control, it will be sent down to the ground for processing, in order to ascess the PMACS's performance and contextualize data from the payload sensors.</p>
+                <p> An Inerital Measurement Unit (IMU), containing a 3-axis Gyroscope and 3-axis Magnetometer, will measure the angular rates and local magnetic field, while the power output of the satellites' solar panels will be used to roughly determine the relative pointing direction of the Sun.
+                    Although this data is not needed for attitude control, they will be sent down to the ground for processing, in order to ascess the PMACS's performance and contextualize data from the payload sensors.</p>
                     
-                <h3>Communication</h3>
-                <p> HABSat-1 will communicate with the ground station on the amateur band.
+                <h3>Communication Subsystem</h3>
+                <p> LEOPARDSat-1 will communicate with the ground station on the amateur band.
                     The subsystem will consists of a transciever and two deployable antennae located at the top of the satellite.
-                    Data collected by the onboard computer is stored in the onboard SD card until the satellite passes over Cincinnati, at which point data will be transmitted to the ground and commands sent to the satellite.</p>
+                    Data collected by the onboard computer will be stored in the onboard SD card until the satellite passes over Cincinnati, at which point data will be transmitted to the ground and commands uploaded to the satellite.</p>
                     
-                <h3>Computing</h3>
-                <p> The main computer on board is an ATmega1284p microprocessor, which is primarily responsible for collecting data from the other subsystems, including radiation data from the payload sensors, solar panel power generation, battery usage, the ambient magnetic field, and the satellite angular rates.
-                    It will also will control radio communications with the ground using the on board tranceiver and antennae.
+                <h3>On-Board Computing Subsystem</h3>
+                <p> The main computer on board will be an ATmega1284p microprocessor, which is primarily responsible for collecting data from the other subsystems, including radiation data from the payload sensors, solar panel power output, battery usage, ambient magnetic field vector, and satellite angular rates.
+                    It will also control radio communications with the ground using the on board tranceiver and antennae.
                     This processor is similar to the ATmega328 used in the Arduino Uno, but with more performance, including 128 KB of flash memory, 4 KB of EEPROM and 16 KB of RAM</p>
 
-                <h3>Payload</h3>
-                <p>Eight Metal-Oxide-Semiconductor Field Effect Transistors (MOSFETs) are used to measure the radiation dosage on orbit. These are separated into three groupings to characterize the effectiveness of the selected composite materials:</p>
+                <h3>Payload Subsystem</h3>
+                <p>Eight Metal-Oxide-Semiconductor Field Effect Transistors (MOSFETs) are used to measure the radiation dosage on orbit.
+                   These are separated into three groups to characterize the effectiveness of the selected composite materials:</p>
                 <ul>
                   <li>Two unshielded sensors act as a reference, monitoring the ionizing radiation that passes through the CubeSat’s aluminum frame.</li>
                   <li>Three sensors are shielded with carbon-carbon samples of varying thicknesses (3.25 mm, 5 mm, 7 mm)</li>
@@ -153,27 +155,26 @@
                 </ul>
 
                 <center><img src="images/Leopard/Payload Diagram.png" alt="" height=350px>
-                <p><i>CAD model of the payload subsystem assembly</i></p></center>
+                <p><i>Labeled CAD model of the Payload Subsystem assembly</i></p></center>
                     
-                <h3>Power</h3>
+                <h3>Power Subsystem</h3>
                 <p>The three main functions of the power subsystem are to provide power generation, power storage, and power distribution.
                    Electrical power will be generated using five 10 cm x 10 cm solar panels, one mounted to each face of the CubeSat other than the Z+ face containing the payload assembly.
-                   The panels will be manufactured in-house by UC CubeCats, with each mounting 26 TrisolX Solar Wings INSERT ELECTRICAL PROPERTIES.
-                   Power generated by these solar panels will be stored in X 18650 Lithium Ion Batteries INSERT ELECTRICAL PROPERTIES.
+                   The panels will be manufactured in-house by UC CubeCats, with each mounting 26 TrisolX Solar Wings.
+                   Power generated by these solar panels will be stored in 2 18650 Lithium Ion Batteries.
                    The batteries will be mounted to a custom-design power distribution board, which contains battery chargers, a battery monitor to track battery status and health, and DC-DC converters to deliver the required voltage and peak/nominal current draws to each subsystem. 
                     
-                <h3>Structure</h3>
+                <h3>Structure Subsystem</h3>
                 <p> <span class="image right"><img src="images/Leopard/Structure.png" alt="" height=350px><i>CAD model of the exterior structural frame</i></span>
                     LEOPARDSat-1's structure will use a custom 1U exterior frame, consisting of four launch rails and two end plates, all made from Aluminum 6061.
-                    The rails are smooth, for either forwards or backwards deployment, and contain several deployment specific mechanisms
-                    (deployment switches to disable the electrical system for safety between launch and deployment, and deployment springs to provide clean separation from other satellites upon deployment):
+                    The rails are smooth, for either forwards or backwards deployment, and contain several deployment specific mechanisms:
                 <ul>
-                    <li>One roller deployment switch on the +X face of one rail.</li>
-                    <li>Two pusher deployment switches on the -Z ends of two rails.</li>
-                    <li>Two separation springs on the -Z ends of the two remaining rails.</li>
+                    <li>One roller deployment switch on the +X face of one rail, to disable the power subsystem for safety between launch and deployment.</li>
+                    <li>Two pusher deployment switches on the -Z ends of two rails, also to disable the power subsystem.</li>
+                    <li>Two separation springs on the -Z ends of the two remaining rails, to provide clean separation from other satellites upon deployment.</li>
                 </ul>
                 <p> To hold the exterior frame together, the top and bottom of the rails will be fastened to the top and bottom plates, respectively.
-                    Internally, the structure utilizes standoffs to properly space and hold each of the five PC104 subsystem boards to the exterior frame, while the solar panels and the payload assembly are then mounted direcrtly to these end plates.</p>
+                    Internally, the structure will utilize standoffs to properly space and hold each of the five PC104 subsystem boards to the exterior frame, while the solar panels and the payload assembly are then mounted direcrtly to these end plates.</p>
                 <hr>                
 
                 <header>
@@ -183,12 +184,12 @@
                 <div class="row">
             	    <div class="col-6 col-12-medium">
                         <p>LEOPARDSat-1 was selected by NASA's <a href="https://www.nasa.gov/directorates/heo/home/CubeSats_initiative">CubeSat Launch Intiative (CSLI)</a> in 2018 as part of the <a href="https://www.nasa.gov/mission_pages/smallsats/elana/index.html">Educational Launch of Nanosatellites (ELaNa) program</a>.
-                   	It is currently scheduled to launch in Early 2022 with the ELaNa-37 mission to the ISS, where it will be deployed into orbit using the <a href="https://nanoracks.com/products/iss-launch/">NanoRacks CubeSat Deployer (NRCSD)</a>.</p>
+                   	It is currently scheduled to launch in 2022 or 2023 with the ELaNa-37 mission to the International Space Station, where it will be deployed into orbit using the <a href="https://nanoracks.com/products/iss-launch/">NanoRacks CubeSat Deployer (NRCSD)</a>.</p>
 
                         <h3>Mission Parameters</h3>
                         <ul>
                             <li><b>Launch Vehicle:</b> TBA (Falcon 9/Dragon 2 or Antares/Cygnus)</li>
-                            <li><b>Launch Date:</b> 2022</li>
+                            <li><b>Launch Date:</b> 2022 or 2023</li>
                             <li><b>Deployment Date:</b> 3-6 months after launch</li>
                             <li><b>Orbital Altitude:</b> 400 km</li>
                             <li><b>Orbital Inclination:</b> 51.6&deg;</li>
@@ -204,10 +205,11 @@
                 </div>
                 
                 <h3>Operations</h3>
-                <p>Upon deployment from the NRCSD, LEOPARDSat-1 will deploy its antennae and begin detumbling, cancel any residual spining imparted by deployment and eventually align with the local magnetic field.
-                   After successfully detumbling (a process which will take about one week), the satellite will listen for a signal from the ground and then signal the ground that the satellite is functional.
-                   The team will then command the satellite to enter the operational state, in which it will begin collecting data and transmitting it to the ground when in communication range of the ground station which is expected to happen roughly twice a day.
-                   Radiation dosages from each sensor will be measured at least once a day and battery health measured once an orbit, while data on its attitude state and solar panel output will be recorded at a much higher frequency (0.1667 Hz) in order to determine the satellites attitude history on the ground.
+                <p>Upon deployment from the NRCSD, LEOPARDSat-1 will deploy its antennae and begin detumbling to cancel any residual spining imparted by deployment, eventually aligning with the local magnetic field.
+                   After successfully detumbling (a process which will take about one week), the satellite will listen for a signal from the ground and then respond that the satellite is functional.
+                   The team will then command the satellite to enter its operational state, in which it will begin collecting data and transmitting it to the ground when in communication range of the ground station (expected to happen roughly twice a day).
+                   Radiation dosages from each sensor will be measured at least once a day and battery health measured once an orbit, while data on its attitude state and solar panel output will be recorded at a much higher frequency (0.1667 Hz) in order to determine the satellite's attitude history on the ground.
+                   The mission will nominally last four months, but may be extended if the satellite continues to function.
                    Due to the mission's low orbit, reentry into Earth's atmosphere is expected to occur within two years of deployment from the ISS, at which point the satellite will be destroyed.</p>
                 <hr>
                 

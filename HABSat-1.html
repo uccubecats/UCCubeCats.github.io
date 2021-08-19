@@ -68,8 +68,8 @@
             <div class="content">
                 <h2>Background</h2>
                 <p>A Harmful Algal Bloom, or HAB, occurs when excessive nutrients in a body of water allow a large proliferation in the number of algae, leading to severe reductions in water oxygen levels, the release of dangerous toxins, and the creation of marine dead zones.
-                   On Lake Erie, HABs are an growing concern, due to their increasing frequency and enormous negative impact on the lake environment, human health, and the local economy.
-                   The only reliable ways to monitor HAB events are by using low-flying aircraft, which is time-consuming and expensive due to the large area involved, or by satellite.
+                   On Lake Erie, HABs are a growing concern, due to their increasing frequency and enormous negative impact on the lake environment, human health, and the local economy.
+                   The only reliable ways to survey and monitor HAB events are by using low-flying aircraft (which is time-consuming and expensive due to the large area involved) or by satellite.
                    However, currently operating satellites have complex scientific schedules which cover many priorities and have a variety of orbits, ultimately meaning that an image of Lake Erie can only be taken roughly every sixteen days.</p>
                 <center>
                     <!--https://earthobservatory.nasa.gov/images/84125/algae-bloom-on-lake-erie-->
@@ -93,10 +93,10 @@
                         Provide an educational platform for members of UC CubeCats and students at the University of Cincinnati to learn about the design, construction, testing, and launch of space systems.
                     </li>
                     <li>
-                        Study Harmful Algal Bloom dynamics in the Great Lakes and other Ohio water bodies using a multispectral imager.
+                        Study Harmful Algal Bloom dynamics in the Great Lakes and other bodies of water in the state of Ohio using a multispectral imager.
                     </li>
                     <li>
-                        Provide a proof-of-concept for employing a &lt;$10000, drone-rated multispectral imager to successfully sense natural phenomena from space.
+                        Provide proof-of-concept for employing a &lt;$10000, drone-rated multispectral imager to successfully sense natural phenomena from space.
                     </li>
                 </ol>
                 <hr>
@@ -111,7 +111,7 @@
                 <center><img src="images/HABSat-1/3d_render_annotated.png" alt="" height=450px>
                 <p><i>CAD model of HABSat-1 with major components labeled</i></p></center>
                 
-                <h3>Attitude Determination & Control</h3>
+                <h3>Attitude Determination & Control Subsystem</h3>
                 <p> Due to the need to precisely and accurately point the satellite for imaging the Earth's surface (&#177; 1&deg;), HABSat-1 will have an active Attitude Determination and Control System (ADCS).
                     Four custom-design reaction wheels will quickly and accurately point the satellite during imaging, communication, and power collection, while magnetorquers will detumble the satellite, desaturate the reaction wheels, and make coarser attitude adjustments.
                     A variety of controllers will be used depending on requirements of the current operational mode, including PID, B-dot, and LQR controllers.
@@ -120,41 +120,40 @@
                     Due to the intense computational nature of these functions, HABSat-1 will have a dedicated ADCS flight computer.</p>
 
                 <center><img src="images/HABSat-1/Reaction_Wheels.png" alt="" height=300px>
-                <p><i>CAD model of custom-designed reaction wheels designed for HABSat-1</i></p></center>
+                <p><i>CAD model of custom reaction wheels designed for HABSat-1</i></p></center>
 
-                <h3>Communication</h3>
+                <h3>Communication Subsystem</h3>
                 <p> HABSat-1 will communicate with the ground station on two frequencies.
-                    A high-gain S-band antenna will be the satellite's main communication line, particularly for transmitting data from the payload sensors.
-                    As this antenna is body fixed and directional, the satellite will point it towards Cincinnati during orbital passes of the Midwestern United States.
+                    A high-gain S-band antenna will be the satellite's main communication line with the ground, particularly for transmitting data from the payload sensors.
+                    As this antenna is body fixed and directional, the satellite will point it towards the ground station during close orbital over-passes.
                     The secondary communication line is an omindirectional UHF antenna on a 70 cm band, which will primarily be used to transmit satellite health data.
                     Each of these antennae will have their own transmitter onboard.</p>
                     
-                <h3>Command and Data Handling</h3>
-                <p> The main computer for the satellite will be the EnduroSat OnBoard Computer (OBC),which will control the satellites operational modes and ground communications, as well as manage data collected by the payload sensors.
-                    This computer provides 256 kB of RAM, 2 MB of program memory, 32 GB of storage, and a real-time clock, and additionally has a large variety of interfacing options for integrating mission hardware.</p>
+                <h3>Command and Data Handling Subsystem</h3>
+                <p> The main computer for the satellite will be the EnduroSat OnBoard Computer (OBC), which will control the satellite's operational modes and ground communications, as well as manage data collected by the payload sensors.
+                    This computer provides 256 kB of RAM, 2 MB of program memory, 32 GB of storage, and a real-time clock, while additionally having a large variety of interfacing options for integrating mission hardware.</p>
                     
-                <h3>Payload</h3>
+                <h3>Payload Subsystem</h3>
 
                 <p> The main payload sensor for HABSat-1 will be a modified version of the the four-band Sentera Quad sensor, provided to the mission by Sentera and NASA.
-                    In order to optimise detection of phycocyanin and chlorophyl, both found in algal blooms, the imager's four lenses will be filtered to sense the 620, 650, 680, and 710 nm wavelengths of light, with each sensing a 10 nm Full Width Half Maximum (FWHM) band about these center points.
-                    At the satellite's projected orbital altitude of 450 km, images should cover a ground swath of roughly 86.5 x 64.8 km, with a ground sample distance of roughly 67.5 meters.</p>
+                    In order to optimise detection of phycocyanin and chlorophyl (both found in algal blooms) the imager's four lenses will be filtered to sense the 620, 650, 680, and 710 nm wavelengths of light, with each sensing a 10 nm Full Width Half Maximum (FWHM) band about these center points.
+                    At the satellite's likely orbital altitude of 450 km, images should cover a ground swath of roughly 86.5 x 64.8 km, with a ground sample distance of roughly 67.5 meters.</p>
 
                 <center><img src="images/HABSat-1/Quad.jpg" alt="" height=300px>
                 <p><i>Sentera Quad multispectral imaging sensor (image: Sentera)</i></p></center>
 
-
-                <h3>Power</h3>
+                <h3>Power Subsystem</h3>
                 <p> The three main functions of the power subsystem are to provide power generation, power storage, and power distribution.
                     Power is generated on HABSat-1 by a series of primary and secondary solar arrays:
                 <ul>
                     <li>
                         The primary array consists of three 10 cm x 34 cm panels, two of which are attached to deployable panels.
-                        During launch and deployment these panel are held down to the body of the satellite by nichrome wire; after deployment the nichrome wire is burned through and spring loaded hinges deploy the two panels.
+                        During launch and deployment, these panels are held down to the body of the satellite by nichrome wire; after deployment, the nichrome wire is burned through, and spring loaded hinges deploy the two panels.
                         When deployed the primary array takes up the entire -X face of the satellite.
                     </li>
                     <li>
                         The secondary array consists of three 10 cm x 10 cm panels fixed to the +X, +Z, and -Z axes of the satellite.
-                        These panels will help power the satellite while the primary array is not pointed at the sun when performing mission objectives.
+                        These panels will help power the satellite while the primary array is not pointed at the sun, such as when performing imaging and ground communication.
                     </li>
                 </ul>
                 </p>
@@ -165,13 +164,13 @@
                     <p><i>A prototype solar array (Left) and a schematic of the custom power distribution board (Right) for HABSat-1</i></p>
                 </center>
 
-                <p> Power generated by these solar panels will be stored in 4 18650 Lithium Ion Batteries 43.2 Watt hours of storage at 3.6V. 
+                <p> Power generated by these solar panels will be stored in four 18650 Lithium Ion Batteries, with 43.2 Watt-hours of storage at 3.6V. 
                     The batteries will be mounted to a custom-design Power Distribution Board (PDB), which contains battery chargers, a battery monitor to track battery health, and DC-DC converters to deliver the required voltage and peak/nominal current draws to each subsystem.
                     A variant of this power distribution board will be used on LEOPARDSat-1 as well.</p>
 
 
                 <h3>Structure</h3>
-                <p> HABSat-1 wil use a custom-design 3U frame made from Aluminum 6061, and consisting of a top and bottom frames, two end cap frames, and four PC-104-compatable side support frames.
+                <p> HABSat-1 wil use a custom-design 3U frame made from Aluminum 6061, and consisting of top and bottom frames, two end cap frames, and four PC-104-compatable side support frames.
                     Internally, subsystems will be attached to this outer frame using threaded rods and standoffs in two separate "stacks":</p>
                 <ul>
                     <li>An Avionics Stack, containing the OBC, reaction wheels, ADCS computer, PDB, and both radio transmitters.</li>
@@ -186,7 +185,7 @@
                     <h2>Mission</h2>
                 </header>
                 <p> HABSat-1 does not currently have set launch provider or timeframe, but is anticipated to be placed into an ISS-like orbit (450 km altitude, 51.6&deg inclination).
-                    However it could also be placed into a higher inclination orbit depenging on the launch vehicle and mission.</p>
+                    However, it could also be placed into a higher inclination and altitude orbit depending on the launch vehicle and its attached mission.</p>
                                     
                 <h3>Mission Parameters</h3>
                 <ul>
@@ -198,9 +197,9 @@
                 </ul>
                 
                 <h3>Operations</h3>
-                <p> Upon deployment into orbit, HABSat-1 will begin charging its batteries while also detumbling using its magnetorquers.
+                <p> Upon deployment into orbit, HABSat-1 will begin charging its batteries, while also detumbling using its magnetorquers.
                     Once detumbling is complete, all onboard systems (all boards, sensors, actuators, etc.) will be checked to ensure that they are operating properly.
-                    Immediately upon successful checkout, the satellite will deploy the two outer primary solar arrays, enter a stable attitude configuration, and begin sending a beaconing its health status until it recieves a command from the ground station to begin nominal operations.</p>
+                    Immediately upon successful checkout, the satellite will deploy the two outer primary solar arrays, enter a stable attitude configuration, and begin beaconing its health status until it recieves a command from the ground station to begin nominal operations.</p>
                 
                 <center><img src="images/HABSat-1/deploy_stabilize.png" alt="" height=350px></center>
 
@@ -208,7 +207,7 @@
                 <ul>
                     <li>Charging: the satellite orients its primary solar array towards the sun in order to charge its batteries up to a certain percentage (around 85% of full battery charge)</li>
                     <li>Imaging: the satellite will slew so that the imager is pointed in the Nadir (towards the ground) direction.
-                        Once within range of Lake Erie, the multispectral imager will take images of the lake and will save them onboard to be downlinked to the S-Band ground station later.</li>
+                        Once within range of Lake Erie, the multispectral imager will take images of the lake and will save them onboard to be downlinked to the S-Band ground station.</li>
                 </ul>
                 </p>
 
