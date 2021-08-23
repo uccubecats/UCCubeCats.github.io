@@ -188,7 +188,7 @@ body {
 }
 #floated{
     float: left;
-    width: 90px; 
+    width: 250px; 
 }
 #floated2{
     float: left;
@@ -2019,7 +2019,7 @@ ul.icons {
   -webkit-justify-content: center;
   -ms-justify-content: center;
   justify-content: center;
-  background-image: url("../../images/banner.png");
+  background-image: url("../../images/bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2547,7 +2547,7 @@ ul.icons {
   -webkit-justify-content: center;
   -ms-justify-content: center;
   justify-content: center;
-  background-image: url("../../images/banner2.png");
+  background-image: url("../../images/banner3.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2806,7 +2806,7 @@ ul.icons {
 #cta2 h2 {
   color: #ffffff; }
 #cta3 {
-  background-image: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url(../../images/bg.jpg);
+  background-image: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url(../../images/cta3.jpg);/* https://creativecommons.org/licenses/by/2.0/ */
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
