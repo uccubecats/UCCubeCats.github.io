@@ -60,10 +60,96 @@
     <section id="main" class="wrapper">
         <div class="inner">
             <div class="content">
-                <header>
-                    <h2>About</h2>
-                </header>
-                <p>A new CATiSE project will be selected this fall semster - Come back later</p>
+                <h2>Project Tuxedo</h2>
+                <p>Project Tuxedo is UC CubeCats’ CATiSE mission for the 2021-2022 academic year, and represents our “return-to-flight” after the disruptions caused by COVID-19.
+                   The mission will seek to measure air pollutants during its flight, while simultaneously trying to protect an egg from damage in a unique spinoff of the egg drop challenge.</p>
+                <h3>Objectives</h3>
+                <ol>
+                    <li>
+                        Educate first-year or inexperienced members about project management and working as a team, while applying this to a technical project. 
+                    </li>
+                    <li>
+                        Measure air pollution levels at different altitudes.
+                    </li>
+                    <li>
+                        Contain an egg without it sustaining damage during the flight.
+                    </li>
+                    <li>
+                        Record a 360° timelapse for the duration of the mission.
+                    </li>
+                </ol>
+                <h3>High-Altitude Balloon (HAB) System</h3>
+                
+                <h4>Communications</h4>
+                <p>The HAB will communicate GPS and sensor data to the ground using the APRS frequency (144.39 MHz). 
+                   The primary transmitter is a HX1 VHF transmitter connected to the main computer via a Habduino shield.
+                   In addition to a primary GPS receiver, a Spot Gen4 GPS is used to track the payload during flight and facilitate payload recovery.</p>
+                <center><img src="images/CATiSE/tuxedo_comms.png" alt="" height=350px>
+                <p><i>Tuxedo Communication Subsystem block diagram</i></p></center>
+                
+                <h4>Flight Systems</h4>
+                <p>The mission will use a 1.5 kg weather balloon connected to the payload container (a styrofoam cooler) by a nylon parachute cord.
+                   A 5 ft parachute will allow the payload to descend safely at the end of the mission.
+                   The egg will be contained within the styrofoam cooler, with the payload subsystems, and secured using an arrangement of packaging peanuts.</p>
+                <center><img src="images/CATiSE/tuxedo_flight_sys.png" alt="" height=350px>
+                <p><i>Tuxedo Flight Systems Subsystem block diagram</i></p></center>
+                
+                <h4>Software & Payload</h4>
+                <p>The primary control computer for the system is an Arduino Mega 2560, which will log data from the sensors, command the camera to take pictures, and store data.
+                   The main sensor suite consists of a CO2 sensor, a barometer, and an Air Quality Index (AQI) sensor capable of measuring CO, NO2, C2H5OH (ethyl alcohol), and volatile organic compound (VOC) concentrations in the surrounding air.
+                   Measurements will be taken every 60 seconds (0.01667 Hz).
+                   In addition to these sensors two cameras will be carried on board.
+                   A GoPro Max will be used to record a 360 video of the entire flight, starting at launch.
+                   An ArduCam connected to the main Arduino computer will film the egg while the system is climbing or falling.
+                   Data from the cameras and sensors will be collected onto two SD cards (one for the ArduCam and main sensors, the other for the GoPro Max).
+                   Power is provided by two 30000 mAh power banks (one powers the Arduino main sensors and ArduCam, the other powers the GoPro Max).
+                <center><img src="images/CATiSE/tuxedo_software_payload.png" alt="" height=400px>
+                <p><i>Tuxedo Software & Payload Subsystem block diagram</i></p></center>
+                
+                <h3>Mission</h3>
+                <p>The mission will be launched from a location in southern Indiana or northern Kentucky (exact location TBD); This increases the likelihood of the payload landing somewhere close to the Greater Cincinnati area at mission’s end.
+                   It is expected that the flight will last around 9 hours and will reach a maximum altitude of 30,000 meters (~100,000 feet).
+                   The currently expected launch date is <b>April 16th, 2022</b>.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="cta3" class="wrapper">
+        <div class="inner">
+
+            <header class="special">
+                <h2>Meet The Team</h2>
+            </header>
+
+            <div class="highlights">
+
+                <section>
+                    <div class="content">
+                        <header>
+                            <h3>Team Lead Communications</h3>
+                        </header>
+                        <img style="border-radius: 50%" src="images/Square Space Logo.png" alt="" height=150px>
+                        <p>Dylan Lawrence<br><a href="mailto:lawrend9@mail.uc.edu"> lawrend9@mail.uc.edu</a></p>
+                    </div>
+                </section>
+                <section>
+                    <div class="content">
+                        <header>
+                            <h3>Team Lead Flight Systems</h3>
+                        </header>
+                        <img style="border-radius: 50%" src="images/Square Space Logo.png" alt="" height=150px>
+                        <p>Brian Drobnak<br><a href="mailto:drobnabn@mail.uc.edu">drobnabn@mail.uc.edu</a></p>
+                    </div>
+                </section>
+                <section>
+                    <div class="content">
+                        <header>
+                            <h3>Team Lead Software & Payloads</h3>
+                        </header>
+                        <img style="border-radius: 50%" src="images/Square Space Logo.png" alt="" height=150px>
+                        <p>Nathan Nguyen<br><a href="mailto:nguye3np@mail.uc.edu">nguye3np@mail.uc.edu</a></p>
+                    </div>
+                </section>
             </div>
         </div>
     </section>
