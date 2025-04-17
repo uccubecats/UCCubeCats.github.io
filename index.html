@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-        <title>UC CubeCats</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <link rel="stylesheet" href="assets/css/main.css">
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    </head>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>UC CubeCats</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
 
 <!--Header-->
 <header id="header">
-    <a class="logo" href="index.html"><img style="max-height:45px" src="images/banner1_white.png"></a>
+    <a class="logo"></a>
     <nav>
         <a href="#menu">Menu</a>
     </nav>
@@ -22,18 +23,17 @@
 <!-- Nav bar -->
 <nav id="menu">
     <ul class="links">
-        <li><a href='index.html'>Home</a></li>
-        <li><a href='About.html'>About Us</a>
+        <li><a href='index.html'>Home</a>
             <ul>
-                <li><a href='Exec.html'>Meet the Team</a></li>
+                <li><a href='Exec.html'>Executive Board</a></li>
+                <li><a href='generic.html'>Our Sponsors</a></li>
                 <li><a href='Calendar.html'>Calendar</a></li>
             </ul>
-        </li>
         <li><a href='WhatIsACubeSat.html'>What Is A CubeSat?</a></li>
         <li><a href='CubeSat.html'>CubeSat Program</a>
             <ul>
-                <li><a href='LEOPARDSat-1.html'>LEOPARDsat-1</a></li>
-                <li><a href='HABSat-1.html'>HABsat-1</a></li>
+                <li><a href='LEOPARDSat-1.html'>LEOPARDSat-1</a></li>
+                <li><a href='HABSat-1.html'>HABSat-1</a></li>
                 <li><a href='GroundStation.html'>Ground Station</a></li>
                 <li><a href='HelmholtzCage.html'>Helmholtz Cage</a></li>
             </ul>
@@ -44,7 +44,9 @@
                 <li><a href='PastMissions.html'>Past Missions</a></li>
             </ul>
         </li>
+        <li><a href="GetInvolved.html">Get Involved</a></li>
         <li><a href='ContactUs.html'>Contact Us</a></li>
+        </li>
     </ul>
 </nav>
 
@@ -53,9 +55,7 @@
     <div id="full">
     </div>
     <div class="inner">
-        <img src="images/White Cat.png" alt="" style="max-width:100%;">
-        <br>
-        <img src="images/White Words Only.png" alt="" style="max-width:100%;">
+        <img src="images/White Cat Words Stacked.png" alt="" style="max-width:100%;">
     </div>
 </section>
 
@@ -65,20 +65,40 @@
         <div class="content">
             <center>
                 <header>
-                    <h2>What is UC Cubecats?</h2>
+                    <h2>Who We Are</h2>
                 </header>
-                <p>UC CubeCats is a student-led, undergraduate research laboratory at the <a href="https://www.uc.edu/">University of Cincinnati</a>, dedicated to the education of its members through the development and launch of CubeSats.<br><br>
-                <a href="About.html">Learn More About Us!</a><br>
-                <a href="WhatIsACubeSat.html">What is a CubeSat?</a><br>
-                <a href="Calendar.html">Our Meeting Schedule</a></p>
-                <video controls style="max-width:100%;"src="images/banner.mp4" poster="images/Other/Video_Thumbnail.png"></video>
-            <br><hr>
-                
-            <h2>The Latest</h2>
-            </center>
-            <h3><b>September 2024</b></h3>
-            <p>After a long delay, Project Floppa is preparing to launch early this fall!
-               Read all about the mission on our <a href="CurrentMissions.html">Current Missions</a> page.</p>
+                <p> UC CubeCats is a student-led, undergraduate research laboratory founded in 2015 at the <b><a href="https://ceas.uc.edu/">University of Cincinnati College of Engineering and Applied Science</a></b>.
+                    Our goal is to provide students with a team-based opportunity to positively impact the scientific community and the University of Cincinnati, as well as advance their professional careers, through education and experience in spacecraft development.
+                    Members of our organization can gain experience designing, building, and operating flightworthy aerospace systems (particularly <b><a href="WhatIsACubeSat.html">CubeSats</a></b> and High-Altitude Balloons), network with industry professionals through conferences and collaborations, and apply concepts learned in the classroom to real-world projects.</p>
+                <div class="slider-wrapper">
+                    <div class="slider">
+                        <input type="radio" name="slider" class="trigger" id="one" checked="checked"/>
+                        <div class="slide">
+                            <figure class="slide-figure">
+                                <img class="slide-img" src="images/Square Space Logo.png" alt="" height=100%;/>
+                            </figure>
+                        </div>
+                        <input type="radio" name="slider" class="trigger" id="two"/>
+                        <div class="slide">
+                            <figure class="slide-figure">
+                                <img class="slide-img" src="images/Square Space Logo.png" alt="" height=100%;/>
+                            </figure>
+                        </div>
+                        <input type="radio" name="slider" class="trigger" id="three" />
+                        <div class="slide">
+                            <figure class="slide-figure">
+                                <img class="slide-img" src="images/Square Space Logo.png" alt="" height=100%;/>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <ul class="slider-nav">
+                    <li class="slider-nav__item"><label class="slider-nav__label" for="one">1</label></li>
+                    <li class="slider-nav__item"><label class="slider-nav__label" for="two">2</label></li>
+                    <li class="slider-nav__item"><label class="slider-nav__label" for="three">3</label></li>
+                </ul>
+
+            <center>
         </div>
     </div>
 </section>
@@ -88,24 +108,18 @@
     <section id="cta2" class="wrapper">
         <div class="inner">
             <header class="special">
-                <h2>Our Organizational Structure</h2>
+                <h2>What We Do</h2>
             </header>
             <div class="highlights">
                 <section>
                     <div data-aos="flip-up" class="content">
                         <header>
-                            <h3><a href="Exec.html">Executive Board</a></h3>
-                        </header>
-                        <p>Our Executive Board comprises five leadership positions: President, Vice-President, Secretary, Treasurer, and CubeSat Program Manager.
-                           Additionally, we have several chair positions, who help ensure the organization runs smoothly.</p>
-                    </div>
-                </section>
-                <section>
-                    <div data-aos="flip-up" class="content">
-                        <header>
                             <h3><a href="CubeSat.html">CubeSat Program</a></h3>
                         </header>
-                        <p> Our CubeSat program is composed of dedicated members currently working on two CubeSat projects, a Ground Station for communicating with future missions, and a Helmhotz Cage for ground testing of satellite systems.</p>
+                        <img src="images/Square Space Logo.png" alt="" height="250px" style="border-radius: 50%">
+                        <!--center><image src="images/cubesat.png" style="max-width:80%;"-->
+                        <!--image src="images/cubesat.png" style="max-width:80%;"><br-->
+                        <p> Our CubeSat Program is currently working on two CubeSat projects (one under active development and one at the preliminary design level), a Ground Station for communicating with future missions, and a Helmhotz Cage for ground testing of satellite systems.</p>
                     </div>
                 </section>
                 <section>
@@ -113,7 +127,19 @@
                         <header>
                             <h3><a href="CATiSE.html">CATiSE Program</a></h3>
                         </header>
-                        <p> The CubeCats Applied Training in Space Exploration (CATiSE) Program was designed to teach new members systems engineering, project leadership skills, and technical skills for missions in space-like environments.</p>
+                        <img src="images/Square Space Logo.png" alt="" height="250px" style="border-radius: 50%">
+                        <!--center><image src="images/hab.png" style="max-width:80%;"-->
+                        <p> The CubeCats Applied Training in Space Exploration (CATiSE) Program is designed to teach new members (espcially freshmen) the systems engineering, project leadership, and technical skills needed to design and operate missions in a space-like environments.</p>
+                    </div>
+                </section>
+                <section>
+                    <div data-aos="flip-up" class="content">
+                        <header>
+                            <h3><a href="https://github.com/uccubecats">Open Source</a></h3>
+                        </header>
+                        <img src="images/Square Space Logo.png" alt="" height="250px" style="border-radius: 50%">
+                        <!--center><image src="images/open-source.png" style="max-width:55%;"--><!--https://www.flaticon.com/free-icons/open-source" title="open source icons"-->
+                        <p> Our work is intended be useful to the entire community, especially new groups just starting out. All software, designs, and schematics created for our projects are or will be open sourced, as well as lessons learned while working on our projects.</p>
                     </div>
                 </section>
             </div>
@@ -121,45 +147,21 @@
     </section>
 </div>
 
-<!-- CTA -->
-<div data-aos="fade-up">
-    <section id="cta" class="wrapper">
-        <div class="inner">
-            <header class="special">
-                <h2>Some of Our Highlighted Projects</h2>
-            </header>
-            <div class="highlights">
-                <section>
-                    <div data-aos="flip-up" class="content">
-                        <header>
-                            <h3><a href="LEOPARDSat-1.html">LEOPARDsat-1</a></h3>
-                        </header>
-                        <img src="images/Leopard Logo.png" alt="" height=250px>
-                        <p>A 1U CubeSat mission serving as an education and outreach platform for local students, which will also study the radiation mitigation effects of carbon-carbon composites.</p>
-                    </div>
-                </section>
-                <section>
-                    <div data-aos="flip-up" class="content">
-                        <header>
-                            <h3><a href="HABSat-1.html">HABsat-1</a></h3>
-                        </header>
-                        <img src="images/HABsat Logo.png" alt="" height=250px>
-                        <p>A 3U CubeSat mission using a commercial-off-the-shelf multispectral imager to study harmful algal blooms on the Great Lakes for at least a year.</p>
-                    </div>
-                </section>
-                <section>
-                    <div data-aos="flip-up" class="content">
-                        <header>
-                            <h3><a href="HelmholtzCage.html">Helmholtz Cage</a></h3>
-                        </header>
-                        <img src="images/Square Space Logo.png" alt="" height=250px style="border-radius: 50%">
-                        <p>An open-source, 3-axis Helmholtz Cage design for magnetic field testing of CubeSats. Also includes an "two-and-a-half" degree-of-freedom air-bearing table. </p>
-                    </div>
-                </section>
-            </div>
+<section id="cta" class="wrapper">
+    <div class="inner">
+        <div class="content">
+            <center>
+                <header>
+                    <h2>The Latest</h2>
+                </header>
+                <p><b>February 6th, 2025</b> - LEOPARDSat-1 completed its Critical Design Review (CDR)!
+                   Thanks to our review panel from L3 Harris Space & Sensors for lending their expertise and providng great feedback to our project team.
+                   <a href="https://www.linkedin.com/feed/update/urn:li:activity:7298733265220247552/?actorCompanyId=104646934" class="icon fa-linkedin-square"><span class="label">LinkedIn</span></a></p>
+                <center><image src="images/Square Space Logo.png" style="max-width:60%;">
+            <center>
         </div>
-    </section>
-</div>
+    </div>
+</section>
     
 <footer id="footer">
     <div class="inner">
@@ -167,29 +169,29 @@
             <section>
                 <h3>Work With Us Today!</a></h3>
                 <p> Are you a UC student interested in joining our organisation and becoming part of some cool space projects?
-		    Or are you interested in collaborating, donating, and/or partaking in outreach activities?</p>
-                <p> Read more <a href="About.html"><u>about our group and its work</u></a> or <a href="ContactUs.html"><u>contact us</u></a> for more information.</p>
+                    Or are you interested in collaborating, donating, and/or partaking in outreach activities?</p>
+                <p> Read about how to <a href="GetInvolved.html"><u> get involved</u></a>, or <a href="ContactUs.html"><u>contact us</u></a> directly for more information.</p>
             </section>
             <section>
-                <h3>Projects</h3>
+                <h3>Quick Links</h3>
                 <ul class="alt">
-                    <li><a href="LEOPARDSat-1.html">LEOPARDSat-1<br></a></li>
-                    <li><a href="HABSat-1.html">HABSat-1<br></a></li>
-                    <li><a href="HelmholtzCage.html">Helmlholtz Cage<br></a></li>
-                    <li><a href="CurrentMissions.html">Current CATiSE Missions<br></a></li>
+                    <li><a href="Exec.html">Executive Board<br></a></li>
+                    <li><a href="Calendar.html">Calendar<br></a></li>
+                    <li><a href="CubeSat.html">CubeSat Program<br></a></li>
+                    <li><a href="CATiSE.html">CATiSE Program<br></a></li>
                 </ul>
             </section>
             <section>
-                <h3>Social Media</h3>
+                <h3>External Links</h3>
                 <ul class="plain">
-                    <li><a href="https://twitter.com/uccubecats"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
-                    <li><a href="https://www.facebook.com/UCCubeCats/"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
                     <li><a href="https://www.instagram.com/uccubecats/"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/company/uc-cubecats/"><i class="icon fa-linkedin-square">&nbsp;</i>Linkedin</a></li>
+                    <li><a href="https://github.com/uccubecats"><i class="icon fa-github-square">&nbsp;</i>Github</a></li>
                     <li><a href="https://www.youtube.com/channel/UCswoyHMcaZrM_iyTmgqaW6w"><i class="icon fa-youtube-play">&nbsp;</i>Youtube</a></li>
                 </ul>
             </section>
         </div>
-        <div class="copyright"> © 2022 UC CubeCats </div>
+        <div class="copyright"> © 2025 UC CubeCats </div>
     </div>
 </footer>
        
