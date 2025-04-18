@@ -61,84 +61,157 @@
     <section id="main" class="wrapper">
         <div class="inner">
             <div class="content">
-                
-	    	<header>
-                <h2>The 'U' Form Factor</h2>
-        	</header>
+                <header>
+                    <h2>The 'U' Form Factor</h2>
+                </header>
                 <p> CubeSats are a class of nanosatellites (satellites with masses between 1 and 10 kilograms) that use a standardized size and form factor called a "U" (a cube measuring 10 x 10 x 10 cm).
                     A standard cubesat is 1U (10 x 10 x 10 cm), but using "U's" as a building block, larger sizes and arrangements can be achieved, such as 2U (10 x 10 x 20 cm), 3U (10 x 10 x 30 cm), 6U (10 x 20 x 30 cm), and so on.</p>
-                <center><image src="images/Other/Cubesat_Sizes.png" style="max-width:60%;">
-                <p><i>Common CubeSat configurations (image: NASA)</i></p></center>
-                <hr>
-                
-            <header>
-                <h2>Missions</h2>
-        	</header>
+                <center>
+                    <image src="images/Other/Cubesat_Sizes.png" style="max-width:60%;">
+                    <p><i>Common CubeSat configurations (image: NASA)</i></p>
+                </center>
+            </div><br>
+            
+            <div class="content"/>
+            	<header>
+                	<h2>Missions</h2>
+            	</header>
                 <p> CubeSats were originally developed by California Polytechnic State University at San Luis Obispo (CalPoly) and Stanford University in 1999 as an educational tool for students to learn about space systems engineering. 
-                    Although initially conceived as a purely academic tool, the low-cost, standardization, and flexability of CubeSats has lead to their adoption by academia, the private sector, and governments for a variety of missions.
+                    Although initially conceived as a purely academic tool, the low-cost, standardization, and flexability of CubeSats has led to their adoption by academia, the private sector, and governments for a variety of missions.
                     Common applications include low-cost science missions, technology demonstrations too risky to justify a larger satellite, amateur radio communication, and remote-sensing of the Earth's surface.</p>
-                <div class="row gtr-50 gtr-uniform">
-                  <div class="col-4">
-                      <!--https://space.skyrocket.de/doc_sdat/vermont-lunar-cubesat-1.htm-->
-                      <span class="image fit"><img src="images/Other/cubesats_1.jpg" alt=""></span>
-                  </div>
-                  <div class="col-4">
-                      <!--https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fspaceflightnow.com%2Fwp-content%2Fuploads%2F2015%2F09%2Fslide2.jpg&f=1&nofb=1-->
-                      <span class="image fit"><img src="images/Other/cubesats_2.jpg" alt=""></span>
-                  </div>
-                  <div class="col-4">
-                      <!--https://www.jpl.nasa.gov/cubesat/missions/marco.php-->
-                      <span class="image fit"><img src="images/Other/cubesats_3.jpg" alt=""></span>
-                  </div>
-                </div>
-                <center>
-                    <p><i>Some examples of past CubeSat missions (Left to Right):
-                    The Vermont Lunar CubeSat, a 1U technology demostration CubeSat from Vermont Technical College (image: VTC);
-                    a PlanetLabs SuperDove satellite, a commercial 3U-CubeSat for Earth imaging (image: PlanetLabs);
-                    Mars Cube One A and B (MarCO-A and MarCO-B), two 6U-Cubesats from JPL that flew by Mars in support of NASA's InSight mission (image: NASA).</i></p>
-                </center>
-                <p> Since the first missions launched in June 2003, over 1600 CubeSats have been placed into orbit.
-                    Unitl recently, CubeSats were restriced to Low Earth Orbit (LEO).
-                    However in 2018, the two-CubeSat Mars Cube One (MarCO) mission became the first CubeSat mission to move beyond LEO, flying by Mars in support of the NASA's InSight mission.
-                    NASA's Artemis 1 mission will carry ten CubeSats to the Moon and beyond on the maiden flight of the SLS.</p>
-                <hr>
-                    
-            <header>
-                <h2>Launch</h2>
-            </header>
-                <p></p>
-	            <p> Due to their small size, CubeSats are typically carried into orbit as secondary (or rideshare) payloads on a launch.
-                    The Poly-PicoSatellite Orbital Deployer (P-POD) provides a mechanism for CubeSats deployed from the rocket's upper stage after orbital insertion.
-                    Alternatively, the NanoRacks CubeSat Deployer (NRCSD) allows for CubeSats to be carried to the the International Space Station inside Commercial Crew Resupply Vehicles (SpaceX Dragon and Northrup Grumman Cygnus) and deployed into orbit from the station's scientific airlock.
-                    In the last few years, several dedicated rocket launchers have been developed in which launch CubeSats as the primary payload, including the RocketLab Electron and Virgin Galactic LauncherOne.</p>
-                <center>
-                    <!--https://earthobservatory.nasa.gov/images/84125/algae-bloom-on-lake-erie-->
-                    <img src="images/Other/launcherone.jpg" alt=""  style="max-width:49%;">
-                    <!--http://landsat.gsfc.nasa.gov/?p=10357-->
-                    <img src="images/Other/electron.jpg" alt="" style="max-width:49%;">
-                    <p><i>(Left) Virgin Galactic's LauncherOne, (Right) RocketLab's Electron (images: NRO, Virgin Galactic).</i></p>
-                </center>
-                <hr>
                 
-	        <header>
-                <h2>Further Information</h2>
-	        </header>
+                <div class="slider-wrapper">
+                    <div class="slider">
+                        <input type="radio" name="slider" class="trigger" id="one" checked="checked"/>
+                        <div class="slide">
+                            <figure class="slide-figure">
+                                <img class="slide-img-caption" src="images/Other/vermont_lunar_cubesat.jpg" alt=""/>
+                                <div class="slide-caption"><i>The Vermont Lunar CubeSat, a 1U technology demostration CubeSat from Vermont Technical College (image: VTC)</i></div>
+                            </figure>
+                        </div>
+                        <input type="radio" name="slider" class="trigger" id="two" />
+                        <div class="slide">
+                            <figure class="slide-figure">
+                                <img class="slide-img-caption" src="images/Other/funcube1.jpg" alt=""/>
+                                <div class="slide-caption"><i>FUNcube-1, a 1U amateur radio CubeSat from AMSAT-UK (image: Wouter Weggelaar)</i></div>
+                            </figure>
+                        </div>
+                        <input type="radio" name="slider" class="trigger" id="three" />
+                        <div class="slide">
+                            <figure class="slide-figure">
+                                <img class="slide-img-caption" src="images/Other/csswe.png" alt=""/>
+                                <div class="slide-caption"><i>The University of Colorado Boulder's Colorado Student Space Weather Experiment (CSSWE), a 3U space science CubeSat (image: Rick Kohnert)</i></div>
+                            </figure>
+                        </div>
+                        <input type="radio" name="slider" class="trigger" id="four"/>
+                        <div class="slide">
+                            <figure class="slide-figure">
+                                <img class="slide-img-caption" src="images/Other/superdove.jpg" alt=""/>
+                                <div class="slide-caption"><i>A PlanetLabs SuperDove satellite, a commercial 3U-CubeSat for Earth imaging (image: PlanetLabs)</i></div>
+                            </figure>
+                        </div>
+                        <input type="radio" name="slider" class="trigger" id="five" />
+                        <div class="slide">
+                            <figure class="slide-figure">
+                                <img class="slide-img-caption" src="images/Other/marco.jpg" alt=""/>
+                                <div class="slide-caption"><i>JPL's Mars Cube One A and B (MarCO-A and MarCO-B), two 6U-Cubesats that flew by Mars in 2018 (image: NASA)</i></div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <ul class="slider-nav">
+                    <li class="slider-nav__item"><label class="slider-nav__label" for="one">1</label></li>
+                    <li class="slider-nav__item"><label class="slider-nav__label" for="two">2</label></li>
+                    <li class="slider-nav__item"><label class="slider-nav__label" for="three">3</label></li>
+                    <li class="slider-nav__item"><label class="slider-nav__label" for="four">4</label></li>
+                    <li class="slider-nav__item"><label class="slider-nav__label" for="five">5</label></li>
+                </ul>
+                
+                <p> As of mid-2024, almost 2400 CubeSats have been placed into orbit since the first launch of CubeSats in June 2003.
+                    Until recently, CubeSats were restriced to Low Earth Orbit (LEO).
+                    However in 2018, the Mars Cube One (MarCO) mission launched the first CubeSats beyond LEO, flying by Mars in support of the NASA's InSight mission.
+                    Since then several other CubeSat missions have operated beyond LEO, inclduing ten Cubesats launched on the maiden launch of SLS during the Artemis 1 mission, the LICIACube supporting the Double Asteroid Redirection Test (DART) mission, and the CAPSTONE mission to a Lunar near rectilinear halo orbit, all in 2022.</p>
+            </div><br>
+            
+            <div class="content"/>
+                <header>
+                    <h2>Launch</h2>
+                </header>
+                <p> Due to their small size, CubeSats are typically carried into orbit as secondary (or rideshare) payloads on a launch.
+                    The Poly-PicoSatellite Orbital Deployer (P-POD) provides a mechanism for CubeSats to be deployed from a rocket's upper stage after orbital insertion.
+                    Alternatively, the NanoRacks CubeSat Deployer (NRCSD) allows for CubeSats to be carried to the the International Space Station inside Commercial Crew Resupply Vehicles (such as the SpaceX Dragon and Northrup Grumman Cygnus) and deployed into orbit from the station's scientific airlock.
+                    In the last few years, several dedicated rocket launchers have been developed which launch CubeSats as the primary payload, including the RocketLab Electron and Firefly Alpha.</p>
+                <div class="slider-wrapper">
+                    <div class="slider">
+                        <input type="radio" name="slider2" class="trigger" id="ten" checked="checked"/>
+                        <div class="slide">
+                            <figure class="slide-figure">
+                                <img class="slide-img-caption" src="images/Other/ppod_csswe.png" alt=""/>
+                                <div class="slide-caption"><i> CSSWE next to a PPOD prior to integration (image: CSSWE)</i></div>
+                            </figure>
+                        </div>
+                        <input type="radio" name="slider2" class="trigger" id="eleven"/>
+                        <div class="slide">
+                            <figure class="slide-figure">
+                                <img class="slide-img-caption" src="images/Other/NRCSD.jpg" alt=""/>
+                                <div class="slide-caption"><i> The NRCSD deploying CubeSats into orbit from the ISS (image: NASA)</i></div>
+                            </figure>
+                        </div>
+                        <input type="radio" name="slider2" class="trigger" id="twelve"/>
+                        <div class="slide">
+                            <figure class="slide-figure">
+                                <img class="slide-img-caption" src="images/Other/electron.jpg" alt=""/>
+                                <div class="slide-caption"><i>RocketLab's Electron rocket (image: NRO)</i></div>
+                            </figure>
+                        </div>
+                        <input type="radio" name="slider2" class="trigger" id="thirteen"/>
+                        <div class="slide">
+                            <figure class="slide-figure">
+                                <img class="slide-img-caption" src="images/Other/sls_cubesats.jpg" alt=""/>
+                                <div class="slide-caption"><i>CubeSats inside their deployers attached to the payload adapter of Artemis 1's SLS (image: NASA)</i></div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <ul class="slider-nav">
+                    <li class="slider-nav__item"><label class="slider-nav__label" for="ten">1</label></li>
+                    <li class="slider-nav__item"><label class="slider-nav__label" for="eleven">2</label></li>
+                    <li class="slider-nav__item"><label class="slider-nav__label" for="twelve">3</label></li>
+                    <li class="slider-nav__item"><label class="slider-nav__label" for="thirteen">4</label></li>
+                </ul>
+            </div><br>
+            
+            <div class="content"/>
+                <header>
+                    <h2>Further Information</h2>
+                </header>
+                <h3>UC CubeCats</h3>
+                <ul>
+                    <li><a href="CubeSat.html">CubeSat Program</a> < Check out our CubeSat missions and related projects!</li> 
+                </ul>
                 <h3>NASA</h3>
                 <ul>
-                    <li><a href="https://www.nasa.gov/mission_pages/cubesats/index.html"> CubeSat Index</a></li>
-                    <li><a href="https://www.nasa.gov/directorates/heo/home/CubeSats_initiative"> CubeSat Launch Initiative (CSLI)</a></li>
-                    <li><a href="https://www.nasa.gov/sites/default/files/atoms/files/nasa_csli_cubesat_101_508.pdf">CubeSat 101: Basic Concepts and Processes for First-Time CubeSat Developers</a></li>
+                    <li><a href="https://www.nasa.gov/what-are-smallsats-and-cubesats/"> What are SmallSats and CubeSats?</a></li>
+                    <li><a href="https://www.nasa.gov/smallsat-institute/"> Small Spacecraft Systems Virtual Institute</a></li>
+                    <li><a href="https://www.nasa.gov/kennedy/launch-services-program/cubesat-launch-initiative/"> CubeSat Launch Initiative (CSLI)</a></li>
+                    <li><a href="https://www.nasa.gov/wp-content/uploads/2017/03/nasa_csli_cubesat_101_508.pdf?emrc=05d3e2">CubeSat 101: Basic Concepts and Processes for First-Time CubeSat Developers</a></li>
                 </ul>
                 <h3>CalPoly CubeSat Laboratory</h3>
                 <ul>
                     <li><a href="https://www.cubesat.org/about"> CubeSat.org</a></li>
                     <li><a href="https://www.cubesat.org/cubesatinfo"> CubeSat Developer Resources</a></li>
+                    <li><a href="https://static1.squarespace.com/static/5418c831e4b0fa4ecac1bacd/t/62193b7fc9e72e0053f00910/1645820809779/CDS+REV14_1+2022-02-09.pdf"> CubeSat Design Specification (Rev. 14.1)</a></li>
                 </ul>
                 <h3>Canadian Space Agency</h3>
-		<ul>
+                <ul>
                     <li><a href="https://asc-csa.gc.ca/eng/satellites/cubesat/what-is-a-cubesat.asp"> What is a CubeSat?</a></li>
-		</ul>
-            </div>
+                </ul>
+                <h3>Nanosats Database</h3>
+                <ul>
+                    <li><a href="https://www.nanosats.eu/"> Main Page</a></li>
+                    <li><a href="https://www.nanosats.eu/database"> Database</a></li>
+                </ul>
+            </div><br>
         </div>
     </section>
     
