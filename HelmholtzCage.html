@@ -64,26 +64,28 @@
                 <header>
                     <h2>About</h2>
                 </header>
-                <p>
-                    A Helmholtz Coil is a device consisting of a pair of identical coiled-wire electormagnets, separated by a set distance to create a uniform magnetic field along their common axis.
+                <p> A Helmholtz Coil is a device consisting of a pair of identical coiled-wire electormagnets, separated by a set distance to create a uniform magnetic field along their common axis.
                     Arranging three Helmholtz Coils orthogonally to each other creates a Helmholtz Cage, which is able to create uniform fields in each direction at its center.
                     This setup can be used to realistically test a satellite's attitude determination and control system on the ground by simulating on-orbit magnetic fields, and characterize the residual magnetism of satellite components by negating the ambient magnetic field.
-                    In order to test the ADCS of our two upcoming CubeSat missions as well as potential future missions, UC CubeCats designed and built its own Helmholtz Cage.
-                    This work was funded by a grant from the <a href="http://osgc.org/">Ohio Space Grant Consortium (OSGC).</a></p>
-                <hr>
-                
+                    In order to test the ADCS of our two upcoming CubeSat missions as well as potential future missions, UC CubeCats designed and built its own Helmholtz Cage.</p>
+                    
+                <p> This project was funded by a grant from the <a href="http://osgc.org/">Ohio Space Grant Consortium (OSGC).</a></p>
+            </div><br>
+            
+            <div class="content">
 	        <header>
-                    <h2>Requirements</h2>
-		</header>
+            	<h2>Requirements</h2>
+			</header>
                 <ol>
-		    <li>Capable of generating a uniform magnetic field in a volume large enough to hold a 3U CubeSat, plus some limited deployable structures.</li>
+					<li>Capable of generating a uniform magnetic field in a volume large enough to hold a 3U CubeSat, plus some limited deployable structures.</li>
                     <li>Capable of simulating dynamic magnetic fields such as those found in Low Earth Orbit (LEO).</li>
                     <li>Capable of cancelling out the ambient magnetic field in our lab's location.</li>
                     <li>Relatively easy to disassemble, store, and reassemble.</li>
                     <li>Cost less than $5000</li>
-		</ol>
-                <hr>
-                
+				</ol>
+            </div><br>
+            
+            <div class="content">
                 <header>
                     <h2>Design</h2>
                 <header>
@@ -96,7 +98,7 @@
                 <img src="images/HelmholtzCage/helmholtz_cage.jpg" alt="" style="max-width:49%;">
                 <p><i>Labeled CAD schematic of the Helmholtz Cage (Left); Assembled Helmholtz Cage (Right)</i></p></center>
 
-		<p> To hold the wire coils, we use 1.25 in x 1.25 in Aluminum U-channel beams, with its interior wrapped in electrical tape for greater insulation.
+				<p> To hold the wire coils, we use 1.25 in x 1.25 in Aluminum U-channel beams, with its interior wrapped in electrical tape for greater insulation.
                     The beams are attached at their ends by L-brackets to create a square coil structure.
                     To hold the coils together into the proper Helmholtz Cage configuration, further L-brackets and some 3D printed components are used.
                     These allow us to slide the coils in and out of the sturcture for easy assembly and disassembly.
@@ -110,22 +112,23 @@
                 
                 <center><img src="images/HelmholtzCage/block_diagram.png" alt="" style="max-width:70%;">
                 <p><i>Block diagram of the Helmholtz Cage system</i></p></center>
-                
+            </div><br>
+            
+            <div class="content">
                 <header>
-                    <h3>Control Software</h3>
+                    <h2>Control Software</h2>
                 <header>
                 
                 <p> The control software for the cage is a Python based program, which is primarily operated from a custom GUI.
-                    The software has four main funtionalities:
+                    The software has four main funtionalities:</p>
                     <ul>
                         <li>Testing the connections to the three power supplies and the magnetometer.
                         <li>Calibrating the cage, by producing an equation that relates the output magnetic field strength on each axis to the input voltage.
-                        <li>Running "static" tests, in which the user can directly specify either the desired magnetic field strength or the input voltages on each axis.
-                        <li>Running "dynamic" tests, which use a time-varying input from a file, such as the output of an <a href="https://www.agi.com/products/stk">Systems Tool Kit (STK)</a> simulation, to simulate magnetic fields on orbit (WIP).
-		<p>
-
-                <center><img src="images/HelmholtzCage/gui.png" alt="" style="max-width:70%;">
-                <p><i>Sample run of the Helmholtz Cage using the GUI based interface.</i></p></center>
+                        <li>Running <i>Static</i> tests, in which the user can directly specify either the desired magnetic field strength or the input voltages on each axis.
+                        <li>Running <i>Dynamic</i> tests, which use a time-varying input from a file, such as the output of an <a href="https://www.agi.com/products/stk">Systems Tool Kit (STK)</a> simulation, to simulate magnetic fields on orbit (WIP).
+                    </ul>
+                <center><img src="images/HelmholtzCage/gui2.png" alt="" style="max-width:60%;">
+                <p><i>Helmholtz Cage GUI interface.</i></p></center>
 
 		<!--header>
                     <h3>Air Bearing Table</h3>
