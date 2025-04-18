@@ -67,24 +67,26 @@
         <div class="inner">
             <div class="content">
                 <h2>Background</h2>
-                <p>A Harmful Algal Bloom, or HAB, occurs when excessive nutrients in a body of water allow a large proliferation in the number of algae, leading to severe reductions in water oxygen levels, the release of dangerous toxins, and the creation of marine dead zones.
-                   On Lake Erie, HABs are a growing concern, due to their increasing frequency and enormous negative impact on the lake environment, human health, and the local economy.
-                   The only reliable ways to survey and monitor HAB events are by using low-flying aircraft (which is time-consuming and expensive due to the large area involved) or by satellite.
-                   However, currently operating satellites have complex scientific schedules which cover many priorities and have a variety of orbits, ultimately meaning that an image of Lake Erie can only be taken roughly every sixteen days.</p>
+                <p> A Harmful Algal Bloom, or HAB, occurs when excessive nutrients in a body of water allow a large proliferation in the number of algae, leading to severe reductions in water oxygen levels, the release of dangerous toxins, and the creation of marine dead zones.
+                    On Lake Erie, HABs are a growing concern, due to their increasing frequency and enormous negative impact on the lake environment, human health, and the local economy.
+                    The only reliable ways to survey and monitor HAB events are by using low-flying aircraft (which is time-consuming and expensive due to the large area involved) or by satellite.
+                    However, currently operating satellites have complex scientific schedules which cover many priorities and have a variety of orbits, ultimately meaning that an image of Lake Erie can only be taken roughly every sixteen days.</p>
                 <center>
                     <!--https://earthobservatory.nasa.gov/images/84125/algae-bloom-on-lake-erie-->
                     <img src="images/HABSat-1/Lake_Erie_HAB.jpg" alt=""  style="max-width:49%;">
                     <!--http://landsat.gsfc.nasa.gov/?p=10357-->
                     <img src="images/HABSat-1/Lake_Erie_HAB_2.png" alt="" style="max-width:49%;">
-                    <p><i>Algal blooms on Lake Erie as seen from space (Left) and from the lake shore (Right).
-                    In 2014, such an algal bloom forced the city of Toledo to declare its tap water unsafe to drink. (images: NASA)</i></p>
+                    <p><i>Algal blooms on Lake Erie as seen from space (Left) and from the lake shore (Right) (images: NASA)</i></p>
                 </center>
-                
-                <p>The purpose of HABSat-1 is to fill this gap by monitoring the development and dynamics of HABs on the Great Lakes and other bodies of water in the state of Ohio using a dedicated CubeSat.
-                   This CubeSat will improve upon current satellite systems, by overcoming the techinical limitations of existing satellites in observing HABs and providing imaging at a higher frequency.
-                   The main on-board sensor will be a low-cost, narrow-band multispectral imager, optimized to detect the light wavelengths found in algal blooms.
-                   By pairing a drone-rated imager with a low-cost CubeSat, the mission will also demonstrate the viability of such sensors for space-based earth observation, providing an improvement over the temporal coverage and spatial resolution of current imaging satellites.</p>
-                <hr>
+                <p> The purpose of HABSat-1 is to fill this gap by monitoring the development and dynamics of HABs on the Great Lakes and other bodies of water in the state of Ohio using a dedicated CubeSat.
+                    This CubeSat will improve upon current satellite systems, by overcoming the techinical limitations of existing satellites in observing HABs and providing imaging at a higher frequency.
+                    The main on-board sensor will be a low-cost, narrow-band multispectral imager, optimized to detect the light wavelengths found in algal blooms.
+                    By pairing a drone-rated imager with a low-cost CubeSat, the mission will also demonstrate the viability of such sensors for space-based earth observation, providing an improvement over the temporal coverage and spatial resolution of current imaging satellites.</p>
+                <p><b>Summer 2025: HABSat-1 is currently being restarted after COVID hiatus!</b>
+                    If you are interested in the project, please reach out to Samuel Kohls (<a href="mailto:kohlssc@mail.uc.edu">kohlssc@mail.uc.edu</a>) for more information.</p>
+            </div><br>
+            
+            <div class="content">
                 <header>
                     <h2>Objectives</h2>
                 </header>
@@ -99,8 +101,9 @@
                         Provide proof-of-concept for employing a &lt;$10000, drone-rated multispectral imager to successfully sense natural phenomena from space.
                     </li>
                 </ol>
-                <hr>
-                
+            </div><br>
+            
+            <div class="content">
                 <header>
                     <h2>Spacecraft</h2>
                 </header>
@@ -109,7 +112,7 @@
                     On board computing, communications, and attitude determination and control will take up the remainder of the satellite.</p>
              
                 <center><img src="images/HABSat-1/3d_render_annotated.png" alt="" style="max-width:90%;">
-                <p><i>CAD model of HABSat-1 with major components labeled</i></p></center>
+                <p><i>Preliminary CAD model of HABSat-1 with major components labeled</i></p></center>
                 
                 <h3>Attitude Determination & Control Subsystem</h3>
                 <p> Due to the need to precisely and accurately point the satellite for imaging the Earth's surface (&#177; 1&deg;), HABSat-1 will have an active Attitude Determination and Control System (ADCS).
@@ -156,18 +159,10 @@
                         These panels will help power the satellite while the primary array is not pointed at the sun, such as when performing imaging and ground communication.
                     </li>
                 </ul>
-                
-
-                <center>
-                    <img src="images/HABSat-1/solar_cell.jpg" alt=""  style="max-width:35%;">
-                    <img src="images/HABSat-1/power_distribution.png" alt=""  style="max-width:35%;">
-                    <p><i>A prototype solar array (Left) and a schematic of the custom power distribution board (Right) for HABSat-1</i></p>
-                </center>
 
                 <p> Power generated by these solar panels will be stored in four 18650 Lithium Ion Batteries, with 43.2 Watt-hours of storage at 3.6V. 
                     The batteries will be mounted to a custom-design Power Distribution Board (PDB), which contains battery chargers, a battery monitor to track battery health, and DC-DC converters to deliver the required voltage and peak/nominal current draws to each subsystem.
                     A variant of this power distribution board will be used on LEOPARDSat-1 as well.</p>
-
 
                 <h3>Structure</h3>
                 <p> HABSat-1 wil use a custom-design 3U frame made from Aluminum 6061, and consisting of top and bottom frames, two end cap frames, and four PC-104-compatable side support frames.
@@ -176,11 +171,12 @@
                     <li>An Avionics Stack, containing the OBC, reaction wheels, ADCS computer, PDB, and both radio transmitters.</li>
                     <li>An Imaging Stack, containing the multispectral imaging payload and other sensors.</li>
                 </ul>
-
+		
                 <center><img src="images/HABSat-1/assembly_4.png" alt=""  style="max-width:50%;">
                 <p><i>Prototype of HABSat-1's structural frame.</i></p></center>
-                <hr>
-                
+            </div><br>
+            
+            <div class="content">
                 <header>
                     <h2>Mission</h2>
                 </header>
@@ -203,16 +199,13 @@
                 
                 <center><img src="images/HABSat-1/deploy_stabilize.png" alt=""  style="max-width:75%;"></center>
 
-                <p> During nominal operations, there are two modes the satellite will use:</p>
-                <ul>
-                    <li>Charging: the satellite orients its primary solar array towards the sun in order to charge its batteries up to a certain percentage (around 85% of full battery charge)</li>
-                    <li>Imaging: the satellite will slew so that the imager is pointed in the Nadir (towards the ground) direction.
-                        Once within range of Lake Erie, the multispectral imager will take images of the lake and will save them onboard to be downlinked to the S-Band ground station.</li>
-                </ul>
-
+                <p> During nominal operations, the satellite will be either <i>Charging</i> by orienting its primary solar array towards the sun in order to charge its batteries up to a certain percentage (around 85% of full battery charge) or <i>Imaging</i> by slewing so that the imager is pointed in the Nadir (towards the ground) direction.
+                    Once within range of Lake Erie, the multispectral imager will take images of the lake and will save them onboard to be downlinked to the S-Band ground station.</p>
+                    
                 <center><img src="images/HABSat-1/orbital_planning.png" alt=""  style="max-width:75%;"></center>
-                <hr>
-                
+            </div><br>
+            
+            <div class="content">
                 <header>
                     <h2>In The News</h2>
                 </header>
@@ -220,173 +213,89 @@
                     University of Cincinnati - <a href="https://www.uc.edu/news/articles/2018/11/n2050010.html"><i>UC Students' Mini Satellite Tracks Harmful Algal Growth</i></a>, August 24, 2018
                     <br>
                 </p>
-
             </div>
         </div>
     </section>
-<!--
-    <section id="main" class="wrapper">
-        <div class="inner">
-            <div class="content">
-
-                <header>
-                    <h2>Mission Description</h2>
-                </header>
-                <p>The Hazardous Algal Blooms (HAB) in western Lake Erie have plagued the fishing industry and endangered the safe drinking water for hundreds of thousands of people. Currently the only reliable way to monitor the amount and location of hazardous algae is by using a hyper-spectral imager from a low flying aircraft. This method can take over a day to image all critical areas, and is extremely costly. There are some satellites in orbit that can image Lake Erie, however their obits, and complex scientific schedules only allow an image to be taken of Lake Erie roughly every sixteen days. Thus the purpose of HABSat1 (Hazardous Algal Bloom Satellite One) is to study the movement and development of toxic algal blooms in Lake Erie on a nearly daily basis.</p>
-                <hr>
-                <header>
-                    <h2>Satelite Overview</h2>
-                </header>
-                <p>HABSat-1 will be a 3U (10 x 10 x 30 cm) imaging CubeSat in Low Earth Orbit (LEO) that will utilize an active attitude determination and control (ADCS) system. An on-board UHF radio will beacon the health of the spacecraft, while an S-band antenna will down-link hyper-spectral images. Both of which will be received by the ground station at the University of Cincinnati. The satellite will also incorporate thermal management systems, and a rigorous power system to provide constant power to the camera, communications system, and ADCS system.</p>
-                <hr>
-                <header>
-                    <h2>Pictures</h2>
-                </header>
-                <div class="slider-wrapper">
-                    <div class="slider">
-                        <input type="radio" name="slider" class="trigger" id="one" checked="checked" />
-                        <div class="slide">
-                            <figure class="slide-figure">
-                                <img class="slide-img" src="images/HABSat-1/3d-render.png" />
-
-                            
-                        </div>
-                        <input type="radio" name="slider" class="trigger" id="two" />
-                        <div class="slide">
-                            <figure class="slide-figure">
-                                <img class="slide-img" src="images/HABSat-1/20190212_221640.jpg" />
-
-                            </figure>
-                        </div>
-                        <input type="radio" name="slider" class="trigger" id="three" />
-                        <div class="slide">
-                            <figure class="slide-figure">
-                                <img class="slide-img" src="images/HABSat-1/assembly-1.png" />
-
-                            </figure>
-                        </div>
-                        <input type="radio" name="slider" class="trigger" id="four" />
-                        <div class="slide">
-                            <figure class="slide-figure">
-                                <img class="slide-img" src="images/HABSat-1/assembly-2.png" />
-
-                            </figure>
-                        </div>
-                        <input type="radio" name="slider" class="trigger" id="five" />
-                        <div class="slide">
-                            <figure class="slide-figure">
-                                <img class="slide-img" src="images/HABSat-1/assembly-3.png" />
-
-                            </figure>
-                        </div>
-                        <input type="radio" name="slider" class="trigger" id="six" />
-                        <div class="slide">
-                            <figure class="slide-figure">
-                                <img class="slide-img" src="images/HABSat-1/assembly-4.png" />
-
-                            </figure>
-                        </div>
-                        <input type="radio" name="slider" class="trigger" id="seven" />
-                        <div class="slide">
-                            <figure class="slide-figure">
-                                <img class="slide-img" src="images/HABSat-1/max-level.jpg" />
-
-                            </figure>
-                        </div>
-                    </div>
-                    <input type="radio" name="slider" class="trigger" id="eight" />
-                    <div class="slide">
-                        <figure class="slide-figure">
-                            <img class="slide-img" src="images/HABSat-1/orbital-planning.png" />
-
-                        </figure>
-                    </div>
-                    <input type="radio" name="slider" class="trigger" id="nine" />
-                    <div class="slide">
-                        <figure class="slide-figure">
-                            <img class="slide-img" src="images/HABSat-1/Power-Distribution.png" />
-
-                        </figure>
-                    </div>
-                    <input type="radio" name="slider" class="trigger" id="ten" />
-                    <div class="slide">
-                        <figure class="slide-figure">
-                            <img class="slide-img" src="images/HABSat-1/solar-cell.jpg" />
-
-                        </figure>
-                    </div>
-                    <ul class="slider-nav">
-                        <li class="slider-nav__item"><label class="slider-nav__label" for="one">1</label></li>
-                        <li class="slider-nav__item"><label class="slider-nav__label" for="two">2</label></li>
-                        <li class="slider-nav__item"><label class="slider-nav__label" for="three">3</label></li>
-                        <li class="slider-nav__item"><label class="slider-nav__label" for="four">4</label></li>
-                        <li class="slider-nav__item"><label class="slider-nav__label" for="five">5</label></li>
-                        <li class="slider-nav__item"><label class="slider-nav__label" for="six">6</label></li>
-                        <li class="slider-nav__item"><label class="slider-nav__label" for="seven">7</label></li>
-                        <li class="slider-nav__item"><label class="slider-nav__label" for="eight">8</label></li>
-                        <li class="slider-nav__item"><label class="slider-nav__label" for="nine">9</label></li>
-                        <li class="slider-nav__item"><label class="slider-nav__label" for="ten">10</label></li>
-
-                    </ul>
-                </div>
-                <br>
-                <br>
-                <hr>
-                <h3>In The News</h3>
-                <p><a href="https://ceas.uc.edu/news-1718/in-full-bloom-student-built-satellite-tracks-harmful-algal-growt.html">https://ceas.uc.edu/news-1718/in-full-bloom-student-built-satellite-tracks-harmful-algal-growt.html</a></p>
-
-            </div>
-        </div>
-    </section-->
-
+    
     <!-- Team -->
     <section id="cta3" class="wrapper">
         <div class="inner">
 
             <header class="special">
-                <h2>Project Team Leads</h2>
+                <h2>Project Team Leads (TBD)</h2>
             </header>
-
+            
             <div class="highlights">
-
                 <section>
                     <div class="content">
                         <header>
                             <h3>Chief Engineer</h3>
                         </header>
-                        <img style="border-radius: 50%" src="images/HABsat Logo.png" alt="" height=150px>
-                        <p>Jasmine Rosen<br><a href="mailto:rosenmi@mail.uc.edu">rosenmi@mail.uc.edu</a></p>
+                        <img style="border-radius: 50%" src="images/HABsat Logo.png" alt="" height=150px>			 <p><b>OPEN</b><br>
                     </div>
                 </section>
                 <section>
                     <div class="content">
                         <header>
-                            <h3>Team Lead ADCS</h3>
+                            <h3>ADCS Team Lead</h3>
                         </header>
                         <img style="border-radius: 50%" src="images/HABsat Logo.png" alt="" height=150px>
-                        <p>Michael Rechtin<br><a href="mailto:rechtima@mail.uc.edu">rechtima@mail.uc.edu</a></p>
+			 <p><b>OPEN</b><br>
                     </div>
                 </section>
                 <section>
                     <div class="content">
                         <header>
-                            <h3>Team Lead Payload</h3>
+                            <h3>CDH Team Lead</h3>
                         </header>
                         <img style="border-radius: 50%" src="images/HABsat Logo.png" alt="" height=150px>
-                        <p>Vincent Feldman<br><a href="mailto:feldmavp@mail.uc.edu">feldmavp@mail.uc.edu</a></p>
+			 <p><b>OPEN</b><br>
                     </div>
                 </section>
                 <section>
                     <div class="content">
                         <header>
-                            <h3>Team Lead OBC</h3>
+                            <h3>Comms Team Lead</h3>
                         </header>
                         <img style="border-radius: 50%" src="images/HABsat Logo.png" alt="" height=150px>
-                        <p>Zach Powell<br><a href="mailto:powellwz@mail.uc.edu">powellwz@mail.uc.edu</a></p>
+			 <p><b>OPEN</b><br>
                     </div>
                 </section>
                 <section>
-                    <div class="content2"></div>
+                    <div class="content">
+                        <header>
+                            <h3>Payload Team Lead</h3>
+                        </header>
+                        <img style="border-radius: 50%" src="images/HABsat Logo.png" alt="" height=150px>
+			 <p><b>OPEN</b><br>
+                    </div>
+                </section>
+                <section>
+                    <div class="content">
+                        <header>
+                            <h3>Power Lead</h3>
+                        </header>
+                        <img style="border-radius: 50%" src="images/HABsat Logo.png" alt="" height=150px>
+			 <p><b>OPEN</b><br>
+                    </div>
+                </section>
+                <section>
+                    <div class="content">
+                        <header>
+                            <h3>Structures Lead</h3>
+                        </header>
+                        <img style="border-radius: 50%" src="images/HABsat Logo.png" alt="" height=150px>
+			 <p><b>OPEN</b><br>
+                    </div>
+                </section>
+                <section>
+                    <div class="content">
+                        <header>
+                            <h3>Systems Engineering</h3>
+                        </header>
+                        <img style="border-radius: 50%" src="images/HABsat Logo.png" alt="" height=150px>
+			 <p><b>OPEN</b><br>
+                    </div>
                 </section>
                 <section>
                     <div class="content2"></div>
