@@ -2809,6 +2809,10 @@ ul.icons {
   z-index: 1; }
 #cta2 h2 {
   color: #ffffff; }
+#cta2 strong {
+  color: #ffffff; }
+#cta3 strong {
+  color: #ffffff; }
 #cta3 {
   background-image: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url(../../images/cta3.jpg);/* https://creativecommons.org/licenses/by/2.0/ */
   background-attachment: fixed;

@@ -14,15 +14,15 @@
 
 <body class="is-preload">
     
-    <!-- Header -->
-    <header id="header">
-        <a class="logo" href="index.html"><img style="max-height:45px" src="images/banner1_white.png"></a>
-        <nav>
-            <a href="#menu">Menu</a>
-        </nav>
-    </header>
+<!-- Header -->
+<header id="header">
+    <a class="logo" href="index.html"><img style="max-height:45px" src="images/banner1_white.png"></a>
+    <nav>
+        <a href="#menu">Menu</a>
+    </nav>
+</header>
     
-    <!-- Nav bar -->
+<!-- Nav bar -->
 <nav id="menu">
     <ul class="links">
         <li><a href='index.html'>Home</a>
@@ -74,26 +74,52 @@
                 However, many materials usually considered for the role of shielding against radiation are typically too massive to be practical (such as lead), or are consumables (such as liquid hydrogen, food, or water) secondarily used as radiation mitigation.
                 Lighter, more permanent materials are needed that can protect astronauts while being more versatile in their application on the spacecraft.</p>
 
-                <div class="row gtr-50 gtr-uniform">
-                  <div class="col-4">
-                      <!--  https://cdn.britannica.com/15/96915-050-787329AB/bubble-plasma-disk-Sun-right-ejection-instrument-Dec-2-2002.jpg NASA-->
-                      <span class="image fit"><img src="images/Leopard/CME.jpg" alt=""></span>
-                  </div>
-                  <div class="col-4">
-                      <!--  https://3iom3142cnb81rlnt6w4mtlr-wpengine.netdna-ssl.com/wp-content/uploads/2017/12/fig1.jpg Artist’s impression of the shower of particles caused when a cosmic ray, a charged particle produced by an astrophysical source, hits Earth’s upper atmosphere. [J. Yang/NSF]-->
-                      <span class="image fit"><img src="images/Leopard/cosmic ray.jpg" alt=""></span>
-                  </div>
-                  <div class="col-4">
-                      <!-- https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/radiation_belts_0.jpg?itok=Bu9k0BfQ NASA -->
-                      <span class="image fit"><img src="images/Leopard/Van Allen.jpg" alt=""></span>
-                  </div>
+            <div class="slider-wrapper">
+                <div class="slider">
+                    <input type="radio" name="slider" class="trigger" id="one" checked="checked"/>
+                    <div class="slide">
+                        <figure class="slide-figure">
+                            <img class="slide-img-caption" src="images/Leopard/CME.jpg" alt=""/>
+                            <!--https://cdn.britannica.com/15/96915-050-787329AB/bubble-plasma-disk-Sun-right-ejection-instrument-Dec-2-2002.jpg-->
+                            <div class="slide-caption"><i> A solar Coronal Mass Ejection (CME) a potential source of solar energetic particles (image: NASA)</i></div>
+                        </figure>
+                    </div>
+                    <input type="radio" name="slider" class="trigger" id="two" />
+                    <div class="slide">
+                        <figure class="slide-figure">
+                            <img class="slide-img-caption" src="images/Leopard/cosmic_ray_2.jpg" alt=""/>
+                            <!-- https://3iom3142cnb81rlnt6w4mtlr-wpengine.netdna-ssl.com/wp-content/uploads/2017/12/fig1.jpg -->
+                            <div class="slide-caption"><i>Rendering of a Galactic Cosmic Ray (GCR) colliding with Earth's atmosphere, producing an air shower (image: NSF)</i></div>
+                        </figure>
+                    </div>
+                    <input type="radio" name="slider" class="trigger" id="three" />
+                    <div class="slide">
+                        <figure class="slide-figure">
+                            <img class="slide-img-caption" src="images/Leopard/Van Allen.jpg" alt=""/>
+                            <!-- https://science.nasa.gov/wp-content/uploads/2023/06/Van_Allen_Belts1-jpg.webp?resize=2000,1126 -->
+                            <div class="slide-caption"><i>Rendering of Earth's Van Allen belts, which consist of trapped charged particles (image: NASA)</i></div>
+                        </figure>
+                    </div>
+                    <input type="radio" name="slider" class="trigger" id="four" />
+                    <div class="slide">
+                        <figure class="slide-figure">
+                            <img class="slide-img-caption" src="images/Leopard/rad_doses_mars.png" alt=""/>
+                            <!-- http://photojournal.jpl.nasa.gov/jpeg/PIA17601.jpg -->
+                            <div class="slide-caption"><i>Comparison of the radiation dose detected by MSL on its voyage from Earth to Mars relative to other doses (image: NASA)</i></div>
+                        </figure>
+                    </div>
                 </div>
-				<center><p><i>
-               		Representations of the three natural forms of radiation encountered in space (Left to Right): Solar energetic particles (pictured: coronal mass ejection, NASA); Galactic Cosmic Rays, or GCRs (pictured: GCR collision with Earth's atmosphere, NSF); Trapped particle radiation (pictured: Earth's Van Allen Belts, NASA)
-                </i></p></center>
+            </div>
+            <ul class="slider-nav">
+                <li class="slider-nav__item"><label class="slider-nav__label" for="one">1</label></li>
+                <li class="slider-nav__item"><label class="slider-nav__label" for="two">2</label></li>
+                <li class="slider-nav__item"><label class="slider-nav__label" for="three">3</label></li>
+                <li class="slider-nav__item"><label class="slider-nav__label" for="four">4</label></li>
+            </ul>
+             
             <p> LEOPARDSat-1 is a CubeSat mission to study the effectiveness of lightweight carbon-based composites in shielding against ionizing radiation. 
                 To do this, the satellite will measure the difference in radiation dose between sensors partially protected by varying thicknesses of such materials and those which are left unprotected.
-                This data will help inform the spaceflight community on the viability of using these materials for future missions.
+                This data will help inform the spaceflight community on the viability of using these materials for future missions, as well as produce a satellite design for further material testing.
                 As this is UC Cubecats' first satellite mission, it will also serve as opportunity for our members to gain experience in the design, construction, testing, and launch of space systems.</p>
         </div><br>
         
@@ -115,7 +141,7 @@
             <header>
                 <h2>Spacecraft</h2>
             </header>
-            <p> The LEOPARDSat-1 mission hardware is a 1U CubeSat (10 cm x 10 cm x 11.35 cm) with an expected mass of roughly 1 kilogram.
+            <p> The LEOPARDSat-1 spacecraft is a 1U CubeSat (10 cm x 10 cm x 11.35 cm) with an expected mass of roughly 0.96 kg.
                 Within the structural frame are five PC104-format boards, with the Payload Assembly mounted on the +Z (top) face of the satellite.</p>
             <center><img src="images/Leopard/3d-model.png" alt="" style="max-width:80%;"><br>
             <p><i>CAD rendering of LEOPARDSat-1 in its operational configuration</i></p></center>
@@ -124,8 +150,8 @@
             <p> LEOPARDSat-1 will use a Passive Magnetic Attitude Control System (PMACS) to control its orientation on orbit, utilizing a permanent magnet to align with Earth's magnetic field and two bars of hysteresis material to dampen out the transient response.
                 For this mission, the PMACS will keep the satellite pointed to within 15&deg; of the local magnetic field vector after a week long period of "detumbling" post-deployment.
                 Although PMACS can not set the satellite to a commanded orientation and is not as precise as an active control system, neither of these are required for the objectives of LEOPARDSat-1 and the passive approach requires no power or computational resources to orient the satellite.</p>
-            <center><img src="images/Leopard/ADCS Layout.png" alt="" style="max-width:80%;">
-            <p><i>Schematic of the LEOPARDSat-1 Attitude Determination and Control Subsystem (ADCS)</i></p></center>
+            <center><img src="images/Leopard/ADCS Layout.png" alt="" style="max-width:50%;">
+            <p><i>Layout of the LEOPARDSat-1 Passive Magnetic Attitude Control System (PMACS)</i></p></center>
             <p> An Inerital Measurement Unit (IMU), containing a 3-axis Gyroscope and 3-axis Magnetometer, will measure the angular rates and local magnetic field, while an array of photodiodes will be used to roughly determine the relative pointing direction of the Sun.
                 Although this data is not needed for attitude control, they will be sent down to the ground for processing in order to assess the PMACS's performance and contextualize data from the payload sensors.</p>
             
@@ -146,8 +172,8 @@
                 These are separated into three groups to characterize the effectiveness of the selected composite material:</p>
             <ul>
                 <li>Six unshielded RADFETs act as a reference, monitoring the ionizing radiation that passes through the CubeSat’s aluminum frame.</li>
-                <li>Six RADFETs are shielded with 3.5 mm Carbon-Carbon/High-Density Polyethylene (C-C/HDPE) composite samples</li>
-                <li>Four RADFETs are shielded  with 7 mm thick C-C/HDPE composite samples</li>
+                <li>Six RADFETs are shielded with 3.25 mm Carbon-Carbon/High-Density Polyethylene (C-C/HDPE) composite samples</li>
+                <li>Four RADFETs are shielded  with 6.5 mm thick C-C/HDPE composite samples</li>
             </ul>
             <!--center><img src="images/Leopard/Payload Diagram.png" alt="" style="max-width:80%;">
             <p><i>Labeled CAD model of the Payload Subsystem assembly</i></p></center-->
@@ -163,18 +189,18 @@
             <!--p> <span class="image right"><img src="images/Leopard/Structure.png" alt="" style="max-width:90%;"><i>CAD model of the exterior structural frame</i></span-->
             <div class="row">
                 <div class="col-6 col-12-medium">
-                	<p>LEOPARDSat-1's structure will use a custom 1U exterior frame, consisting of four launch rails and two end plates, all made from anodized Aluminum 6061.
-                	The rails are smooth, for either forwards or backwards deployment, and contain several deployment specific mechanisms:</p>
-            		<ul>
-                		<li>One roller deployment switch on the +Y face of one rail, to disable the power subsystem for safety between launch and deployment.</li>
-                		<li>Two pusher deployment switches on the -Z ends of two rails, also to disable the power subsystem.</li>
-                		<li>Two separation springs on the -Z ends of the two remaining rails, to provide clean separation from other satellites upon deployment.</li>
-            		</ul>
-            		<p>Internally, the structure will utilize standoffs to properly space and firmly hold the PC104 subsystem boards to the exterior frame, while the solar panels and the payload assembly are mounted direcrtly to the end plates.</p>
-            	</div>
-            	<div class="col-6 col-12-medium">
-            		<center><img src="images/Leopard/Structure.png" alt="" style="max-width:95%;">
-                	<p style="line-height:15px;"><i>CAD model of the exterior structural frame</i></p></center>
+                    <p>LEOPARDSat-1's structure will use a custom 1U exterior frame, consisting of four launch rails and two end plates, all made from anodized Aluminum 6061.
+                    The rails are smooth, for either forwards or backwards deployment, and contain several deployment specific mechanisms:</p>
+                    <ul>
+                        <li>One roller deployment switch on the +Y face of one rail, to disable the power subsystem for safety between launch and deployment.</li>
+                        <li>Two pusher deployment switches on the -Z ends of two rails, also to disable the power subsystem.</li>
+                        <li>Two separation springs on the -Z ends of the two remaining rails, to provide clean separation from other satellites upon deployment.</li>
+                    </ul>
+                    <p>Internally, the structure will utilize standoffs to properly space and firmly hold the PC104 subsystem boards to the exterior frame, while the solar panels and the payload assembly are mounted direcrtly to the end plates.</p>
+                </div>
+                <div class="col-6 col-12-medium">
+                    <center><img src="images/Leopard/Structure.jpg" alt="" style="max-width:95%;">
+                    <p style="line-height:15px;"><i>CAD model of the exterior structural frame</i></p></center>
                 </div>
             </div>
         </div><br>
@@ -183,28 +209,20 @@
             <header>
                 <h2>Mission</h2>
             </header>
-
-            <div class="row">
-                <div class="col-6 col-12-medium">
                 <p> LEOPARDSat-1 was selected by the ninth round of NASA's <a href="https://www.nasa.gov/directorates/heo/home/CubeSats_initiative">CubeSat Launch Intiative (CSLI)</a> in 2018.
-                    It is currently scheduled to launch to the International Space Station in late 2025 or early 2026, where it will be deployed into orbit using the <a href="https://voyagertechnologies.com/space-solutions/smallsat-microsat-deployment/">NanoRacks CubeSat Deployer (NRCSD)</a> (now operated by Voyager Technologies).</p>
+                    Although not yet manifested, it is currently expected to launch to the International Space Station by mid-2026.
+                    where it will be deployed into orbit using the <a href="https://voyagertechnologies.com/space-solutions/smallsat-microsat-deployment/">NanoRacks CubeSat Deployer (NRCSD)</a> (now operated by Voyager Technologies).</p>
                 <h3>Mission Parameters</h3>
                 <ul>
                     <li><b>Launch Vehicle:</b> TBA (Falcon 9/Dragon 2 or Antares/Cygnus)</li>
-                    <li><b>Launch Date:</b> NET Q4 2025</li>
-                    <li><b>Deployment Date:</b> 3-6 months after launch</li>
+                    <li><b>Launch Date:</b> NET 2026</li>
+                    <li><b>Deployment Date:</b> 1-2 months after launch</li>
                     <li><b>Orbital Altitude:</b> ~420 km</li>
                     <li><b>Orbital Inclination:</b> 51.6&deg;</li>
-                    <li><b>Mission Duration:</b> 4 months (nominal)</li>
+                    <li><b>Mission Duration:</b> 4 months (minimum)</li>
+                    <li><b>Decay Date:</b> est. 2 years after deployment </li>
                 </ul>
-                </div>
-                <div class="col-6 col-12-medium">
-                    <br>
-                    <!-- https://blogs.nasa.gov/kennedy/2017/05/18/cubesats-deployed-from-space-station/ -->
-                    <center><img src="images/Leopard/NRCSD.jpg" alt="" style="max-width:100%;">
-                    <p style="line-height:15px;"><i>CubeSats being deployed from the NRCSD on the ISS (image: NASA)</i></p></center>
-                </div>
-            </div>
+                
             
             <h3>Operations</h3>
             <p> Upon deployment from the NRCSD, LEOPARDSat-1 will deploy its antenna and begin detumbling to cancel any residual spining imparted by deployment, eventually aligning with the local magnetic field.
@@ -224,100 +242,103 @@
                 WVXU - <a href="http://wvxu.org/post/these-uc-students-want-help-nasa-get-mars#stream/0"><i>These UC Students Want To Help NASA Get To Mars</i></a>, March 2, 2018<br>
                 The Cincinnati Enquirer - <a href="https://www.cincinnati.com/story/news/2018/03/07/these-uc-bearcats-heading-space-well-their-experiments/334908002/"><i>These UC Bearcats are Heading to Space. (OK, their Experiments are.)</i></a>, March 7, 2018<br>
                 WCPO-TV - <a href="https://www.wcpo.com/news/education/higher-education/uc-news/how-university-of-cincinnati-students-are-helping-nasa-get-to-mars"><i>How University of Cincinnati Students are Helping NASA Get to Mars</i></a>, March 7, 2018<br>
-                The News Record - <a href="http://www.newsrecord.org/news/cubecats-satellite-is-a-go-for-launch/article_3058ce2c-23e7-11e8-87a8-f7fc67c39a44.html"><i>CubeCats Satellite is a Go for Launch</i></a>, March 9, 2018</p>
+                The News Record - <a href="http://www.newsrecord.org/news/cubecats-satellite-is-a-go-for-launch/article_3058ce2c-23e7-11e8-87a8-f7fc67c39a44.html"><i>CubeCats Satellite is a Go for Launch</i></a>, March 9, 2018<br>
+                UC Magazine - <a href="https://www.uc.edu/news/articles/n20944639/uc-aerospace-students-design-custom-satellites-for-science.html"><i>UC Students Design Custom Satellites</i></a>, September 10, 2020</p>
+
+
         </div>
     </div>
 </section>
     
-    <!-- Team -->
-    <section id="cta3" class="wrapper">
-        <div class="inner">
+<!-- Team -->
+<section id="cta3" class="wrapper">
+    <div class="inner">
 
-            <header class="special">
-                <h2>Project Leads 2024-2025</h2>
-            </header>
+        <header class="special">
+            <h2><strong>Project Leads 2024-2025</strong></h2>
+        </header>
 
-            <div class="highlights">
-                <section>
-                    <div class="content">
-                        <header>
-                            <h3>Chief Engineer</h3>
-                        </header>
-                        <img src="images/Leopard Logo.png" alt="" height=250px>
-                        <p>Matthew Verbryke<br><a href="mailto:verbrymr@mail.uc.edu">verbrymr@mail.uc.edu</a></p>
-                    </div>
-                </section>
-                <section>
-                    <div class="content">
-                        <header>
-                            <h3>ADCS Team Lead</h3>
-                        </header>
-                        <img src="images/Leopard Logo.png" alt="" height=250px>
-                        <p>Dhyan Patel<br><a href="mailto:patel5dm@mail.uc.edu">patel5dm@mail.uc.edu</a></p>
-                    </div>
-                </section>
-                <section>
-                    <div class="content">
-                        <header>
-                            <h3>Comms Team Lead</h3>
-                        </header>
-                        <img src="images/Leopard Logo.png" alt="" height=250px>
-                        <p>Quinton Mincy<br><a href="mailto:mincyqn@mail.uc.edu">mincyqn@mail.uc.edu</a></p>
-                    </div>
-                </section>
-                <section>
-                    <div class="content">
-                        <header>
-                            <h3>OBC Team Lead</h3>
-                        </header>
-                        <img src="images/Leopard Logo.png" alt="" height=250px>
-                        <p>Nathan Rolfes<br><a href="mailto:rolfesnz@mail.uc.edu">rolfesnz@mail.uc.edu</a></p>
-                    </div>
-                </section>
-                <section>
-                    <div class="content">
-                        <header>
-                            <h3>Payload Team Lead</h3>
-                        </header>
-                        <img src="images/Leopard Logo.png" alt="" height=250px>
-                        <p>Sam Kohls<br><a href="mailto:kohlssc@mail.uc.edu">kohlssc@mail.uc.edu</a></p>
-                    </div>
-                </section>
-                <section>
-                    <div class="content">
-                        <header>
-                            <h3>Power Team Lead</h3>
-                        </header>
-                        <img src="images/Leopard Logo.png" alt="" height=250px>
-                        <p>Nicholas Haehn<br><a href="mailto:haehnna@mail.uc.edu">haehnna@mail.uc.edu</a></p>
-                    </div>
-                </section>
-                <section>
-                    <div class="content">
-                        <header>
-                            <h3>Structures Team Lead</h3>
-                        </header>
-                        <img src="images/Leopard Logo.png" alt="" height=250px>
-                        <p>James Drake<br><a href="mailto:drakej4@mail.uc.edu">drakej4@mail.uc.edu</a></p>
-                    </div>
-                </section>
-                <section>
-                    <div class="content">
-                        <header>
-                            <h3>Systems Engineer</h3>
-                        </header>
-                        <img src="images/Leopard Logo.png" alt="" height=250px>
-                        <p>Christopher Macke<br><a href="mailto:mackecw@mail.uc.edu">mackecw@mail.uc.edu</a></p>
-                    </div>
-                </section>
-                <section>
-                    <div class="content2"></div>
-                </section>
-            </div>
+        <div class="highlights">
+            <section>
+                <div class="content">
+                    <header>
+                        <h3>Chief Engineer</h3>
+                    </header>
+                    <img src="images/Leopard Logo.png" alt="" height=250px>
+                    <p>Matthew Verbryke<br><a href="mailto:verbrymr@mail.uc.edu">verbrymr@mail.uc.edu</a></p>
+                </div>
+            </section>
+            <section>
+                <div class="content">
+                    <header>
+                        <h3>ADCS Team Lead</h3>
+                    </header>
+                    <img src="images/Leopard Logo.png" alt="" height=250px>
+                    <p>Dhyan Patel<br><a href="mailto:patel5dm@mail.uc.edu">patel5dm@mail.uc.edu</a></p>
+                </div>
+            </section>
+            <section>
+                <div class="content">
+                    <header>
+                        <h3>Comms Team Lead</h3>
+                    </header>
+                    <img src="images/Leopard Logo.png" alt="" height=250px>
+                    <p>Quinton Mincy<br><a href="mailto:mincyqn@mail.uc.edu">mincyqn@mail.uc.edu</a></p>
+                </div>
+            </section>
+            <section>
+                <div class="content">
+                    <header>
+                        <h3>OBC Team Lead</h3>
+                    </header>
+                    <img src="images/Leopard Logo.png" alt="" height=250px>
+                    <p>Nathan Rolfes<br><a href="mailto:rolfesnz@mail.uc.edu">rolfesnz@mail.uc.edu</a></p>
+                </div>
+            </section>
+            <section>
+                <div class="content">
+                    <header>
+                        <h3>Payload Team Lead</h3>
+                    </header>
+                    <img src="images/Leopard Logo.png" alt="" height=250px>
+                    <p>Sam Kohls<br><a href="mailto:kohlssc@mail.uc.edu">kohlssc@mail.uc.edu</a></p>
+                </div>
+            </section>
+            <section>
+                <div class="content">
+                    <header>
+                        <h3>Power Team Lead</h3>
+                    </header>
+                    <img src="images/Leopard Logo.png" alt="" height=250px>
+                    <p>Nicholas Haehn<br><a href="mailto:haehnna@mail.uc.edu">haehnna@mail.uc.edu</a></p>
+                </div>
+            </section>
+            <section>
+                <div class="content">
+                    <header>
+                        <h3>Structures Team Lead</h3>
+                    </header>
+                    <img src="images/Leopard Logo.png" alt="" height=250px>
+                    <p>James Drake<br><a href="mailto:drakej4@mail.uc.edu">drakej4@mail.uc.edu</a></p>
+                </div>
+            </section>
+            <section>
+                <div class="content">
+                    <header>
+                        <h3>Systems Engineer</h3>
+                    </header>
+                    <img src="images/Leopard Logo.png" alt="" height=250px>
+                    <p>Christopher Macke<br><a href="mailto:mackecw@mail.uc.edu">mackecw@mail.uc.edu</a></p>
+                </div>
+            </section>
+            <section>
+                <div class="content2"></div>
+            </section>
         </div>
-    </section>
-    
-    <!-- Footer -->
+    </div>
+</section>
+
+<!-- Footer -->
 <footer id="footer">
     <div class="inner">
         <div class="content">
@@ -350,12 +371,12 @@
     </div>
 </footer>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
 </body>
 
