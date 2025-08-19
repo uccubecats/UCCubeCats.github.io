@@ -13,13 +13,13 @@
 
 <body class="is-preload">
     
-    <!-- Header -->
-    <header id="header">
-        <a class="logo" href="index.html"><img style="max-height:45px" src="images/banner1_white.png"></a>
-        <nav>
-            <a href="#menu">Menu</a>
-        </nav>
-    </header>
+<!-- Header -->
+<header id="header">
+    <a class="logo" href="index.html"><img style="max-height:45px" src="images/banner1_white.png"></a>
+    <nav>
+        <a href="#menu">Menu</a>
+    </nav>
+</header>
     
     <!-- Nav bar -->
 <nav id="menu">
@@ -51,127 +51,127 @@
     </ul>
 </nav>
 
-    <!-- Heading -->
-    <section id="banner2">
-        <div class="inner">
-            <h1><b>Helmholtz Cage</b></h1>
-        </div>
-    </section>
-    
-    <!-- Main -->
-    <section id="main" class="wrapper">
-        <div class="inner">
-            <div class="content">
-                <header>
-                    <h2>About</h2>
-                </header>
-                <p> A Helmholtz Coil is a device consisting of a pair of identical coiled-wire electormagnets, separated by a set distance to create a uniform magnetic field along their common axis.
-                    Arranging three Helmholtz Coils orthogonally to each other creates a Helmholtz Cage, which is able to create uniform fields in each direction at its center.
-                    This setup can be used to realistically test a satellite's attitude determination and control system on the ground by simulating on-orbit magnetic fields, and characterize the residual magnetism of satellite components by negating the ambient magnetic field.
-                    In order to test the ADCS of our two upcoming CubeSat missions as well as potential future missions, UC CubeCats designed and built its own Helmholtz Cage.</p>
-                    
-                <p> This project was funded by a grant from the <a href="http://osgc.org/">Ohio Space Grant Consortium (OSGC).</a></p>
-            </div><br>
-            
-            <div class="content">
-	        <header>
-            	<h2>Requirements</h2>
-			</header>
-                <ol>
-					<li>Capable of generating a uniform magnetic field in a volume large enough to hold a 3U CubeSat, plus some limited deployable structures.</li>
-                    <li>Capable of simulating dynamic magnetic fields such as those found in Low Earth Orbit (LEO).</li>
-                    <li>Capable of cancelling out the ambient magnetic field in our lab's location.</li>
-                    <li>Relatively easy to disassemble, store, and reassemble.</li>
-                    <li>Cost less than $5000</li>
-				</ol>
-            </div><br>
-            
-            <div class="content">
-                <header>
-                    <h2>Design</h2>
-                <header>
-                <p> The UC Helmholtz Cage is based upon previous designs used for CubeSat testing.
-                    Instead of circular coils, we use square-shaped coils, which provide a greater volume of uniform magnetic field strength and direction at the center of a pair.
-                    In order to generate a uniform field volume of 30 cm x 30 cm x 30 cm at its center (big enough for a 3U CubeSat oriented in any direction), the square coils should ideally be 8 ft x 8 ft square, with a coil spacing-to-side-length ratio of 0.5445 (i.e. 4.356 ft separating each coil pair).
-                    Because the coils can not all be 8 ft x 8 ft (the coils can not intersect each other), the actual coil side lengths for our Cage are 7.56 ft, 7.77 ft, and 8.00 ft for the innermost, middle, and outmost coils, respectively.
-                
-                <center><img src="images/HelmholtzCage/diagram.png" alt="" style="max-width:49%;">
-                <img src="images/HelmholtzCage/helmholtz_cage.jpg" alt="" style="max-width:49%;">
-                <p><i>Labeled CAD schematic of the Helmholtz Cage (Left); Assembled Helmholtz Cage (Right)</i></p></center>
+<!-- Heading -->
+<section id="banner2">
+    <div class="inner">
+        <h1><b>Helmholtz Cage</b></h1>
+    </div>
+</section>
 
-				<p> To hold the wire coils, we use 1.25 in x 1.25 in Aluminum U-channel beams, with its interior wrapped in electrical tape for greater insulation.
-                    The beams are attached at their ends by L-brackets to create a square coil structure.
-                    To hold the coils together into the proper Helmholtz Cage configuration, further L-brackets and some 3D printed components are used.
-                    These allow us to slide the coils in and out of the sturcture for easy assembly and disassembly.
-                    Each coil is wrapped in 45 loops or (~1445 ft) of 14-AWG wire, for a total of 8640 ft of wiring in the entire Cage.
-                    The maximum field that can be produced by a coil pair with safety and power considerations is 1.5 Gauss in either direction, with an current of 10 Amps applied in parallel.
-                    This is enough to cancel out the ambient magnetic field as well as simulate on-orbit magnetic fields in our lab location.</p>
-                
-                <p> To power the coils, the Cage uses three HP 6038a Autoranging DC Power supplies (one for each coil pair), which can each provide a maximum of 240 Watts of power.
-                    These are connected to the main control computer via a GPIB-USB interface.
-                    A truth magnetometer is placed at the center of the cage during operation and provides feedback on the actual magnetic field during operation.
-                
-                <center><img src="images/HelmholtzCage/block_diagram.png" alt="" style="max-width:70%;">
-                <p><i>Block diagram of the Helmholtz Cage system</i></p></center>
-            </div><br>
-            
-            <div class="content">
-                <header>
-                    <h2>Control Software</h2>
-                <header>
-                
-                <p> The control software for the cage is a Python based program, which is primarily operated from a custom GUI.
-                    The software has four main funtionalities:</p>
-                    <ul>
-                        <li>Testing the connections to the three power supplies and the magnetometer.
-                        <li>Calibrating the cage, by producing an equation that relates the output magnetic field strength on each axis to the input voltage.
-                        <li>Running <i>Static</i> tests, in which the user can directly specify either the desired magnetic field strength or the input voltages on each axis.
-                        <li>Running <i>Dynamic</i> tests, which use a time-varying input from a file, such as the output of an <a href="https://www.agi.com/products/stk">Systems Tool Kit (STK)</a> simulation, to simulate magnetic fields on orbit (WIP).
-                    </ul>
-                <center><img src="images/HelmholtzCage/gui2.png" alt="" style="max-width:60%;">
-                <p><i>Helmholtz Cage GUI interface.</i></p></center>
-
-		<!--header>
-                    <h3>Air Bearing Table</h3>
-                </header-->
-                
-            </div>
-        </div>
-    </section>
-    
-    <!-- Team -->
-    <section id="cta3" class="wrapper">
-        <div class="inner">
-
-            <header class="special">
-                <h2>Project Team Leads</h2>
+<!-- Main -->
+<section id="main" class="wrapper">
+    <div class="inner">
+        <div class="content">
+            <header>
+                <h2>About</h2>
             </header>
-
-            <div class="highlights">
-
-                <section>
-                    <div class="content">
-                        <header>
-                            <h3>Helmholtz Cage <br>Project Lead</h3>
-                        </header>
-                        <img style="border-radius: 50%" src="images/Square Space Logo.png" alt="" height=150px>
-                        <p>Matthew Verbryke<br><a href="mailto:verbrymr@mail.uc.edu">verbrymr@mail.uc.edu</a></p>
-                    </div>
-                </section>
-
-                <section>
-                    <div class="content">
-                        <header>
-                            <h3>Air-Bearing Table Project Lead</h3>
-                        </header>
-                        <img style="border-radius: 50%" src="images/Square Space Logo.png" alt="" height=150px>
-                        <p>Michael Rechtin<br><a href="rechtima@mail.uc.edu">rechtima@mail.uc.edu</a></p>
-                    </div>
-                </section>
+            <p> A Helmholtz Coil is a device consisting of a pair of identical coiled-wire electormagnets, separated by a set distance to create a uniform magnetic field along their common axis.
+                Arranging three Helmholtz Coils orthogonally to each other creates a Helmholtz Cage, which is able to create uniform fields in each direction at its center.
+                This setup can be used to realistically test a satellite's attitude determination and control system on the ground by simulating on-orbit magnetic fields, and characterize the residual magnetism of satellite components by negating the ambient magnetic field.
+                In order to test the ADCS of our two upcoming CubeSat missions as well as potential future missions, UC CubeCats designed and built its own Helmholtz Cage.</p>
                 
-            </div>
+            <p> This project was funded by a grant from the <a href="http://osgc.org/">Ohio Space Grant Consortium (OSGC).</a></p>
+        </div><br>
+        
+        <div class="content">
+        <header>
+            <h2>Requirements</h2>
+        </header>
+            <ol>
+                <li>Capable of generating a uniform magnetic field in a volume large enough to hold a 3U CubeSat, plus some limited deployable structures.</li>
+                <li>Capable of simulating dynamic magnetic fields such as those found in Low Earth Orbit (LEO).</li>
+                <li>Capable of cancelling out the ambient magnetic field in our lab's location.</li>
+                <li>Relatively easy to disassemble, store, and reassemble.</li>
+                <li>Cost less than $5000</li>
+            </ol>
+        </div><br>
+        
+        <div class="content">
+            <header>
+                <h2>Design</h2>
+            <header>
+            <p> The UC Helmholtz Cage is based upon previous designs used for CubeSat testing.
+                Instead of circular coils, we use square-shaped coils, which provide a greater volume of uniform magnetic field strength and direction at the center of a pair.
+                In order to generate a uniform field volume of 30 cm x 30 cm x 30 cm at its center (big enough for a 3U CubeSat oriented in any direction), the square coils should ideally be 8 ft x 8 ft square, with a coil spacing-to-side-length ratio of 0.5445 (i.e. 4.356 ft separating each coil pair).
+                Because the coils can not all be 8 ft x 8 ft (the coils can not intersect each other), the actual coil side lengths for our Cage are 7.56 ft, 7.77 ft, and 8.00 ft for the innermost, middle, and outmost coils, respectively.
+            
+            <center><img src="images/HelmholtzCage/diagram.png" alt="" style="max-width:49%;">
+            <img src="images/HelmholtzCage/helmholtz_cage.jpg" alt="" style="max-width:49%;">
+            <p><i>Labeled CAD schematic of the Helmholtz Cage (Left); Assembled Helmholtz Cage (Right)</i></p></center>
+
+            <p> To hold the wire coils, we use 1.25 in x 1.25 in Aluminum U-channel beams, with its interior wrapped in electrical tape for greater insulation.
+                The beams are attached at their ends by L-brackets to create a square coil structure.
+                To hold the coils together into the proper Helmholtz Cage configuration, further L-brackets and some 3D printed components are used.
+                These allow us to slide the coils in and out of the sturcture for easy assembly and disassembly.
+                Each coil is wrapped in 45 loops or (~1445 ft) of 14-AWG wire, for a total of 8640 ft of wiring in the entire Cage.
+                The maximum field that can be produced by a coil pair with safety and power considerations is 1.5 Gauss in either direction, with an current of 10 Amps applied in parallel.
+                This is enough to cancel out the ambient magnetic field as well as simulate on-orbit magnetic fields in our lab location.</p>
+            
+            <p> To power the coils, the Cage uses three HP 6038a Autoranging DC Power supplies (one for each coil pair), which can each provide a maximum of 240 Watts of power.
+                These are connected to the main control computer via a GPIB-USB interface.
+                A truth magnetometer is placed at the center of the cage during operation and provides feedback on the actual magnetic field during operation.
+            
+            <center><img src="images/HelmholtzCage/block_diagram.png" alt="" style="max-width:70%;">
+            <p><i>Block diagram of the Helmholtz Cage system</i></p></center>
+        </div><br>
+        
+        <div class="content">
+            <header>
+                <h2>Control Software</h2>
+            <header>
+            
+            <p> The control software for the cage is a Python based program, which is primarily operated from a custom GUI.
+                The software has four main funtionalities:</p>
+                <ul>
+                    <li>Testing the connections to the three power supplies and the magnetometer.
+                    <li>Calibrating the cage, by producing an equation that relates the output magnetic field strength on each axis to the input voltage.
+                    <li>Running <i>Static</i> tests, in which the user can directly specify either the desired magnetic field strength or the input voltages on each axis.
+                    <li>Running <i>Dynamic</i> tests, which use a time-varying input from a file, such as the output of an <a href="https://www.agi.com/products/stk">Systems Tool Kit (STK)</a> simulation, to simulate magnetic fields on orbit (WIP).
+                </ul>
+            <center><img src="images/HelmholtzCage/gui2.png" alt="" style="max-width:60%;">
+            <p><i>Helmholtz Cage GUI interface.</i></p></center>
+
+        <!--header>
+            <h3>Air Bearing Table</h3>
+        </header-->
+            
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Team -->
+<section id="cta3" class="wrapper">
+    <div class="inner">
+
+        <header class="special">
+            <h2><strong>Project Team Leads</strong></h2>
+        </header>
+
+        <div class="highlights">
+
+            <section>
+                <div class="content">
+                    <header>
+                        <h3>Helmholtz Cage <br>Project Lead</h3>
+                    </header>
+                    <img style="border-radius: 50%" src="images/Square Space Logo.png" alt="" height=150px>
+                    <p>Matthew Verbryke<br><a href="mailto:verbrymr@mail.uc.edu">verbrymr@mail.uc.edu</a></p>
+                </div>
+            </section>
+
+            <section>
+                <div class="content">
+                    <header>
+                        <h3>Air-Bearing Table Project Lead</h3>
+                    </header>
+                    <img style="border-radius: 50%" src="images/Square Space Logo.png" alt="" height=150px>
+                    <p>Michael Rechtin<br><a href="rechtima@mail.uc.edu">rechtima@mail.uc.edu</a></p>
+                </div>
+            </section>
+            
+        </div>
+    </div>
+</section>
     
     <!-- Footer -->
 <footer id="footer">
@@ -205,12 +205,12 @@
         <div class="copyright"> © 2025 UC CubeCats </div>
     </div>
 </footer>
-    
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
 </body></html>
