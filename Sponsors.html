@@ -10,9 +10,166 @@
     <meta name="keywords" content="">
     <link rel="stylesheet" href="assets/css/main.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Carousel Container Styles */
+        .carousel-container {
+            overflow: hidden;
+            background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0) 5%, rgba(255,255,255,0) 95%, rgba(255,255,255,0.95) 100%);
+            padding: 40px 0;
+            position: relative;
+            margin: 30px 0;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: max-content;
+            animation: scroll 30s linear infinite;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .carousel-track:hover {
+            animation-play-state: paused;
+        }
+
+        /* Different speeds for different sections */
+        .carousel-track.sponsors {
+            animation: scroll 20s linear infinite;
+        }
+
+        .carousel-track.partners {
+            animation: scroll 35s linear infinite;
+        }
+
+        .carousel-track.donors {
+            animation: scroll 40s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .carousel-item {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-width: 200px;
+            height: 120px;
+        }
+
+        .carousel-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .carousel-item img {
+            max-width: 180px;
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Sponsor section - larger items */
+        .carousel-item.sponsor {
+            min-width: 300px;
+            height: 150px;
+        }
+
+        .carousel-item.sponsor img {
+            max-width: 280px;
+            max-height: 120px;
+        }
+
+        /* Donor card styles */
+        .donor-card {
+            flex-shrink: 0;
+            padding: 20px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-width: 220px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .donor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+        }
+
+        .donor-name {
+            color: white;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Section headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            margin-top: -10px;
+            margin-bottom: 30px;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .carousel-item {
+                min-width: 150px;
+                height: 100px;
+                padding: 15px 20px;
+            }
+
+            .carousel-item img {
+                max-width: 130px;
+                max-height: 60px;
+            }
+
+            .carousel-item.sponsor {
+                min-width: 220px;
+                height: 120px;
+            }
+
+            .carousel-item.sponsor img {
+                max-width: 200px;
+                max-height: 90px;
+            }
+
+            .donor-card {
+                min-width: 180px;
+                height: 80px;
+            }
+
+            .donor-name {
+                font-size: 0.95em;
+            }
+        }
+    </style>
 </head>
 
-<body class="is-preload">
+<body class="is-preload" >
 
 <!--Header-->
 <header id="header">
@@ -53,125 +210,206 @@
 </nav>
 
 <!-- Heading -->
-<section id="banner2">
+<section id="banner2" >
     <div class="inner">
         <h1><b>Our Supporters</b></h1>
     </div>
 </section>
 
 <!-- Main -->
-<section id="main" class="wrapper">
+<section id="main particles-js" class="wrapper" >
     <div class="inner">
         
+        <!-- Sponsors Section -->
         <div class="content">
-            <header class="special">
+            <header class="special section-header">
                 <h2><b>Sponsors</b></h2>
             </header>
-            <h3><center>Platinum Sponsor</center></h3>
-            <a href="https://www.l3harris.com/">
-                <img src="images/Other/L3Harris_alt.jpg" alt="L3 Harris" style="max-width:100%;">
-            </a><br><br>
+            <p class="section-subtitle">Platinum Sponsor & Funding Partners</p>
             
-            <h3><center>Funding</center></h3>
-            <div class="row gtr-50 gtr-uniform">
-                <div class="col-4">
-                </div>
-                <div class="col-4">
-                    <a href="https://ceas.uc.edu/">
-                        <span class="image fit">
-                            <img src="images/Other/CEAS_logo_2.jpg" alt="College of Engineering and Applied Science">
-                        </span>
+            <div class="carousel-container">
+                <div class="carousel-track sponsors">
+                    <!-- First set of logos -->
+                    <a href="https://www.l3harris.com/" class="carousel-item sponsor">
+                        <img src="images/Other/L3Harris_alt.jpg" alt="L3 Harris">
                     </a>
-                </div>
-            </div>
-            <div class="row gtr-50 gtr-uniform">
-                <div class="col-4">
-                    <a href="https://highered.ohio.gov//">
-                        <span class="image fit">
-                            <img src="images/Other/ohio_DHE_new.png" alt="Ohio Department of Higher Education">
-                        </span>
+                    <a href="https://ceas.uc.edu/" class="carousel-item sponsor">
+                        <img src="images/Other/CEAS_logo_2.jpg" alt="College of Engineering and Applied Science">
                     </a>
-                </div>
-                <div class="col-4">
-                    <a href="https://www.uc.edu/campus-life/sald/student-organizations/Funding/UFB.html">
-                        <span class="image fit">
-                            <img src="images/Other/UFB_Logo.png" alt="University Funding Board">
-                        </span>
+                    <a href="https://highered.ohio.gov/" class="carousel-item sponsor">
+                        <img src="images/Other/ohio_DHE_new.png" alt="Ohio Department of Higher Education">
                     </a>
-                </div>
-                <div class="col-4">
-                    <a href="https://osgc.org/">
-                        <span class="image fit">
-                            <img src="images/Other/OSGC_Logo_2.png" alt="Ohio Space Grant Consortium">
-                        </span>
+                    <a href="https://www.uc.edu/campus-life/sald/student-organizations/Funding/UFB.html" class="carousel-item sponsor">
+                        <img src="images/Other/UFB_Logo.png" alt="University Funding Board">
+                    </a>
+                    <a href="https://osgc.org/" class="carousel-item sponsor">
+                        <img src="images/Other/OSGC_Logo_2.png" alt="Ohio Space Grant Consortium">
+                    </a>
+                    
+                    <!-- Duplicate set for seamless loop -->
+                    <a href="https://www.l3harris.com/" class="carousel-item sponsor">
+                        <img src="images/Other/L3Harris_alt.jpg" alt="L3 Harris">
+                    </a>
+                    <a href="https://ceas.uc.edu/" class="carousel-item sponsor">
+                        <img src="images/Other/CEAS_logo_2.jpg" alt="College of Engineering and Applied Science">
+                    </a>
+                    <a href="https://highered.ohio.gov/" class="carousel-item sponsor">
+                        <img src="images/Other/ohio_DHE_new.png" alt="Ohio Department of Higher Education">
+                    </a>
+                    <a href="https://www.uc.edu/campus-life/sald/student-organizations/Funding/UFB.html" class="carousel-item sponsor">
+                        <img src="images/Other/UFB_Logo.png" alt="University Funding Board">
+                    </a>
+                    <a href="https://osgc.org/" class="carousel-item sponsor">
+                        <img src="images/Other/OSGC_Logo_2.png" alt="Ohio Space Grant Consortium">
                     </a>
                 </div>
             </div>
         </div><br>
         
+        <!-- Partners Section -->
         <div class="content">
-            <header class="special">
+            <header class="special section-header">
                 <h2><b>Partners</b></h2>
             </header>
-            <div class="row gtr-50 gtr-uniform">
-                <div class="col-4">
-                    <a href="https://www.nasa.gov/kennedy/launch-services-program/cubesat-launch-initiative/">
-                        <span class="image fit">
-                            <img src="images/Other/NASA_logo.png" alt="NASA CSLI">
-                        </span>
+            <p class="section-subtitle">Organizations we collaborate with</p>
+            
+            <div class="carousel-container">
+                <div class="carousel-track partners">
+                    <!-- First set of logos -->
+                    <a href="https://www.nasa.gov/kennedy/launch-services-program/cubesat-launch-initiative/" class="carousel-item">
+                        <img src="images/Other/NASA_logo.png" alt="NASA CSLI">
                     </a>
-                </div>
-                <div class="col-4">
-                    <a href="https://voyagertechnologies.com/">
-                        <span class="image fit">
-                            <img src="images/Other/voyager_logo.png" alt="Voyager Technologies">
-                        </span>
+                    <a href="https://voyagertechnologies.com/" class="carousel-item">
+                        <img src="images/Other/voyager_logo.png" alt="Voyager Technologies">
                     </a>
-                </div>
-                <div class="col-4">
-                    <a href="https://www.cincinnatiobservatory.org/">
-                        <span class="image fit">
-                            <img src="images/Other/cinci_observatory_new.png" alt="Cincinnati Observatory">
-                        </span>
+                    <a href="https://www.cincinnatiobservatory.org/" class="carousel-item">
+                        <img src="images/Other/cinci_observatory_new.png" alt="Cincinnati Observatory">
                     </a>
-                </div>
-                <div class="col-4">
-                    <a href="https://sites.google.com/site/w8yxucarc/">
-                        <span class="image fit">
-                            <img src="images/Other/urarc.png" alt="University of Cincinnati Amateur Radio Club">
-                        </span>
+                    <a href="https://sites.google.com/site/w8yxucarc/" class="carousel-item">
+                        <img src="images/Other/urarc.png" alt="University of Cincinnati Amateur Radio Club">
                     </a>
-                </div>
-                <div class="col-4">
-                    <a href="https://innovation.uc.edu/">
-                        <span class="image fit">
-                            <img src="images/Other/1819.jpg" alt="1819 Innovation Hub">
-                        </span>
+                    <a href="https://innovation.uc.edu/" class="carousel-item">
+                        <img src="images/Other/1819.jpg" alt="1819 Innovation Hub">
+                    </a>
+                    
+                    <!-- Duplicate set for seamless loop -->
+                    <a href="https://www.nasa.gov/kennedy/launch-services-program/cubesat-launch-initiative/" class="carousel-item">
+                        <img src="images/Other/NASA_logo.png" alt="NASA CSLI">
+                    </a>
+                    <a href="https://voyagertechnologies.com/" class="carousel-item">
+                        <img src="images/Other/voyager_logo.png" alt="Voyager Technologies">
+                    </a>
+                    <a href="https://www.cincinnatiobservatory.org/" class="carousel-item">
+                        <img src="images/Other/cinci_observatory_new.png" alt="Cincinnati Observatory">
+                    </a>
+                    <a href="https://sites.google.com/site/w8yxucarc/" class="carousel-item">
+                        <img src="images/Other/urarc.png" alt="University of Cincinnati Amateur Radio Club">
+                    </a>
+                    <a href="https://innovation.uc.edu/" class="carousel-item">
+                        <img src="images/Other/1819.jpg" alt="1819 Innovation Hub">
                     </a>
                 </div>
             </div>
         </div><br>
         
+        <!-- Donors Section -->
         <div class="content">
-            <header class="special">
+            <header class="special section-header">
                 <h2><b>Donors</b></h2>
             </header>
-            <center>
-                Steve Kohls &#8226
-                Betsy Kohls &#8226
-                Polly Ruhnke &#8226
-                Nathan Nguyen &#8226
-                Samuel Kohls &#8226
-                Claire Danna &#8226
-                Derek Cress &#8226
-                Amy Carovillano &#8226
-                Shane Whitaker &#8226
-                Susie Carovillano &#8226
-                Laura Meade &#8226
-                Joseph Ottolino &#8226
-                Mindy Danna &#8226
-                Christina Carovillano
-            </center>
+            <p class="section-subtitle">Generous individuals supporting our mission</p>
+            
+            <div class="carousel-container">
+                <div class="carousel-track donors">
+                    <!-- First set of donor cards -->
+                    <div class="donor-card">
+                        <div class="donor-name">Steve Kohls</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Betsy Kohls</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Polly Ruhnke</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Nathan Nguyen</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Samuel Kohls</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Claire Danna</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Derek Cress</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Amy Carovillano</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Shane Whitaker</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Susie Carovillano</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Laura Meade</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Joseph Ottolino</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Mindy Danna</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Christina Carovillano</div>
+                    </div>
+                    
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="donor-card">
+                        <div class="donor-name">Steve Kohls</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Betsy Kohls</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Polly Ruhnke</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Nathan Nguyen</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Samuel Kohls</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Claire Danna</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Derek Cress</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Amy Carovillano</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Shane Whitaker</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Susie Carovillano</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Laura Meade</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Joseph Ottolino</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Mindy Danna</div>
+                    </div>
+                    <div class="donor-card">
+                        <div class="donor-name">Christina Carovillano</div>
+                    </div>
+                </div>
+            </div>
         </div><br>
     
     </div>
@@ -216,6 +454,7 @@
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
 </body>
 
