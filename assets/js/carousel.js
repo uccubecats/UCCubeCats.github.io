@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let velocity = 0;
         let animationId;
         let lastTime = Date.now();
+        let isDragging = false;
+        const dragThreshold = 5;
         
        // For the animation to pick up where it left off
         function getAnimationDuration(track) {
@@ -29,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         track.addEventListener('mousedown', (e) => {
             isDown = true;
+            isDragging = false;
             track.classList.add('dragging');
             startX = e.pageX;
             previousX = e.pageX;
@@ -43,41 +46,56 @@ document.addEventListener('DOMContentLoaded', function() {
             
             
             track.style.animation = 'none';
-            
-            e.preventDefault();
+
         });
         
         
         track.addEventListener('mouseleave', () => {
             if (isDown) {
+                if (isDragging) {
+                    applyMomentum();
+                }
                 isDown = false;
+                isDragging = false;
                 track.classList.remove('dragging');
-                applyMomentum();
             }
         });
         
         
-        track.addEventListener('mouseup', () => {
+        track.addEventListener('mouseup', (e) => {
             if (isDown) {
+                if (isDragging) {
+                    e.preventDefault(); 
+                    applyMomentum();
+                }
                 isDown = false;
+                isDragging = false;
                 track.classList.remove('dragging');
-                applyMomentum();
             }
         });
         
         
         track.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
+             if (!isDown) return;
+    
+            const x = e.pageX;
+            const distance = Math.abs(x - startX);
+            
+            // Only start dragging if moved beyond threshold
+            if (!isDragging && distance > dragThreshold) {
+                isDragging = true;
+                track.classList.add('dragging');
+            }
+            
+            if (!isDragging) return;
+            
             
             const now = Date.now();
             const dt = now - lastTime;
-            const x = e.pageX;
             const dx = x - previousX;
             
-            // Calculate velocity for momentum
             if (dt > 0) {
-                velocity = dx / dt * 16; // Normalize to 60fps
+                velocity = dx / dt * 16;
             }
             
             currentX += dx;
@@ -85,12 +103,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             previousX = x;
             lastTime = now;
-        });
+            });
         
         
         track.addEventListener('touchstart', (e) => {
             isDown = true;
-            track.classList.add('dragging');
+            isDragging = false;
             startX = e.touches[0].pageX;
             previousX = e.touches[0].pageX;
             currentX = getCurrentTransform();
@@ -106,18 +124,30 @@ document.addEventListener('DOMContentLoaded', function() {
         
         track.addEventListener('touchend', () => {
             if (isDown) {
+                if (isDragging) {
+                    applyMomentum();
+                }
                 isDown = false;
+                isDragging = false;
                 track.classList.remove('dragging');
-                applyMomentum();
             }
         });
         
         track.addEventListener('touchmove', (e) => {
             if (!isDown) return;
             
+            const x = e.touches[0].pageX;
+            const distance = Math.abs(x - startX);
+            
+            if (!isDragging && distance > dragThreshold) {
+                isDragging = true;
+                track.classList.add('dragging');
+            }
+            
+            if (!isDragging) return;
+            
             const now = Date.now();
             const dt = now - lastTime;
-            const x = e.touches[0].pageX;
             const dx = x - previousX;
             
             if (dt > 0) {
