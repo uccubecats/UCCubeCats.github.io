@@ -9,36 +9,15 @@
         );
         
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+
         renderer.setSize(window.innerWidth, window.innerHeight);
+
         renderer.setPixelRatio(window.devicePixelRatio);
+
         document.getElementById('canvas-container').appendChild(renderer.domElement);
 
         // Camera position
         camera.position.z = 3;
-
-        // Create starfield background
-        function createStarfield() {
-            const starsGeometry = new THREE.BufferGeometry();
-            const starsMaterial = new THREE.PointsMaterial({
-                color: 0xffffff,
-                size: 1.5,
-                transparent: true,
-                opacity: 0.8
-            });
-
-            const starsVertices = [];
-            for (let i = 0; i < 10000; i++) {
-                const x = (Math.random() - 0.5) * 2000;
-                const y = (Math.random() - 0.5) * 2000;
-                const z = (Math.random() - 0.5) * 2000;
-                starsVertices.push(x, y, z);
-            }
-
-            starsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starsVertices, 3));
-            const stars = new THREE.Points(starsGeometry, starsMaterial);
-            scene.add(stars);
-        }
-        createStarfield();
 
         // Earth group
         const earthGroup = new THREE.Group();
@@ -75,7 +54,7 @@
         earthGroup.add(earth);
 
         // Create atmosphere glow
-        const atmosphereGeometry = new THREE.SphereGeometry(1.05, 64, 64);
+        const atmosphereGeometry = new THREE.SphereGeometry(1.05, 164, 164);
         const atmosphereMaterial = new THREE.MeshPhongMaterial({
             color: 0x4488ff,
             transparent: true,
@@ -121,16 +100,6 @@
         const glow = new THREE.Mesh(glowGeometry, glowMaterial);
         earthGroup.add(glow);
 
-        // Clouds layer (optional)
-        const cloudsGeometry = new THREE.SphereGeometry(1.01, 64, 64);
-        const cloudsMaterial = new THREE.MeshPhongMaterial({
-            color: 0xffffff,
-            transparent: true,
-            opacity: 0.3,
-            side: THREE.DoubleSide
-        });
-        const clouds = new THREE.Mesh(cloudsGeometry, cloudsMaterial);
-        earthGroup.add(clouds);
 
         // Lighting
         const ambientLight = new THREE.AmbientLight(0x333333);
@@ -171,8 +140,6 @@
             // Rotate Earth
             earth.rotation.y += 0.001;
             
-            // Rotate clouds slightly faster
-            clouds.rotation.y += 0.0012;
             
             // Subtle wobble animation
             earthGroup.rotation.x = Math.sin(time * 0.3) * 0.02;
@@ -205,10 +172,10 @@
             }
         });
 
-        // Start animation
+
         animate();
 
-        // Hide loading after a short delay if texture doesn't trigger it
+
         setTimeout(() => {
             document.getElementById('loading').style.display = 'none';
         }, 3000);
