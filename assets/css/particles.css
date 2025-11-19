@@ -34,78 +34,6 @@
             transform: scale(0.98);
         }
 
-        /* Star Animation Container */
-        .star-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 5;
-        }
-
-        .star {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: transparent;
-            pointer-events: none;
-            opacity: 0;
-        }
-
-        .star::before {
-            content: '.';
-            position: absolute;
-            font-size: 40px;
-            color: #000000;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
-        }
-
-        .star.clicked::before {
-            color: #000000;
-            text-shadow: 0 0 15px rgba(255, 0, 0, 0.9);
-        }
-
-        /* Hover Animation */
-        @keyframes starBurst {
-            0% {
-                transform: translate(0, 0) scale(0);
-                opacity: 1;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: translate(var(--tx), var(--ty)) scale(1.5);
-                opacity: 0;
-            }
-        }
-
-        /* Click Animation */
-        @keyframes starExplosion {
-            0% {
-                transform: translate(0, 0) scale(0) rotate(0deg);
-                opacity: 1;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: translate(var(--tx), var(--ty)) scale(2) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        .star.animating {
-            animation: starBurst 1s ease-out forwards;
-        }
-
-        .star.exploding {
-            animation: starExplosion 1.2s ease-out forwards;
-        }
-
         /* Responsive adjustments */
         @media screen and (max-width: 768px) {
             .carousel-item {
@@ -142,4 +70,59 @@
                 padding: 15px 35px;
                 font-size: 1.2em;
             }
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+        }
+
+        .button-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        .space-button {
+            padding: 20px 50px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            background: rgba(15, 20, 35, 0.8);
+            border: 3px solid rgba(100, 150, 255, 0.8);
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            box-shadow: 
+                0 0 20px rgba(100, 150, 255, 0.5),
+                inset 0 0 20px rgba(100, 150, 255, 0.2);
+            transition: all 0.3s ease;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .space-button:hover {
+            border-color: rgba(150, 200, 255, 1);
+            box-shadow: 
+                0 0 40px rgba(150, 200, 255, 0.8),
+                inset 0 0 30px rgba(150, 200, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .space-button:active {
+            transform: scale(0.95);
+        }
+
+        .burst-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ff3366;
+            border-radius: 50%;
+            pointer-events: none;
+            box-shadow: 0 0 10px #ff3366;
         }
