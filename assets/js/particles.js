@@ -71,11 +71,17 @@
 
         // Get button position
         function getButtonCenter() {
-            const rect = button.getBoundingClientRect();
-            return {
-                x: rect.left + rect.width / 2,
-                y: rect.top + rect.height / 2
-            };
+            const button = document.getElementById('spaceBtn');
+            const canvas = document.getElementById('particles-js');
+            
+            const buttonRect = button.getBoundingClientRect();
+            const canvasRect = canvas.getBoundingClientRect();
+            
+            // Calculate button center relative to canvas
+            const x = buttonRect.left - canvasRect.left + buttonRect.width / 2;
+            const y = buttonRect.top - canvasRect.top + buttonRect.height / 2;
+            
+            return { x, y };
         }
 
         // Hover effect - attract particles
@@ -121,8 +127,14 @@
             const buttonPos = getButtonCenter();
             const particleCount = 500;
 
+            // For burst particles (DOM elements), convert back to viewport coordinates
+            const canvas = document.getElementById('particles-js');
+            const canvasRect = canvas.getBoundingClientRect();
+            const viewportX = buttonPos.x + canvasRect.left;
+            const viewportY = buttonPos.y + canvasRect.top;
+
             for (let i = 0; i < particleCount; i++) {
-                createBurstParticle(buttonPos.x, buttonPos.y);
+                createBurstParticle(viewportX, viewportY);
             }
         });
 
