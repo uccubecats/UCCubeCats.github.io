@@ -3,345 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Model Viewer - Back Solar PCB</title>
+    <title>Solar PCB 3D Viewer</title>
     <style>
         body {
             margin: 0;
             overflow: hidden;
             font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
         }
-        #canvas-container {
-            width: 100vw;
+        
+        canvas {
+            display: block;
+            width: 100%;
             height: 100vh;
         }
+        
         #info {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(0, 0, 0, 0.7);
+            top: 20px;
+            left: 20px;
             color: white;
-            padding: 15px;
-            border-radius: 5px;
-            max-width: 300px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            z-index: 100;
         }
-        #controls {
+        
+        #info h2 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+        
+        #info p {
+            margin: 5px 0;
+        }
+        
+        #loading {
             position: absolute;
-            bottom: 10px;
-            left: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
             background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
+            padding: 30px 50px;
+            border-radius: 10px;
+            z-index: 200;
         }
-        button {
-            margin: 5px;
-            padding: 8px 15px;
-            background: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #45a049;
-        }
-        #file-input {
-            margin: 10px 0;
-        }
-        .error {
-            color: #ff6b6b;
+        
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <div id="canvas-container"></div>
+    <div id="loading">Loading 3D Model...</div>
     
     <div id="info">
-        <h3>3D Model Viewer</h3>
-        <p>Back Solar PCB Model</p>
-        <input type="file" id="file-input" accept=".obj,.stl,.gltf,.glb,.fbx">
-        <p style="font-size: 12px;">Supported: OBJ, STL, GLTF, GLB, FBX</p>
-        <p id="status">Select a file to load...</p>
+        <h2>🔆 Back Solar PCB</h2>
+        <p><strong>Controls:</strong></p>
+        <p>🖱️ Left Click + Drag: Rotate</p>
+        <p>🖱️ Right Click + Drag: Pan</p>
+        <p>🖱️ Scroll: Zoom</p>
     </div>
 
-    <div id="controls">
-        <button onclick="resetCamera()">Reset View</button>
-        <button onclick="toggleWireframe()">Toggle Wireframe</button>
-        <button onclick="toggleGrid()">Toggle Grid</button>
-    </div>
-
+    <!-- Three.js Core -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- OrbitControls -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <!-- STLLoader -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+
     <script>
         // Scene setup
-        let scene, camera, renderer, controls, model, grid;
-        let wireframeEnabled = false;
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x1a1a2e);
         
-        init();
+        // Camera setup
+        const camera = new THREE.PerspectiveCamera(
+            75,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            1000
+        );
+        camera.position.set(100, 100, 100);
+        
+        // Renderer setup
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        document.body.appendChild(renderer.domElement);
+        
+        // OrbitControls for camera manipulation
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+        controls.screenSpacePanning = false;
+        controls.minDistance = 10;
+        controls.maxDistance = 500;
+        
+        // Lighting setup
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+        scene.add(ambientLight);
+        
+        const directionalLight1 = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight1.position.set(100, 100, 50);
+        directionalLight1.castShadow = true;
+        scene.add(directionalLight1);
+        
+        const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.5);
+        directionalLight2.position.set(-100, -100, -50);
+        scene.add(directionalLight2);
+        
+        const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.4);
+        scene.add(hemisphereLight);
+        
+        
+        // Axes helper for orientation
+        const axesHelper = new THREE.AxesHelper(50);
+        scene.add(axesHelper);
+        
+        // Load STL model
+        const loader = new THREE.STLLoader();
+        const loadingElement = document.getElementById('loading');
+        
+        loader.load(
+            './3DModel/Back_Solar_PCB.stl',
+            function (geometry) {
+                // Create material for the model
+                const material = new THREE.MeshPhongMaterial({
+                    color: 0x100e90,
+                    emissive: 0x000000,
+                    specular: 0xffffff,
+                    shininess: 0,
+                    flatShading: true,
+                    side: THREE.FrontSide,
+                    wireframe: false,
+                    transparent: false
+                });
+                
+                // Create mesh with material
+                const mesh = new THREE.Mesh(geometry, material);
+                
+                // Center the geometry
+                geometry.computeBoundingBox();
+                const center = new THREE.Vector3();
+                geometry.boundingBox.getCenter(center);
+                geometry.translate(-center.x, -center.y, -center.z);
+                
+                // Rotate mesh to face upward
+                mesh.rotation.y = Math.PI ; 
+                mesh.rotation.x = Math.PI /2; 
+                // Add mesh to scene
+                mesh.castShadow = true;
+                mesh.receiveShadow = true;
+                scene.add(mesh);
+                
+                // Adjust camera to fit the model
+                const box = new THREE.Box3().setFromObject(mesh);
+                const size = box.getSize(new THREE.Vector3());
+                const maxDim = Math.max(size.x, size.y, size.z);
+                const fov = camera.fov * (Math.PI / 180);
+                let cameraZ = Math.abs(maxDim / 2 / Math.tan(fov / 2));
+                cameraZ *= 2; // Add some padding
+                
+                camera.position.set(0, cameraZ, cameraZ);
+                camera.lookAt(0, 0, 0);
+                controls.target.set(0, 0, 0);
+                controls.update();
+                
+                // Hide loading message
+                loadingElement.classList.add('hidden');
+                
+                console.log('STL model loaded successfully!');
+                console.log('Model dimensions:', size);
+            },
+            function (xhr) {
+                // Progress callback
+                const percentComplete = (xhr.loaded / xhr.total) * 100;
+                loadingElement.textContent = `Loading 3D Model... ${Math.round(percentComplete)}%`;
+            },
+            function (error) {
+                // Error callback
+                console.error('Error loading STL file:', error);
+                loadingElement.innerHTML = `
+                    <div style="color: #ff6b6b;">
+                        <strong>Error Loading Model</strong><br>
+                        Please ensure the file exists at:<br>
+                        <code>./3DModel/Back_Solar_PCB.stl</code>
+                    </div>
+                `;
+            }
+        );
+        
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
         animate();
-
-        function init() {
-            // Create scene
-            scene = new THREE.Scene();
-            scene.background = new THREE.Color(0x1a1a1a);
-
-            // Create camera
-            camera = new THREE.PerspectiveCamera(
-                75,
-                window.innerWidth / window.innerHeight,
-                0.1,
-                1000
-            );
-            camera.position.set(50, 50, 50);
-
-            // Create renderer
-            renderer = new THREE.WebGLRenderer({ antialias: true });
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.shadowMap.enabled = true;
-            document.getElementById('canvas-container').appendChild(renderer.domElement);
-
-            // Add lights
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-            scene.add(ambientLight);
-
-            const directionalLight1 = new THREE.DirectionalLight(0xffffff, 0.8);
-            directionalLight1.position.set(50, 50, 50);
-            scene.add(directionalLight1);
-
-            const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.4);
-            directionalLight2.position.set(-50, -50, -50);
-            scene.add(directionalLight2);
-
-            // Add grid
-            grid = new THREE.GridHelper(100, 20, 0x444444, 0x222222);
-            scene.add(grid);
-
-            // Add axes helper
-            const axesHelper = new THREE.AxesHelper(25);
-            scene.add(axesHelper);
-
-            // Basic orbit controls (manual implementation since we can't import OrbitControls)
-            setupManualControls();
-
-            // File input handler
-            document.getElementById('file-input').addEventListener('change', handleFileSelect);
-
-            // Window resize handler
-            window.addEventListener('resize', onWindowResize);
-        }
-
-        function setupManualControls() {
-            let isDragging = false;
-            let previousMousePosition = { x: 0, y: 0 };
-            let cameraRotation = { x: 0, y: 0 };
-            let cameraDistance = 100;
-
-            renderer.domElement.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                previousMousePosition = { x: e.clientX, y: e.clientY };
-            });
-
-            renderer.domElement.addEventListener('mousemove', (e) => {
-                if (isDragging) {
-                    const deltaX = e.clientX - previousMousePosition.x;
-                    const deltaY = e.clientY - previousMousePosition.y;
-
-                    cameraRotation.y += deltaX * 0.005;
-                    cameraRotation.x += deltaY * 0.005;
-
-                    cameraRotation.x = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, cameraRotation.x));
-
-                    updateCameraPosition();
-
-                    previousMousePosition = { x: e.clientX, y: e.clientY };
-                }
-            });
-
-            renderer.domElement.addEventListener('mouseup', () => {
-                isDragging = false;
-            });
-
-            renderer.domElement.addEventListener('wheel', (e) => {
-                e.preventDefault();
-                cameraDistance += e.deltaY * 0.1;
-                cameraDistance = Math.max(10, Math.min(500, cameraDistance));
-                updateCameraPosition();
-            });
-
-            function updateCameraPosition() {
-                camera.position.x = cameraDistance * Math.cos(cameraRotation.x) * Math.sin(cameraRotation.y);
-                camera.position.y = cameraDistance * Math.sin(cameraRotation.x);
-                camera.position.z = cameraDistance * Math.cos(cameraRotation.x) * Math.cos(cameraRotation.y);
-                camera.lookAt(scene.position);
-            }
-
-            updateCameraPosition();
-        }
-
-        function handleFileSelect(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-
-            const filename = file.name.toLowerCase();
-            const statusElement = document.getElementById('status');
-            statusElement.textContent = 'Loading...';
-            statusElement.className = '';
-
-            const reader = new FileReader();
-
-            if (filename.endsWith('.obj')) {
-                reader.onload = function(e) {
-                    loadOBJ(e.target.result);
-                };
-                reader.readAsText(file);
-            } else if (filename.endsWith('.stl')) {
-                reader.onload = function(e) {
-                    loadSTL(e.target.result);
-                };
-                reader.readAsArrayBuffer(file);
-            } else {
-                statusElement.textContent = 'Unsupported format. Please convert to OBJ or STL.';
-                statusElement.className = 'error';
-            }
-        }
-
-        function loadOBJ(data) {
-            try {
-                const lines = data.split('\n');
-                const vertices = [];
-                const faces = [];
-
-                for (let line of lines) {
-                    const parts = line.trim().split(/\s+/);
-                    if (parts[0] === 'v') {
-                        vertices.push(
-                            parseFloat(parts[1]),
-                            parseFloat(parts[2]),
-                            parseFloat(parts[3])
-                        );
-                    } else if (parts[0] === 'f') {
-                        for (let i = 1; i < parts.length - 2; i++) {
-                            faces.push(
-                                parseInt(parts[1].split('/')[0]) - 1,
-                                parseInt(parts[i + 1].split('/')[0]) - 1,
-                                parseInt(parts[i + 2].split('/')[0]) - 1
-                            );
-                        }
-                    }
-                }
-
-                const geometry = new THREE.BufferGeometry();
-                geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-                geometry.setIndex(faces);
-                geometry.computeVertexNormals();
-
-                displayModel(geometry);
-                document.getElementById('status').textContent = 'Model loaded successfully!';
-            } catch (error) {
-                document.getElementById('status').textContent = 'Error loading OBJ: ' + error.message;
-                document.getElementById('status').className = 'error';
-            }
-        }
-
-        function loadSTL(arrayBuffer) {
-            try {
-                const dataView = new DataView(arrayBuffer);
-                const vertices = [];
-                const normals = [];
-
-                // Skip header (80 bytes)
-                const triangleCount = dataView.getUint32(80, true);
-
-                let offset = 84;
-                for (let i = 0; i < triangleCount; i++) {
-                    // Normal
-                    const nx = dataView.getFloat32(offset, true);
-                    const ny = dataView.getFloat32(offset + 4, true);
-                    const nz = dataView.getFloat32(offset + 8, true);
-                    offset += 12;
-
-                    // Vertices
-                    for (let j = 0; j < 3; j++) {
-                        vertices.push(
-                            dataView.getFloat32(offset, true),
-                            dataView.getFloat32(offset + 4, true),
-                            dataView.getFloat32(offset + 8, true)
-                        );
-                        normals.push(nx, ny, nz);
-                        offset += 12;
-                    }
-
-                    offset += 2; // Skip attribute byte count
-                }
-
-                const geometry = new THREE.BufferGeometry();
-                geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-                geometry.setAttribute('normal', new THREE.Float32BufferAttribute(normals, 3));
-
-                displayModel(geometry);
-                document.getElementById('status').textContent = 'Model loaded successfully!';
-            } catch (error) {
-                document.getElementById('status').textContent = 'Error loading STL: ' + error.message;
-                document.getElementById('status').className = 'error';
-            }
-        }
-
-        function displayModel(geometry) {
-            // Remove old model
-            if (model) {
-                scene.remove(model);
-            }
-
-            // Create material
-            const material = new THREE.MeshPhongMaterial({
-                color: 0x00aa00,
-                specular: 0x111111,
-                shininess: 30,
-                side: THREE.DoubleSide
-            });
-
-            // Create mesh
-            model = new THREE.Mesh(geometry, material);
-            scene.add(model);
-
-            // Center and scale model
-            geometry.computeBoundingBox();
-            const center = new THREE.Vector3();
-            geometry.boundingBox.getCenter(center);
-            model.position.sub(center);
-
-            const size = new THREE.Vector3();
-            geometry.boundingBox.getSize(size);
-            const maxDim = Math.max(size.x, size.y, size.z);
-            const scale = 50 / maxDim;
-            model.scale.set(scale, scale, scale);
-        }
-
-        function resetCamera() {
-            camera.position.set(50, 50, 50);
-            camera.lookAt(scene.position);
-        }
-
-        function toggleWireframe() {
-            if (model) {
-                wireframeEnabled = !wireframeEnabled;
-                model.material.wireframe = wireframeEnabled;
-            }
-        }
-
-        function toggleGrid() {
-            grid.visible = !grid.visible;
-        }
-
-        function onWindowResize() {
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-            renderer.render(scene, camera);
-        }
+        });
+        
+        // Optional: Add rotation animation (uncomment to enable)
+        // function rotateModel() {
+        //     scene.children.forEach(child => {
+        //         if (child instanceof THREE.Mesh && child.geometry.type === 'BufferGeometry') {
+        //             child.rotation.y += 0.005;
+        //         }
+        //     });
+        // }
+        // setInterval(rotateModel, 16);
     </script>
 </body>
 </html>
