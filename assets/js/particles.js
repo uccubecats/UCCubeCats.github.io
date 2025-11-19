@@ -112,7 +112,7 @@
                     const distance = Math.sqrt(dx * dx + dy * dy);
                     
                     if (distance < pullDistance) {
-                        const force = -.01;
+                        const force = .01;
                         particle.vx += (dx / distance) * force * 0.5;
                         particle.vy += (dy / distance) * force * 0.5;
                     }
@@ -162,7 +162,7 @@
             function animate() {
                 posX += velocityX * 2;
                 posY += velocityY * 2;
-                velocityY += .1; // Gravity
+                velocityY += .001; // Gravity
                 opacity -= 0.02;
 
                 particle.style.left = posX + 'px';

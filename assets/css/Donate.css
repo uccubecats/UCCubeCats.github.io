@@ -873,7 +873,7 @@ body.is-preload #banner2:before {
 #footer {
   background-color: black;
   color: rgba(255, 255, 255, 0.9);
-  padding: 3rem 0 0rem 0;
+  padding: 10rem 0 0rem 0;
 }
 
 #footer input, #footer select, #footer textarea {

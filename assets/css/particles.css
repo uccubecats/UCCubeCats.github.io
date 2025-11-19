@@ -121,8 +121,9 @@
             position: absolute;
             width: 4px;
             height: 4px;
-            background: #ff3366;
+            background: white;
             border-radius: 50%;
             pointer-events: none;
-            box-shadow: 0 0 10px #ff3366;
+            opacity: 0.8;
+            animation: burst 1s forwards;
         }
