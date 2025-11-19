@@ -3,250 +3,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Particles</title>
+    <title>3D Model Viewer - Back Solar PCB</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
+            margin: 0;
             overflow: hidden;
-            background: #000000;
+            font-family: Arial, sans-serif;
         }
-
-        #particles-js {
-            position: absolute;
-            width: 100%;
+        #canvas-container {
+            width: 100vw;
             height: 100vh;
-            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
         }
-
-        .button-container {
+        #info {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            max-width: 300px;
         }
-
-        .space-button {
-            padding: 20px 50px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #ffffff;
-            background: rgba(15, 20, 35, 0.8);
-            border: 3px solid rgba(100, 150, 255, 0.8);
-            border-radius: 50px;
+        #controls {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 15px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
             cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            box-shadow: 
-                0 0 20px rgba(100, 150, 255, 0.5),
-                inset 0 0 20px rgba(100, 150, 255, 0.2);
-            transition: all 0.3s ease;
-            font-family: 'Arial', sans-serif;
         }
-
-        .space-button:hover {
-            border-color: rgba(150, 200, 255, 1);
-            box-shadow: 
-                0 0 40px rgba(150, 200, 255, 0.8),
-                inset 0 0 30px rgba(150, 200, 255, 0.3);
-            transform: scale(1.05);
+        button:hover {
+            background: #45a049;
         }
-
-        .space-button:active {
-            transform: scale(0.95);
+        #file-input {
+            margin: 10px 0;
         }
-
-        .burst-particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: #ff3366;
-            border-radius: 50%;
-            pointer-events: none;
-            box-shadow: 0 0 10px #ff3366;
+        .error {
+            color: #ff6b6b;
         }
     </style>
 </head>
 <body>
-    <div id="particles-js"></div>
-    <div class="button-container">
-        <button class="space-button" id="spaceBtn">Explore</button>
+    <div id="canvas-container"></div>
+    
+    <div id="info">
+        <h3>3D Model Viewer</h3>
+        <p>Back Solar PCB Model</p>
+        <input type="file" id="file-input" accept=".obj,.stl,.gltf,.glb,.fbx">
+        <p style="font-size: 12px;">Supported: OBJ, STL, GLTF, GLB, FBX</p>
+        <p id="status">Select a file to load...</p>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <div id="controls">
+        <button onclick="resetCamera()">Reset View</button>
+        <button onclick="toggleWireframe()">Toggle Wireframe</button>
+        <button onclick="toggleGrid()">Toggle Grid</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
+        // Scene setup
+        let scene, camera, renderer, controls, model, grid;
+        let wireframeEnabled = false;
         
-        let isHovering = false;
-        let particles;
+        init();
+        animate();
 
-        // Initialize particles.js
-        particlesJS('particles-js', {
-            particles: {
-                number: {
-                    value: 200,
-                    density: {
-                        enable: true,
-                        value_area: 800
-                    }
-                },
-                color: {
-                    value: '#ffffff'
-                },
-                shape: {
-                    type: 'circle',
-                },
-                opacity: {
-                    value: 0.8,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
-                },
-                size: {
-                    value: 3,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 2,
-                        size_min: 0.1,
-                        sync: false
-                    }
-                },
-                line_linked: {
-                    enable: false
-                },
-                move: {
-                    enable: true,
-                    speed: 0.5,
-                    direction: 'none',
-                    random: true,
-                    straight: false,
-                    out_mode: 'out',
-                    bounce: false,
-                }
-            },
-            interactivity: {
-                detect_on: 'canvas',
-                events: {
-                    onhover: {
-                        enable: false
-                    },
-                    onclick: {
-                        enable: false
-                    },
-                    resize: true
-                }
-            },
-            retina_detect: true
-        });
+        function init() {
+            // Create scene
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x1a1a1a);
 
-        const button = document.getElementById('spaceBtn');
-        const buttonContainer = document.querySelector('.button-container');
+            // Create camera
+            camera = new THREE.PerspectiveCamera(
+                75,
+                window.innerWidth / window.innerHeight,
+                0.1,
+                1000
+            );
+            camera.position.set(50, 50, 50);
 
-        // Get button position
-        function getButtonCenter() {
-            const rect = button.getBoundingClientRect();
-            return {
-                x: rect.left + rect.width / 2,
-                y: rect.top + rect.height / 2
-            };
+            // Create renderer
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.shadowMap.enabled = true;
+            document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+            // Add lights
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+            scene.add(ambientLight);
+
+            const directionalLight1 = new THREE.DirectionalLight(0xffffff, 0.8);
+            directionalLight1.position.set(50, 50, 50);
+            scene.add(directionalLight1);
+
+            const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.4);
+            directionalLight2.position.set(-50, -50, -50);
+            scene.add(directionalLight2);
+
+            // Add grid
+            grid = new THREE.GridHelper(100, 20, 0x444444, 0x222222);
+            scene.add(grid);
+
+            // Add axes helper
+            const axesHelper = new THREE.AxesHelper(25);
+            scene.add(axesHelper);
+
+            // Basic orbit controls (manual implementation since we can't import OrbitControls)
+            setupManualControls();
+
+            // File input handler
+            document.getElementById('file-input').addEventListener('change', handleFileSelect);
+
+            // Window resize handler
+            window.addEventListener('resize', onWindowResize);
         }
 
-        // Hover effect - attract particles
-        button.addEventListener('mouseenter', () => {
-            isHovering = true;
-            attractParticles();
-        });
+        function setupManualControls() {
+            let isDragging = false;
+            let previousMousePosition = { x: 0, y: 0 };
+            let cameraRotation = { x: 0, y: 0 };
+            let cameraDistance = 100;
 
-        button.addEventListener('mouseleave', () => {
-            isHovering = false;
-        });
+            renderer.domElement.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                previousMousePosition = { x: e.clientX, y: e.clientY };
+            });
 
-        function attractParticles() {
-            if (!isHovering) return;
+            renderer.domElement.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    const deltaX = e.clientX - previousMousePosition.x;
+                    const deltaY = e.clientY - previousMousePosition.y;
 
-            const buttonPos = getButtonCenter();
-            const pJSDom = window.pJSDom;
-            
-            if (pJSDom && pJSDom[0] && pJSDom[0].pJS.particles.array) {
-                const particles = pJSDom[0].pJS.particles.array;
-                
-                // Adjust pull distance based on screen size for laptop optimization
-                const pullDistance = window.innerWidth > 1024 ? 400 : 300;
-                
-                particles.forEach(particle => {
-                    const dx = (buttonPos.x - particle.x) * .1;
-                    const dy = (buttonPos.y - particle.y) * .1;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < pullDistance) {
-                        const force = .1;
-                        particle.vx += (dx / distance) * force * 0.5;
-                        particle.vy += (dy / distance) * force * 0.5;
-                    }
-                });
+                    cameraRotation.y += deltaX * 0.005;
+                    cameraRotation.x += deltaY * 0.005;
+
+                    cameraRotation.x = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, cameraRotation.x));
+
+                    updateCameraPosition();
+
+                    previousMousePosition = { x: e.clientX, y: e.clientY };
+                }
+            });
+
+            renderer.domElement.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+
+            renderer.domElement.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                cameraDistance += e.deltaY * 0.1;
+                cameraDistance = Math.max(10, Math.min(500, cameraDistance));
+                updateCameraPosition();
+            });
+
+            function updateCameraPosition() {
+                camera.position.x = cameraDistance * Math.cos(cameraRotation.x) * Math.sin(cameraRotation.y);
+                camera.position.y = cameraDistance * Math.sin(cameraRotation.x);
+                camera.position.z = cameraDistance * Math.cos(cameraRotation.x) * Math.cos(cameraRotation.y);
+                camera.lookAt(scene.position);
             }
 
-            requestAnimationFrame(attractParticles);
+            updateCameraPosition();
         }
 
-        // Click effect - burst of red particles
-        button.addEventListener('click', (e) => {
-            const buttonPos = getButtonCenter();
-            const particleCount = 500;
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (!file) return;
 
-            for (let i = 0; i < particleCount; i++) {
-                createBurstParticle(buttonPos.x, buttonPos.y);
+            const filename = file.name.toLowerCase();
+            const statusElement = document.getElementById('status');
+            statusElement.textContent = 'Loading...';
+            statusElement.className = '';
+
+            const reader = new FileReader();
+
+            if (filename.endsWith('.obj')) {
+                reader.onload = function(e) {
+                    loadOBJ(e.target.result);
+                };
+                reader.readAsText(file);
+            } else if (filename.endsWith('.stl')) {
+                reader.onload = function(e) {
+                    loadSTL(e.target.result);
+                };
+                reader.readAsArrayBuffer(file);
+            } else {
+                statusElement.textContent = 'Unsupported format. Please convert to OBJ or STL.';
+                statusElement.className = 'error';
             }
-        });
+        }
 
-        function createBurstParticle(x, y) {
-            const particle = document.createElement('div');
-            particle.className = 'burst-particle';
-            
-            // Random angle for burst effect
-            const angle = Math.random() * Math.PI * 2;
-            const velocity = 3 + Math.random() * 5;
-            const vx = Math.cos(angle) * velocity;
-            const vy = Math.sin(angle) * velocity;
-            
-            particle.style.left = x + 'px';
-            particle.style.top = y + 'px';
-            
-            document.body.appendChild(particle);
+        function loadOBJ(data) {
+            try {
+                const lines = data.split('\n');
+                const vertices = [];
+                const faces = [];
 
-            let posX = x;
-            let posY = y;
-            let opacity = 1;
-            let velocityX = vx;
-            let velocityY = vy;
-
-            function animate() {
-                posX += velocityX * 2;
-                posY += velocityY * 2;
-                velocityY += .1; // Gravity
-                opacity -= 0.02;
-
-                particle.style.left = posX + 'px';
-                particle.style.top = posY + 'px';
-                particle.style.opacity = opacity;
-
-                if (opacity > 0) {
-                    requestAnimationFrame(animate);
-                } else {
-                    particle.remove();
+                for (let line of lines) {
+                    const parts = line.trim().split(/\s+/);
+                    if (parts[0] === 'v') {
+                        vertices.push(
+                            parseFloat(parts[1]),
+                            parseFloat(parts[2]),
+                            parseFloat(parts[3])
+                        );
+                    } else if (parts[0] === 'f') {
+                        for (let i = 1; i < parts.length - 2; i++) {
+                            faces.push(
+                                parseInt(parts[1].split('/')[0]) - 1,
+                                parseInt(parts[i + 1].split('/')[0]) - 1,
+                                parseInt(parts[i + 2].split('/')[0]) - 1
+                            );
+                        }
+                    }
                 }
+
+                const geometry = new THREE.BufferGeometry();
+                geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+                geometry.setIndex(faces);
+                geometry.computeVertexNormals();
+
+                displayModel(geometry);
+                document.getElementById('status').textContent = 'Model loaded successfully!';
+            } catch (error) {
+                document.getElementById('status').textContent = 'Error loading OBJ: ' + error.message;
+                document.getElementById('status').className = 'error';
+            }
+        }
+
+        function loadSTL(arrayBuffer) {
+            try {
+                const dataView = new DataView(arrayBuffer);
+                const vertices = [];
+                const normals = [];
+
+                // Skip header (80 bytes)
+                const triangleCount = dataView.getUint32(80, true);
+
+                let offset = 84;
+                for (let i = 0; i < triangleCount; i++) {
+                    // Normal
+                    const nx = dataView.getFloat32(offset, true);
+                    const ny = dataView.getFloat32(offset + 4, true);
+                    const nz = dataView.getFloat32(offset + 8, true);
+                    offset += 12;
+
+                    // Vertices
+                    for (let j = 0; j < 3; j++) {
+                        vertices.push(
+                            dataView.getFloat32(offset, true),
+                            dataView.getFloat32(offset + 4, true),
+                            dataView.getFloat32(offset + 8, true)
+                        );
+                        normals.push(nx, ny, nz);
+                        offset += 12;
+                    }
+
+                    offset += 2; // Skip attribute byte count
+                }
+
+                const geometry = new THREE.BufferGeometry();
+                geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+                geometry.setAttribute('normal', new THREE.Float32BufferAttribute(normals, 3));
+
+                displayModel(geometry);
+                document.getElementById('status').textContent = 'Model loaded successfully!';
+            } catch (error) {
+                document.getElementById('status').textContent = 'Error loading STL: ' + error.message;
+                document.getElementById('status').className = 'error';
+            }
+        }
+
+        function displayModel(geometry) {
+            // Remove old model
+            if (model) {
+                scene.remove(model);
             }
 
-            animate();
+            // Create material
+            const material = new THREE.MeshPhongMaterial({
+                color: 0x00aa00,
+                specular: 0x111111,
+                shininess: 30,
+                side: THREE.DoubleSide
+            });
+
+            // Create mesh
+            model = new THREE.Mesh(geometry, material);
+            scene.add(model);
+
+            // Center and scale model
+            geometry.computeBoundingBox();
+            const center = new THREE.Vector3();
+            geometry.boundingBox.getCenter(center);
+            model.position.sub(center);
+
+            const size = new THREE.Vector3();
+            geometry.boundingBox.getSize(size);
+            const maxDim = Math.max(size.x, size.y, size.z);
+            const scale = 50 / maxDim;
+            model.scale.set(scale, scale, scale);
+        }
+
+        function resetCamera() {
+            camera.position.set(50, 50, 50);
+            camera.lookAt(scene.position);
+        }
+
+        function toggleWireframe() {
+            if (model) {
+                wireframeEnabled = !wireframeEnabled;
+                model.material.wireframe = wireframeEnabled;
+            }
+        }
+
+        function toggleGrid() {
+            grid.visible = !grid.visible;
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
         }
     </script>
 </body>
