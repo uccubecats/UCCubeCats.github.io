@@ -97,13 +97,16 @@
             if (pJSDom && pJSDom[0] && pJSDom[0].pJS.particles.array) {
                 const particles = pJSDom[0].pJS.particles.array;
                 
+                // Adjust pull distance based on screen size for laptop optimization
+                const pullDistance = window.innerWidth > 1024 ? 400 : 300;
+                
                 particles.forEach(particle => {
                     const dx = (buttonPos.x - particle.x) * .1;
                     const dy = (buttonPos.y - particle.y) * .1;
                     const distance = Math.sqrt(dx * dx + dy * dy);
                     
-                    if (distance < 300) {
-                        const force = .005;
+                    if (distance < pullDistance) {
+                        const force = .09;
                         particle.vx += (dx / distance) * force * 0.5;
                         particle.vy += (dy / distance) * force * 0.5;
                     }
