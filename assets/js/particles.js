@@ -112,12 +112,10 @@
                     const distance = Math.sqrt(dx * dx + dy * dy);
                     
                     if (distance < pullDistance) {
-                        const force = .1;
-                        particle.vx += (dx / distance) * force * 0.5;
-                        particle.vy += (dy / distance) * force * 0.5;
+                        const force = .001;
+                        particle.vx += (dx / distance) * (force * 0.5) - .1;
+                        particle.vy += (dy / distance) * (force * 0.5) - .1;
                     }
-                    /* Check if media on laptop */
-                    
 
                 });
             }

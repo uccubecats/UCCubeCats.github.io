@@ -154,28 +154,7 @@
                 font-size: 0.95em;
             }
         }
-        /* Drag functionality styles */
-        .carousel-track {
-            cursor: grab;
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-        }
-
-        .carousel-track.dragging {
-            cursor: grabbing;
-        }
-
-        .carousel-track.dragging .carousel-item,
-        .carousel-track.dragging .donor-card {
-            pointer-events: none;
-        }
-
-        /* On release drag transition */
-        .carousel-track:not(.dragging) {
-            transition: transform 0.3s ease-out;
-        }
+    
 
         /* Base medal shield styling */
         .medal-bronze::after,
@@ -227,6 +206,32 @@
 
         .medal-gold::after {
             background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+             box-shadow: 
+                0 0 8px rgba(255, 215, 0, 0.7),
+                0 0 16px rgba(255, 215, 0, 0.5),
+                0 0 24px rgba(255, 165, 0, 0.4),
+                0 0 32px rgba(255, 165, 0, 0.3),
+                0 4px 8px rgba(0,0,0,0.2);
+            animation: gold-glow 2.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes gold-glow {
+            0% {
+                box-shadow: 
+                    0 0 8px rgba(255, 215, 0, 0.7),
+                    0 0 16px rgba(255, 215, 0, 0.5),
+                    0 0 24px rgba(255, 165, 0, 0.4),
+                    0 0 32px rgba(255, 165, 0, 0.3),
+                    0 4px 8px rgba(0,0,0,0.2);
+            }
+            100% {
+                box-shadow: 
+                    0 0 12px rgba(255, 215, 0, 0.9),
+                    0 0 24px rgba(255, 215, 0, 0.7),
+                    0 0 36px rgba(255, 165, 0, 0.5),
+                    0 0 48px rgba(255, 165, 0, 0.3),
+                    0 4px 8px rgba(0,0,0,0.2);
+            }
         }
 
         /* Platinum Medal Shield */
@@ -234,10 +239,35 @@
             position: relative;
         }
 
-        .medal-platinum::after {
-            background: linear-gradient(135deg, #E5E4E2 0%, #9C9C9C 100%);
-        }
+    .medal-platinum::after {
+        background: linear-gradient(135deg, #F5F5F5 0%, #C0C0C0 50%, #E5E4E2 100%);
+        box-shadow: 
+            0 0 10px rgba(229, 228, 226, 0.8),
+            0 0 20px rgba(229, 228, 226, 0.6),
+            0 0 30px rgba(229, 228, 226, 0.4),
+            0 0 40px rgba(192, 192, 192, 0.3),
+            0 4px 8px rgba(0,0,0,0.2);
+        animation: platinum-glow 2s ease-in-out infinite alternate;
+    }
 
+    @keyframes platinum-glow {
+        0% {
+            box-shadow: 
+                0 0 10px rgba(229, 228, 226, 0.8),
+                0 0 20px rgba(229, 228, 226, 0.6),
+                0 0 30px rgba(229, 228, 226, 0.4),
+                0 0 40px rgba(192, 192, 192, 0.3),
+                0 4px 8px rgba(0,0,0,0.2);
+        }
+        100% {
+            box-shadow: 
+                0 0 15px rgba(245, 245, 245, 1),
+                0 0 30px rgba(229, 228, 226, 0.8),
+                0 0 45px rgba(229, 228, 226, 0.6),
+                0 0 60px rgba(192, 192, 192, 0.4),
+                0 4px 8px rgba(255, 0, 0, 0.2);
+        }
+    }
         /* Ensure parent containers support positioning */
         .carousel-item.medal-bronze,
         .carousel-item.medal-silver,
