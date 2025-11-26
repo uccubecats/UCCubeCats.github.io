@@ -1,0 +1,296 @@
+
+        
+        .carousel-container {
+            overflow: hidden;
+            background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0) 5%, rgba(255,255,255,0) 95%, rgba(255,255,255,0.95) 100%);
+            padding: 40px 0;
+            position: relative;
+            margin: 30px 0;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: max-content;
+            animation: scroll 30s linear infinite;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .carousel-track:hover {
+            animation-play-state: paused;
+        }
+
+        /* Different speeds for different sections */
+        .carousel-track.sponsors {
+            animation: scroll 20s linear infinite;
+        }
+
+        .carousel-track.partners {
+            animation: scroll 35s linear infinite;
+        }
+
+        .carousel-track.donors {
+            animation: scroll 40s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .carousel-item {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-width: 200px;
+            height: 120px;
+        }
+
+        .carousel-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .carousel-item img {
+            max-width: 180px;
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Sponsor section - larger items */
+        .carousel-item.sponsor {
+            min-width: 300px;
+            height: 150px;
+        }
+
+        .carousel-item.sponsor img {
+            max-width: 280px;
+            max-height: 120px;
+        }
+
+        /* Donor card styles */
+        .donor-card {
+            flex-shrink: 0;
+            padding: 20px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-width: 220px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .donor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+        }
+
+        .donor-name {
+            color: white;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Section headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            margin-top: -10px;
+            margin-bottom: 30px;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .carousel-item {
+                min-width: 150px;
+                height: 100px;
+                padding: 15px 20px;
+            }
+
+            .carousel-item img {
+                max-width: 130px;
+                max-height: 60px;
+            }
+
+            .carousel-item.sponsor {
+                min-width: 220px;
+                height: 120px;
+            }
+
+            .carousel-item.sponsor img {
+                max-width: 200px;
+                max-height: 90px;
+            }
+
+            .donor-card {
+                min-width: 180px;
+                height: 80px;
+            }
+
+            .donor-name {
+                font-size: 0.95em;
+            }
+        }
+    
+
+        /* Base medal shield styling */
+        .medal-bronze::after,
+        .medal-silver::after,
+        .medal-gold::after,
+        .medal-platinum::after {
+            content: "\f5a2"; 
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            top: -20px;
+            right: -15px;
+            width: 45px;
+            height: 54px;
+            clip-path: polygon(50% 0%, 100% 15%, 100% 70%, 50% 100%, 0% 70%, 0% 15%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 10;
+            font-size: 1.5em;
+            color: rgb(255, 255, 255); 
+            line-height: 54px;
+            text-align: center;
+        }
+
+        /* Bronze Medal Shield */
+        .medal-bronze {
+            position: relative;
+        }
+
+        .medal-bronze::after {
+            background: linear-gradient(135deg, #CD7F32 0%, #8B4513 100%);
+        }
+
+        /* Silver Medal Shield */
+        .medal-silver {
+            position: relative;
+        }
+
+        .medal-silver::after {
+            background: linear-gradient(135deg, #D3D3D3 0%, #A8A8A8 100%);
+        }
+
+        /* Gold Medal Shield */
+        .medal-gold {
+            position: relative;
+        }
+
+        .medal-gold::after {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+             box-shadow: 
+                0 0 8px rgba(255, 215, 0, 0.7),
+                0 0 16px rgba(255, 215, 0, 0.5),
+                0 0 24px rgba(255, 165, 0, 0.4),
+                0 0 32px rgba(255, 165, 0, 0.3),
+                0 4px 8px rgba(0,0,0,0.2);
+            animation: gold-glow 2.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes gold-glow {
+            0% {
+                box-shadow: 
+                    0 0 8px rgba(255, 215, 0, 0.7),
+                    0 0 16px rgba(255, 215, 0, 0.5),
+                    0 0 24px rgba(255, 165, 0, 0.4),
+                    0 0 32px rgba(255, 165, 0, 0.3),
+                    0 4px 8px rgba(0,0,0,0.2);
+            }
+            100% {
+                box-shadow: 
+                    0 0 12px rgba(255, 215, 0, 0.9),
+                    0 0 24px rgba(255, 215, 0, 0.7),
+                    0 0 36px rgba(255, 165, 0, 0.5),
+                    0 0 48px rgba(255, 165, 0, 0.3),
+                    0 4px 8px rgba(0,0,0,0.2);
+            }
+        }
+
+        /* Platinum Medal Shield */
+        .medal-platinum {
+            position: relative;
+        }
+
+    .medal-platinum::after {
+        background: linear-gradient(135deg, #F5F5F5 0%, #C0C0C0 50%, #E5E4E2 100%);
+        box-shadow: 
+            0 0 10px rgba(229, 228, 226, 0.8),
+            0 0 20px rgba(229, 228, 226, 0.6),
+            0 0 30px rgba(229, 228, 226, 0.4),
+            0 0 40px rgba(192, 192, 192, 0.3),
+            0 4px 8px rgba(0,0,0,0.2);
+        animation: platinum-glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes platinum-glow {
+        0% {
+            box-shadow: 
+                0 0 10px rgba(229, 228, 226, 0.8),
+                0 0 20px rgba(229, 228, 226, 0.6),
+                0 0 30px rgba(229, 228, 226, 0.4),
+                0 0 40px rgba(192, 192, 192, 0.3),
+                0 4px 8px rgba(0,0,0,0.2);
+        }
+        100% {
+            box-shadow: 
+                0 0 15px rgba(245, 245, 245, 1),
+                0 0 30px rgba(229, 228, 226, 0.8),
+                0 0 45px rgba(229, 228, 226, 0.6),
+                0 0 60px rgba(192, 192, 192, 0.4),
+                0 4px 8px rgba(255, 0, 0, 0.2);
+        }
+    }
+        /* Ensure parent containers support positioning */
+        .carousel-item.medal-bronze,
+        .carousel-item.medal-silver,
+        .carousel-item.medal-gold,
+        .carousel-item.medal-platinum,
+        .donor-card.medal-bronze,
+        .donor-card.medal-silver,
+        .donor-card.medal-gold,
+        .donor-card.medal-platinum {
+            overflow: visible;
+        }
+
+        /* Responsive medal sizing */
+        @media screen and (max-width: 768px) {
+            .medal-bronze::after,
+            .medal-silver::after,
+            .medal-gold::after,
+            .medal-platinum::after {
+                width: 35px;
+                height: 42px;
+                font-size: 1.2em;
+                top: -15px;
+                right: -10px;
+                line-height: 42px;
+            }
+        }   
