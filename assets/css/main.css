@@ -3167,7 +3167,8 @@ ul.icons {
 
 
 
-body {
+
+      body {
   padding-top: 0rem; }
   body:before {
     content: ' ';
@@ -3184,7 +3185,8 @@ body {
     z-index: -1;
     opacity: 0.05; }
 
-#header {
+
+    #header {
     -moz-align-items: center;
     -webkit-align-items: center;
     -ms-align-items: center;
