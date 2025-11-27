@@ -294,3 +294,41 @@
                 line-height: 42px;
             }
         }   
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .carousel-item {
+                min-width: 150px;
+                height: 100px;
+                padding: 15px 20px;
+            }
+
+            .carousel-item img {
+                max-width: 130px;
+                max-height: 60px;
+            }
+
+            .carousel-item.sponsor {
+                min-width: 220px;
+                height: 120px;
+            }
+
+            .carousel-item.sponsor img {
+                max-width: 200px;
+                max-height: 90px;
+            }
+
+            .donor-card {
+                min-width: 180px;
+                height: 80px;
+            }
+
+            .donor-name {
+                font-size: 0.95em;
+            }
+
+            .donate-button {
+                padding: 15px 35px;
+                font-size: 1.2em;
+            }
+        }

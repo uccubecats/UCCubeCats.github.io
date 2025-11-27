@@ -178,6 +178,7 @@ body {
 @media screen and (max-width: 480px) {
   html, body {
     min-width: 320px; } }
+
 html {
   box-sizing: border-box; }
 
@@ -1219,7 +1220,8 @@ ul.actions {
           ul.actions:not(.fixed) li .button.icon:before {
             margin-left: -0.5rem; } }
 
-/* Grid */
+
+            /* Grid */
 .row {
   display: flex;
   flex-wrap: wrap;
