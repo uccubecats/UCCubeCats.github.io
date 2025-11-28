@@ -161,10 +161,6 @@ em, i {
   font-style: italic;
 }
 
-p {
-  margin: 0 0 2rem 0;
-}
-
 header.special {
   text-align: center;
   margin-bottom: 4rem;
@@ -679,12 +675,12 @@ body.is-menu-visible #menu {
 #footer {
   background-color: #111111;
   color: rgba(255, 255, 255, 0.5);
-  padding: 13rem 0 0rem 0 ;
+  padding: 3rem 0 0rem 0 ;
   width: 100%;
   overflow-x: hidden;
 }
 #footer .inner {
-  margin: 0 auto;
+  
   width: 75rem;
   max-width: calc(100% - 6rem);
   padding: 0 3rem; 
@@ -851,7 +847,7 @@ body.is-menu-visible #menu {
     text-align: center; }
   @media screen and (max-width: 1280px) {
     #footer {
-      padding: 13rem 0 2rem 0 ; } }
+      padding: 3rem 0 2rem 0 ; } }
   @media screen and (max-width: 980px) {
     #footer .content {
       -moz-flex-wrap: wrap;
@@ -876,7 +872,6 @@ body.is-menu-visible #menu {
   
   #footer .inner {
     max-width: calc(100% - 4rem);
-    padding: 0 2rem;
   
   } 
 }
@@ -887,7 +882,7 @@ body.is-menu-visible #menu {
     #footer .content section {
     width: 100%;
     padding: 0; /* CHANGE from inheriting */
-    margin-bottom: 2rem; /* ADD THIS LINE */
+    margin-bottom: 2rem; 
   }
   
   #footer .content section:last-child {
@@ -924,18 +919,18 @@ body.is-menu-visible #menu {
       padding: 1rem 0 1rem 0 ; } }
  @media screen and (max-width: 480px) {
   .inner {
-    max-width: calc(100% - 2rem); /* CHANGE from calc(100% - 3rem) */
-    padding: 0 1rem; /* ADD THIS LINE */
+    max-width: calc(100% - 2rem);
+    padding: 0 1rem; 
   }
   
   #footer .inner {
-    max-width: calc(100% - 2rem); /* ADD THIS ENTIRE RULE */
+    max-width: calc(100% - 2rem);
     padding: 0 1rem;
   }
   
   #footer .content section {
-    padding: 0; /* ADD THIS LINE */
-    margin-bottom: 1.5rem; /* ADD THIS LINE */
+    padding: 0; 
+    margin-bottom: 1.5rem; 
   }
   
   #main .content {
