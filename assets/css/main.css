@@ -178,6 +178,7 @@ body {
 @media screen and (max-width: 480px) {
   html, body {
     min-width: 320px; } }
+
 html {
   box-sizing: border-box; }
 
@@ -1219,7 +1220,8 @@ ul.actions {
           ul.actions:not(.fixed) li .button.icon:before {
             margin-left: -0.5rem; } }
 
-/* Grid */
+
+            /* Grid */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -3165,7 +3167,8 @@ ul.icons {
 
 
 
-body {
+
+      body {
   padding-top: 0rem; }
   body:before {
     content: ' ';
@@ -3182,7 +3185,8 @@ body {
     z-index: -1;
     opacity: 0.05; }
 
-#header {
+
+    #header {
     -moz-align-items: center;
     -webkit-align-items: center;
     -ms-align-items: center;

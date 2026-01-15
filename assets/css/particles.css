@@ -3,10 +3,43 @@
         .donate-button-container {
             display: flex;
             justify-content: center;
-            margin: 40px 0;
+            
+            margin: 5rem auto;
             position: relative;
-            height: 5rem;
+            height: auto;
+            width: 100%;
+            max-width: 600px;
+            
         }
+
+  .donate-button-container p {
+        text-align: center;
+
+        }
+
+        @media (max-width: 600px) {
+    .donate-button-container {
+        padding: 0 1rem;
+        margin: 5rem auto;
+    }
+    
+    .donate-button-container p,
+    .donate-button-container a,
+    .donate-button-container button {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        max-width: 100%;
+    }
+}
+
+        @media (max-width: 768px) {
+        .donate-button-container {
+            -moz-flex-wrap: wrap;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+            }
 
         .donate-button {
             position: relative;
@@ -34,57 +67,29 @@
             transform: scale(0.98);
         }
 
-        /* Responsive adjustments */
-        @media screen and (max-width: 768px) {
-            .carousel-item {
-                min-width: 150px;
-                height: 100px;
-                padding: 15px 20px;
-            }
-
-            .carousel-item img {
-                max-width: 130px;
-                max-height: 60px;
-            }
-
-            .carousel-item.sponsor {
-                min-width: 220px;
-                height: 120px;
-            }
-
-            .carousel-item.sponsor img {
-                max-width: 200px;
-                max-height: 90px;
-            }
-
-            .donor-card {
-                min-width: 180px;
-                height: 80px;
-            }
-
-            .donor-name {
-                font-size: 0.95em;
-            }
-
-            .donate-button {
-                padding: 15px 35px;
-                font-size: 1.2em;
-            }
+        #particle-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 120%; 
         }
 
         #particles-js {
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 100vh;
+            height: 100%;
+            z-index= -1
+            overflow: hidden;
             background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
         }
 
         .button-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
 
         .space-button {
@@ -92,13 +97,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 1.5rem;
             font-weight: bold;
             color: #ffffff;
             background: rgba(15, 20, 35, 0.8);
             border: 3px solid rgba(100, 150, 255, 0.8);
             border-radius: 50px;
-            cursor: pointer;
+            cursor: pointer;    
             text-transform: uppercase;
             letter-spacing: 2px;
             box-shadow: 
@@ -106,6 +111,9 @@
                 inset 0 0 20px rgba(100, 150, 255, 0.2);
             transition: all 0.3s ease;
             font-family: 'Arial', sans-serif;
+            width: auto;
+            max-width: 100%;
+            white-space: nowrap;
         }
 
         .space-button:hover {
