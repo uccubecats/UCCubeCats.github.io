@@ -671,6 +671,15 @@ body.is-menu-visible #menu {
   align-items: center;
 }
 
+code {
+  border-radius: 4px;
+  border: solid 1px;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  margin: 0 0.25rem;
+  padding: 0.25rem 0.65rem;
+}
+
 /* Footer */
 #footer {
   background-color: #111111;
